@@ -1,3 +1,2 @@
 # mdsi-maquette-insa
-XML representation of all classes possible at the INSA Toulouse
-learnings-database
+XML representation of all classes possible at the INSA Toulouse.
