@@ -1,0 +1,30 @@
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+<!-- Personnel -->
+<xs:element name="Personnel">
+	<xs:attribute name="Nom" type="xs:string"/>
+	<xs:attribute name="Prenom" type="xs:string"/>
+	<xs:attribute name="Grade" type="xs:string"/>
+	<xs:attribute name="Bureau" type="xs:string"/>
+	<xs:attribute name="Tel" type="xs:string"/>
+	<xs:attribute name="Mail" type="xs:string"/>
+	<xs:element ref="Département" minOccurs="0" maxOccurs="1"/>
+</xs:element>
+
+<!-- Départements -->
+<xs:element name="Departement">
+	<xs:attribute name="Acronyme" type="xs:string"/>
+	<xs:attribute name="Nom" type="xs:string"/>
+	<xs:attribute name="DateCreation" type="xs:date"/> <!-- type date ?? -->
+
+<!-- Promos -->
+
+<!-- Spécialités -->
+
+<!-- UFs -->
+
+<!-- UEs -->
+
+<!-- Epreuves -->
+
+<!-- Compétences -->
