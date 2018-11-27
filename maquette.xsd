@@ -8,23 +8,62 @@
 	<xs:attribute name="Bureau" type="xs:string"/>
 	<xs:attribute name="Tel" type="xs:string"/>
 	<xs:attribute name="Mail" type="xs:string"/>
-	<xs:element ref="Département" minOccurs="0" maxOccurs="1"/>
+	<!-- Les départements ont un responsable du personnel (1-1). -->
+	<xs:element ref="Departement" minOccurs="0" maxOccurs="1"/> 
+	<!-- Les UF ont un responsable d'UF (1-*), max = ???. -->
+	<xs:element ref="UF" minOccurs="0" maxOccurs="999"/>
+	<!-- Les UE ont un responsable d'UE (1-*). -->
+	<xs:element ref="UE" minOccurs="0" maxOccurs="999"/>
 </xs:element>
 
 <!-- Départements -->
 <xs:element name="Departement">
 	<xs:attribute name="Acronyme" type="xs:string"/>
 	<xs:attribute name="Nom" type="xs:string"/>
-	<xs:attribute name="DateCreation" type="xs:date"/> <!-- type date ?? -->
+	<xs:attribute name="DateCreation" type="xs:date"/> 
+</xs:element>
 
 <!-- Promos -->
+<xs:element name="Promo">
+	<xs:attribute name="Intitule" type="xs:string"/>
+	<xs:attribute name="Annee" type="xs:string"/>
+</xs:element>
 
 <!-- Spécialités -->
+<xs:element name="Specialite">
+	<xs:attribute name="Intitule" type="xs:string"/>
+</xs:element>
 
 <!-- UFs -->
+<xs:element name="UF">
+	<xs:attribute name="Code" type="xs:string"/>
+	<xs:attribute name="Intitule" type="xs:string"/>
+	<xs:attribute name="Coefficient" type="xs:string"/>
+	<xs:attribute name="Obligation" type="xs:string"/>
+	<xs:attribute name="Semestre" type="xs:string"/>
+	<xs:attribute name="Heterogene" type="xs:string"/>
+	<xs:attribute name="Continuite" type="xs:string"/>
+	<xs:attribute name="ECTS" type="xs:string"/>
+	<xs:attribute name="Type" type="xs:string"/>
+</xs:element>
 
 <!-- UEs -->
+<xs:element name="UE">
+	<xs:attribute name="Code" type="xs:string"/>
+	<xs:attribute name="Intitule" type="xs:string"/>
+	<xs:attribute name="Coefficient" type="xs:string"/>
+	<xs:attribute name="CM" type="xs:string"/>
+	<xs:attribute name="TD" type="xs:string"/>
+	<xs:attribute name="TP" type="xs:string"/> 
+</xs:element>
 
 <!-- Epreuves -->
+<xs:element name="Epreuve">
+	<xs:attribute name="Intitule" type="xs:string"/>
+	<xs:attribute name="Nature" type="xs:string"/>
+</xs:element>
 
 <!-- Compétences -->
+<xs:element name="Competence">
+	<xs:attribute name="Intitule" type="xs:string"/>
+</xs:element>
