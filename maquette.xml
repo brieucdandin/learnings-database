@@ -2,7 +2,9 @@
 
 <Promo ></Promo>
 
-<Personnel></Personnel>
+<Personnel attributs name = MJ Huguet>
+	<departement complexité/>
+</Personnel>
 
 <UF></UF>
 

@@ -8,12 +8,6 @@
 	<xs:attribute name="Bureau" type="xs:string"/>
 	<xs:attribute name="Tel" type="xs:string"/>
 	<xs:attribute name="Mail" type="xs:string"/>
-	<!-- Les départements ont un responsable du personnel (1-1). -->
-	<xs:element ref="Departement" minOccurs="0" maxOccurs="1"/> 
-	<!-- Les UF ont un responsable d'UF (1-*), max = ???. -->
-	<xs:element ref="UF" minOccurs="0" maxOccurs="999"/>
-	<!-- Les UE ont un responsable d'UE (1-*). -->
-	<xs:element ref="UE" minOccurs="0" maxOccurs="999"/>
 </xs:element>
 
 <!-- Départements -->
@@ -21,6 +15,8 @@
 	<xs:attribute name="Acronyme" type="xs:string"/>
 	<xs:attribute name="Nom" type="xs:string"/>
 	<xs:attribute name="DateCreation" type="xs:date"/> 
+	<!-- Les départements ont un responsable du personnel (1-1). -->
+	<xs:element ref="Personnel"/> 
 </xs:element>
 
 <!-- Promos -->
@@ -45,6 +41,8 @@
 	<xs:attribute name="Continuite" type="xs:string"/>
 	<xs:attribute name="ECTS" type="xs:string"/>
 	<xs:attribute name="Type" type="xs:string"/>
+	<!-- Les UF ont un responsable d'UF (1-*), max = ???. -->
+	<xs:element ref="Personnel"/>
 </xs:element>
 
 <!-- UEs -->
@@ -55,6 +53,8 @@
 	<xs:attribute name="CM" type="xs:string"/>
 	<xs:attribute name="TD" type="xs:string"/>
 	<xs:attribute name="TP" type="xs:string"/> 
+	<!-- Les UE ont un responsable d'UE (1-*). -->
+	<xs:element ref="Personnel"/>
 </xs:element>
 
 <!-- Epreuves -->
@@ -67,3 +67,15 @@
 <xs:element name="Competence">
 	<xs:attribute name="Intitule" type="xs:string"/>
 </xs:element>
+
+
+<!-- ????????????????????????????????????? -->
+<xs:element name="Appartenance">
+	<xs:element name="idPromo" type="xs:string"/>
+	<xs:element name="idUF" type="xs:string"/>
+</xs:element>
+
+
+
+
+
