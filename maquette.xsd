@@ -12,26 +12,36 @@
 
 <!-- Départements -->
 <xs:element name="Departement">
-	<xs:attribute name="Acronyme" type="xs:string"/>
-	<xs:attribute name="Nom" type="xs:string"/>
-	<xs:attribute name="DateCreation" type="xs:date"/> 
-	<!-- Les départements ont un responsable du personnel (1-1). -->
-	<xs:element ref="Personnel"/> 
+	<xs:complexType>
+		<xs:sequence>
+			<xs:attribute name="Acronyme" type="xs:string"/>
+			<xs:attribute name="Nom" type="xs:string"/>
+			<xs:attribute name="DateCreation" type="xs:date"/> 
+			<!-- Les départements ont un responsable du personnel (1-1). -->
+			<xs:element ref="Personnel"/> 
+		</xs:sequence>
+	</xs:complexType>
 </xs:element>
 
 <!-- Promos -->
 <xs:element name="Promo">
+		<xs:complexType>
+		<xs:sequence>
 	<xs:attribute name="Intitule" type="xs:string"/>
 	<xs:attribute name="Annee" type="xs:string"/>
 </xs:element>
 
 <!-- Spécialités -->
 <xs:element name="Specialite">
+		<xs:complexType>
+		<xs:sequence>
 	<xs:attribute name="Intitule" type="xs:string"/>
 </xs:element>
 
 <!-- UFs -->
 <xs:element name="UF">
+		<xs:complexType>
+		<xs:sequence>
 	<xs:attribute name="Code" type="xs:string"/>
 	<xs:attribute name="Intitule" type="xs:string"/>
 	<xs:attribute name="Coefficient" type="xs:string"/>
