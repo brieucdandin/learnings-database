@@ -1,91 +1,99 @@
 <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
-
-<!-- Personnel -->
-<xs:element name="Personnel">
-	<xs:attribute name="Nom" type="xs:string"/>
-	<xs:attribute name="Prenom" type="xs:string"/>
-	<xs:attribute name="Grade" type="xs:string"/>
-	<xs:attribute name="Bureau" type="xs:string"/>
-	<xs:attribute name="Tel" type="xs:string"/>
-	<xs:attribute name="Mail" type="xs:string"/>
-</xs:element>
-
-<!-- Départements -->
-<xs:element name="Departement">
-	<xs:complexType>
-		<xs:sequence>
-			<xs:attribute name="Acronyme" type="xs:string"/>
+		<!-- Personnel -->
+		<xs:element name="Personnel">
 			<xs:attribute name="Nom" type="xs:string"/>
-			<xs:attribute name="DateCreation" type="xs:date"/> 
-			<!-- Les départements ont un responsable du personnel (1-1). -->
-			<xs:element ref="Personnel"/> 
-		</xs:sequence>
-	</xs:complexType>
-</xs:element>
+			<xs:attribute name="Prenom" type="xs:string"/>
+			<xs:attribute name="Grade" type="xs:string"/>
+			<xs:attribute name="Bureau" type="xs:string"/>
+			<xs:attribute name="Tel" type="xs:string"/>
+			<xs:attribute name="Mail" type="xs:string"/>
+		</xs:element>
 
-<!-- Promos -->
-<xs:element name="Promo">
-		<xs:complexType>
-		<xs:sequence>
-	<xs:attribute name="Intitule" type="xs:string"/>
-	<xs:attribute name="Annee" type="xs:string"/>
-</xs:element>
+		<!-- Départements -->
+		<xs:element name="Departement">
+			<xs:complexType>
+				<xs:sequence>
+					<!-- Les départements ont un responsable du personnel (1-1). -->
+					<xs:element ref="Personnel"/> 
+				</xs:sequence>
+				<xs:attribute name="idDepartemet" type="xs:string"/>
+				<xs:attribute name="Acronyme" type="xs:string"/>
+				<xs:attribute name="Nom" type="xs:string"/>
+				<xs:attribute name="DateCreation" type="xs:date"/> 
+			</xs:complexType>
+		</xs:element>
 
-<!-- Spécialités -->
-<xs:element name="Specialite">
-		<xs:complexType>
-		<xs:sequence>
-	<xs:attribute name="Intitule" type="xs:string"/>
-</xs:element>
+		<!-- Promos -->
+		<xs:element name="Promo">
+			<xs:complexType>
+				<xs:sequence>
+					<xs:attribute name="Intitule" type="xs:string"/>
+					<xs:attribute name="Annee" type="xs:string"/>
+				</xs:sequence>
+			</xs:complexType>
+		</xs:element>
 
-<!-- UFs -->
-<xs:element name="UF">
-		<xs:complexType>
-		<xs:sequence>
-	<xs:attribute name="Code" type="xs:string"/>
-	<xs:attribute name="Intitule" type="xs:string"/>
-	<xs:attribute name="Coefficient" type="xs:string"/>
-	<xs:attribute name="Obligation" type="xs:string"/>
-	<xs:attribute name="Semestre" type="xs:string"/>
-	<xs:attribute name="Heterogene" type="xs:string"/>
-	<xs:attribute name="Continuite" type="xs:string"/>
-	<xs:attribute name="ECTS" type="xs:string"/>
-	<xs:attribute name="Type" type="xs:string"/>
-	<!-- Les UF ont un responsable d'UF (1-*), max = ???. -->
-	<xs:element ref="Personnel"/>
-</xs:element>
+		<!-- Spécialités -->
+		<xs:element name="Specialite">
+				<xs:complexType>
+				<xs:sequence>
+			<xs:attribute name="Intitule" type="xs:string"/>
+		</xs:element>
 
-<!-- UEs -->
-<xs:element name="UE">
-	<xs:attribute name="Code" type="xs:string"/>
-	<xs:attribute name="Intitule" type="xs:string"/>
-	<xs:attribute name="Coefficient" type="xs:string"/>
-	<xs:attribute name="CM" type="xs:string"/>
-	<xs:attribute name="TD" type="xs:string"/>
-	<xs:attribute name="TP" type="xs:string"/> 
-	<!-- Les UE ont un responsable d'UE (1-*). -->
-	<xs:element ref="Personnel"/>
-</xs:element>
+		<!-- UFs -->
+		<xs:element name="UF">
+			<xs:complexType>
+				<xs:sequence>
+					<xs:element ref="Personnel"/>
+				</xs:sequence>
+				<xs:attribute name="Code" type="xs:string"/>
+				<xs:attribute name="Intitule" type="xs:string"/>
+				<xs:attribute name="Coefficient" type="xs:string"/>
+				<xs:attribute name="Obligation" type="xs:string"/>
+				<xs:attribute name="Semestre" type="xs:string"/>
+				<xs:attribute name="Heterogene" type="xs:string"/>
+				<xs:attribute name="Continuite" type="xs:string"/>
+				<xs:attribute name="ECTS" type="xs:string"/>
+				<xs:attribute name="Type" type="xs:string"/>
+				<!-- Les UF ont un responsable d'UF (1-*), max = ???. -->
+		</xs:element>
 
-<!-- Epreuves -->
-<xs:element name="Epreuve">
-	<xs:attribute name="Intitule" type="xs:string"/>
-	<xs:attribute name="Nature" type="xs:string"/>
-</xs:element>
+		<!-- UEs -->
+		<xs:element name="UE">
+			<xs:attribute name="Code" type="xs:string"/>
+			<xs:attribute name="Intitule" type="xs:string"/>
+			<xs:attribute name="Coefficient" type="xs:string"/>
+			<xs:attribute name="CM" type="xs:string"/>
+			<xs:attribute name="TD" type="xs:string"/>
+			<xs:attribute name="TP" type="xs:string"/> 
+			<!-- Les UE ont un responsable d'UE (1-*). -->
+			<xs:element ref="Personnel"/>
+		</xs:element>
 
-<!-- Compétences -->
-<xs:element name="Competence">
-	<xs:attribute name="Intitule" type="xs:string"/>
-</xs:element>
+		<!-- Epreuves -->
+		<xs:element name="Epreuve">
+			<xs:attribute name="Intitule" type="xs:string"/>
+			<xs:attribute name="Nature" type="xs:string"/>
+		</xs:element>
+
+		<!-- Compétences -->
+		<xs:element name="Competence">
+			<xs:attribute name="Intitule" type="xs:string"/>
+		</xs:element>
+
+		<!-- Clés -->
+		<!-- du Département -->
+		
 
 
-<!-- ????????????????????????????????????? -->
-<xs:element name="Appartenance">
-	<xs:element name="idPromo" type="xs:string"/>
-	<xs:element name="idUF" type="xs:string"/>
-</xs:element>
+		<!-- Relation Promo - UF -->
+		<xs:element name="Appartenance">
+			<xs:element name="idPromo" type="xs:string"/>
+			<xs:element name="idUF" type="xs:string"/>
+		</xs:element>
 
-
-
-
-
+		<!-- Relation Promo - Département -->
+		<xs:element name="Appartenance">
+			<xs:element name="idPromo" type="xs:string"/>
+			<xs:element name="idDepartement" type="xs:string"/>
+		</xs:element>
