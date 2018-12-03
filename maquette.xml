@@ -6,8 +6,8 @@
 		<personnel idPersonnel="P1">
 			<nom>Argentbois</nom>
 			<prenom>Jeanne</prenom>
-			<grade>Enseignante</grade>
-			<bureau>Clairière Vertevent</bureau>
+			<grade>Enseignant</grade>
+			<bureau>Clairière Vertevent arbre 3</bureau>
 			<tel>0677443311</tel>
 			<mail>jeanne.argentbois@foncombe.elv</mail>
 		</personnel>
@@ -22,19 +22,29 @@
 		</personnel>
 
 		<personnel idPersonnel="P3">
-			<nom>Edfandril</nom>
+			<nom>Faendril</nom>
 			<prenom>Maya</prenom>
-			<grade>Enseignante</grade>
-			<bureau>Mine du Nord</bureau>
-			<tel>0611000354</tel>
-			<mail>lebestnain@moria.dw</mail>
+			<grade>Enseignant</grade>
+			<bureau>Clairière Vertevent arbre 4</bureau>
+			<tel>0688993154</tel>
+			<mail>missmaya@foncombe.elv</mail>
 		</personnel>
 	</Personnels>
 
 
 	<promos>
-		<promo>
-			<personnel>P1</personnel>
+		<promo idPromo="Pro1">
+			<intitule>Première année armes elfe</intitule>
+			<annee>1</annee>
+
+			<personnel>P3</personnel>
+		</promo>
+
+		<promo idPromo="Pro2">
+			<intitule>Deuxième année armes elfe</intitule>
+			<annee>2</annee>
+
+			<personnel>P3</personnel>
 		</promo>
 	</promos>
 
@@ -43,11 +53,16 @@
 		<specialite idSpecialite="S1">
 			<intitule>Survie</intitule>
 			<personnel>P1</personnel>
+
+			<promo>Pro1</promo>
+			<promo>Pro2</promo>
 		</specialite>
 
 		<specialite idSpecialite="S2">
 			<intitule>Gelée royale</intitule>
+
 			<personnel>P2</personnel>
+			<promo>Pro2</promo>
 		</specialite>
 	</specialites>
 
@@ -61,7 +76,22 @@
 			<semestre>1</semestre>
 			<heterogene>non</heterogene>
 			<ECTS>10</ECTS>
-			<type> Compétences </type>
+			<competences>oui</competence>
+			<!-- <continuite>non</continuite> On peut ne pas le mettre avec les bonnes bornes ?? On ne le met que si il y a effectivement continuité. -->
+
+			<specialite>S1</specialite>
+			<personnel>P1</personnel>
+		</UF>
+
+		<UF idUF="UF2">
+			<code>E511A9</code>
+			<intitule>Enseignements nains</intitule>
+			<coefficient>4</coefficient>
+			<obligation>oui</obligation>
+			<semestre>1</semestre>
+			<heterogene>oui</heterogene>
+			<ECTS>8</ECTS>
+			<competences>non</competences>
 			<!-- <continuite>non</continuite> On peut ne pas le mettre avec les bonnes bornes ?? On ne le met que si il y a effectivement continuité. -->
 
 			<specialite>S1</specialite>
@@ -85,7 +115,7 @@
 	</UEs>
 
 	<epreuves>
-			<epreuve idEpreuve="Ep1">
+			<epreuve idEpreuve="EP1">
 				<intitule>Examen final archerie</intitule>
 				<nature>Présentation</nature>
 			</epreuve>
@@ -93,9 +123,9 @@
 
 	<departements>
 		<departement idDepartement="D1" >
-			<acronyme>GNOME</acronyme>
-			<nom>Génie Nain et Office des Mines et Extra-Montagnes</nom>
-			<dateCreation>122 AV JC</dateCreation>
+			<acronyme>GNOM</acronyme>
+			<nom>Génie Nain et Office des Mines</nom>
+			<dateCreation>1222-12-24</dateCreation>
 			<personnel>P2</personnel>
 		</Departement>
 	</departement>
