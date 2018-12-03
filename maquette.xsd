@@ -1,28 +1,30 @@
 <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
 		<!-- Personnel -->
-		<xs:element name="Personnel">
-			<xs:sequence>
-				<xs:attribute name="Nom" type="xs:string"/>
-				<xs:attribute name="Prenom" type="xs:string"/>
-				<xs:attribute name="Grade" type="xs:string"/>
-				<xs:attribute name="Bureau" type="xs:string"/>
-				<xs:attribute name="Tel" type="xs:string"/>
-				<xs:attribute name="Mail" type="xs:string"/>
-			</xs:sequence>
+		<xs:element name="personnel">
+			<xs:element name="nom" type="xs:string"/>
+			<xs:element name="prenom" type="xs:string"/>
+			<xs:element name="grade" type="xs:string"/>
+			<xs:element name="bureau" type="xs:string"/>
+			<xs:element name="tel" type="xs:string"/>
+			<xs:element name="mail" type="xs:string"/>
+
+			<xs:attribute name="idPersonnel"/>
 		</xs:element>
 
 		<!-- Départements -->
-		<xs:element name="Departement">
+		<xs:element name="departement">
 			<xs:complexType>
 				<xs:sequence>
 					<!-- Les départements ont un responsable du personnel (1-1). -->
-					<xs:element ref="Personnel"/> 
+					<xs:element ref="personnel"/> 
+
+					<xs:element name="idDepartemet" type="xs:string"/>
+					<xs:element name="acronyme" type="xs:string"/>
+					<xs:element name="nom" type="xs:string"/>
+					<xs:element name="dateCreation" type="xs:date"/> 
 				</xs:sequence>
+				<xs:attribute name="idDepartement"/>
 			</xs:complexType>
-			<xs:attribute name="idDepartemet" type="xs:string"/>
-			<xs:attribute name="acronyme" type="xs:string"/>
-			<xs:attribute name="nom" type="xs:string"/>
-			<xs:attribute name="dateCreation" type="xs:date"/> 
 		</xs:element>
 
 		<!-- Promos -->
