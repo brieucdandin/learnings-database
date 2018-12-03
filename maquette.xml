@@ -68,8 +68,7 @@
 
 
 	<UFs>
-		<UF idUF="UF1">
-			<code>E14PF9</code>
+		<UF codeUf="E14PF19">
 			<intitule>Enseignements elfiques</intitule>
 			<coefficient>6</coefficient>
 			<obligation>oui</obligation>
@@ -83,8 +82,7 @@
 			<personnel>P1</personnel>
 		</UF>
 
-		<UF idUF="UF2">
-			<code>E511A9</code>
+		<UF codeUf="E12AP01">
 			<intitule>Enseignements nains</intitule>
 			<coefficient>4</coefficient>
 			<obligation>oui</obligation>
@@ -100,8 +98,7 @@
 	</UFs>
 
 	<UEs>
-		<UE idUE="UE1">
-			<code>A12PG3</code>
+		<UE codeUe="Q33AF01">
 			<intitule>Archerie</intitule>
 			<coefficient>2</coefficient>
 			<CM>4</CM>
@@ -109,7 +106,7 @@
 			<TP>6</TP>
 
 			<personnel>P1</personnel>
-			<UF>UF1</UF>
+			<UF>E14PF9</UF>
 			<epreuve>Ep1</epreuve>
 		</UE>
 	</UEs>
