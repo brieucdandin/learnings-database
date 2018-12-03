@@ -61,53 +61,72 @@
 		<specialite idSpecialite="S2">
 			<intitule>Gelée royale</intitule>
 
-			<personnel>P2</personnel>
+			<personnel>P3</personnel>
 			<promo>Pro2</promo>
 		</specialite>
 	</specialites>
 
 
 	<UFs>
-		<UF codeUf="E14PF19">
+		<UF codeUf="UF1">
 			<intitule>Enseignements elfiques</intitule>
-			<coefficient>6</coefficient>
-			<obligation>oui</obligation>
+			<obligation>true</obligation>
 			<semestre>1</semestre>
-			<heterogene>non</heterogene>
+			<heterogene>false</heterogene>
 			<ECTS>10</ECTS>
-			<competences>oui</competence>
-			<!-- <continuite>non</continuite> On peut ne pas le mettre avec les bonnes bornes ?? On ne le met que si il y a effectivement continuité. -->
+			<competences>true</competence>
+			<continuite>false</continuite>
 
 			<specialite>S1</specialite>
 			<personnel>P1</personnel>
 		</UF>
 
-		<UF codeUf="E12AP01">
+		<UF codeUf="UF2">
 			<intitule>Enseignements nains</intitule>
-			<coefficient>4</coefficient>
-			<obligation>oui</obligation>
+			<obligation>true</obligation>
 			<semestre>1</semestre>
-			<heterogene>oui</heterogene>
+			<heterogene>true</heterogene>
 			<ECTS>8</ECTS>
-			<competences>non</competences>
-			<!-- <continuite>non</continuite> On peut ne pas le mettre avec les bonnes bornes ?? On ne le met que si il y a effectivement continuité. -->
+			<competences>false</competences>
+			<continuite>false</continuite>
 
 			<specialite>S1</specialite>
-			<personnel>P1</personnel>
+			<personnel>P2</personnel>
 		</UF>
 	</UFs>
 
 	<UEs>
-		<UE codeUe="Q33AF01">
+		<UE codeUe="UE1">
 			<intitule>Archerie</intitule>
-			<coefficient>2</coefficient>
+			<coefficient>0.45</coefficient>
+			<CM>4</CM>
+			<TD>4</TD>
+			<TP>6</TP>
+
+			<personnel>P1</personnel>
+			<UF>UF1</UF>
+		</UE>
+
+		<UE codeUe="UE2">
+			<intitule>Histoire des mineurs</intitule>
+			<coefficient>0.25</coefficient>
+			<CM>6</CM>
+			<TD>4</TD>
+			<TP>0</TP>
+
+			<personnel>P2</personnel>
+			<UF>UF2</UF>
+		</UE>
+
+		<UE codeUe="UE3">
+			<intitule>Archerie</intitule>
+			<coefficient>0.45</coefficient>
 			<CM>4</CM>
 			<TD>4</TD>
 			<TP>6</TP>
 
 			<personnel>P1</personnel>
 			<UF>E14PF9</UF>
-			<epreuve>Ep1</epreuve>
 		</UE>
 	</UEs>
 
@@ -115,6 +134,27 @@
 			<epreuve idEpreuve="EP1">
 				<intitule>Examen final archerie</intitule>
 				<nature>Présentation</nature>
+				<duree>2.50</duree>
+				<UE>UE1</UE>
+			</epreuve>
+
+			<epreuve idEpreuve="EP2">
+				<intitule>Examen intermédiaire archerie</intitule>
+				<nature>Présentation</nature>
+				<duree>2.50</duree>
+				<UE>UE2</UE>
+			</epreuve>
+
+			<epreuve idEpreuve="EP3">
+				<intitule>Examen papier mine</intitule>
+				<nature>Présentation</nature>
+				<duree>2.50</duree>
+			</epreuve>
+
+			<epreuve idEpreuve="EP4">
+				<intitule>Examen final archerie</intitule>
+				<nature>Présentation</nature>
+				<duree>2.50</duree>
 			</epreuve>
 	</epreuves>
 
