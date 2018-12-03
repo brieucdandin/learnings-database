@@ -1,0 +1,132 @@
+<?xml version"1.0" encoding="ISO-8859-1"?>
+
+<maquettes>
+
+	<personnels>
+		<personnel idPersonnel="Palpha">
+			<nom>Flantier</nom>
+			<prenom>Carlotta</prenom>
+			<grade>Plongeur acrobatique</grade>
+			<bureau>Ordinateur de Mehdi</bureau>
+			<tel>0640245800</tel>
+			<mail>contact@dgse.fr</mail>
+		</personnel>
+
+		<personnel idPersonnel="Pbeta">
+			<nom>qetzef</nom>
+			<prenom>Romoyon</prenom>
+			<grade>Branche d'arbre</grade>
+			<bureau>Embout de la pelle la plus proche</bureau>
+			<!-- <tel></tel> -->
+			<mail>gèmléz@r.br</mail>
+		</personnel>
+
+		<personnel idPersonnel="Pgamma">
+			<nom>Le Lamndé</nom>
+			<prenom>Gwendaÿnil</prenom>
+			<grade>Comptable</grade>
+			<bureau>La Chapelle Saint-Aubert</bureau>
+			<tel>027777777777777777777777</tel>
+			<mail>troer@emgefre.bzh</mail>
+		</personnel>
+	</Personnels>
+
+
+	<promos>
+		<promo idPromo="Proalpha">
+			<intitule>Confrérie des chalutiers</intitule>
+			<annee>725</annee>
+
+			<personnel>Palpha</personnel>
+			<personnel>Pgamma</personnel>
+		</promo>
+
+		<promo idPromo="Probeta">
+			<intitule>Deuxième année bilingue mongol-innu</intitule>
+			<annee>2</annee>
+
+			<personnel>Pbeta</personnel>
+		</promo>
+	</promos>
+
+
+	<specialites>
+		<specialite idSpecialite="Salpha">
+			<intitule>Chaînes crantées pimpées</intitule>
+			<personnel>Pbeta</personnel>
+
+			<promo>Probeta</promo>
+		</specialite>
+
+		<specialite idSpecialite="Sbeta">
+			<intitule>Ingénieurie des chalutier-pédalo</intitule>
+
+			<personnel>Palpha</personnel>
+			<promo>Proalpha</promo>
+			<promo>Probeta</promo>
+		</specialite>
+	</specialites>
+
+
+	<UFs>
+		<UF codeUf="ScuwinScuwin">
+			<intitule>Sculpture de têtes de canards</intitule>
+<!-- OOOOOUUUUUUUUUIIIIIIIIIII -->
+			<coefficient>17</coefficient>
+			<obligation>non</obligation>
+			<semestre>1</semestre>
+			<heterogene>non</heterogene>
+			<ECTS>10</ECTS>
+			<competences>oui</competence>
+			<!-- <continuite>non</continuite> On peut ne pas le mettre avec les bonnes bornes ?? On ne le met que si il y a effectivement continuité. -->
+
+			<specialite>S1</specialite>
+			<personnel>P1</personnel>
+		</UF>
+
+		<UF codeUf="E12AP01">
+			<intitule>Enseignements nains</intitule>
+			<coefficient>4</coefficient>
+			<obligation>oui</obligation>
+			<semestre>1</semestre>
+			<heterogene>oui</heterogene>
+			<ECTS>8</ECTS>
+			<competences>non</competences>
+			<!-- <continuite>non</continuite> On peut ne pas le mettre avec les bonnes bornes ?? On ne le met que si il y a effectivement continuité. -->
+
+			<specialite>S1</specialite>
+			<personnel>P1</personnel>
+		</UF>
+	</UFs>
+
+	<UEs>
+		<UE codeUe="Q33AF01">
+			<intitule>Archerie</intitule>
+			<coefficient>2</coefficient>
+			<CM>4</CM>
+			<TD>4</TD>
+			<TP>6</TP>
+
+			<personnel>P1</personnel>
+			<UF>E14PF9</UF>
+			<epreuve>Ep1</epreuve>
+		</UE>
+	</UEs>
+
+	<epreuves>
+			<epreuve idEpreuve="EP1">
+				<intitule>Examen final archerie</intitule>
+				<nature>Présentation</nature>
+			</epreuve>
+	</epreuves>
+
+	<departements>
+		<departement idDepartement="D1" >
+			<acronyme>GNOM</acronyme>
+			<nom>Génie Nain et Office des Mines</nom>
+			<dateCreation>1222-12-24</dateCreation>
+			<personnel>P2</personnel>
+		</Departement>
+	</departement>
+
+</maquettes>
