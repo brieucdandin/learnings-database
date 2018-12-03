@@ -1,15 +1,103 @@
 <?xml version"1.0" encoding="ISO-8859-1"?>
 
-<Promo ></Promo>
+<maquettes>
 
-<Personnel attributs name = MJ Huguet>
-	<departement complexité/>
-</Personnel>
+	<personnels>
+		<personnel idPersonnel="P1">
+			<nom>Argentbois</nom>
+			<prenom>Jeanne</prenom>
+			<grade>Enseignante</grade>
+			<bureau>Clairière Vertevent</bureau>
+			<tel>0677443311</tel>
+			<mail>jeanne.argentbois@foncombe.elv</mail>
+		</personnel>
 
-<UF></UF>
+		<personnel idPersonnel="P2">
+			<nom>Gouttemiel</nom>
+			<prenom>Haldrik</prenom>
+			<grade>Apiculteur</grade>
+			<bureau>Mine du Nord</bureau>
+			<tel>0611000354</tel>
+			<mail>lebestnain@moria.dw</mail>
+		</personnel>
 
-<UE></UE>
+		<personnel idPersonnel="P3">
+			<nom>Edfandril</nom>
+			<prenom>Maya</prenom>
+			<grade>Enseignante</grade>
+			<bureau>Mine du Nord</bureau>
+			<tel>0611000354</tel>
+			<mail>lebestnain@moria.dw</mail>
+		</personnel>
+	</Personnels>
 
-<Epreuve></Epreuve>
 
-<Departement></Departement>
+	<promos>
+		<promo>
+			<personnel>P1</personnel>
+		</promo>
+	</promos>
+
+
+	<specialites>
+		<specialite idSpecialite="S1">
+			<intitule>Survie</intitule>
+			<personnel>P1</personnel>
+		</specialite>
+
+		<specialite idSpecialite="S2">
+			<intitule>Gelée royale</intitule>
+			<personnel>P2</personnel>
+		</specialite>
+	</specialites>
+
+
+	<UFs>
+		<UF idUF="UF1">
+			<code>E14PF9</code>
+			<intitule>Enseignements elfiques</intitule>
+			<coefficient>6</coefficient>
+			<obligation>oui</obligation>
+			<semestre>1</semestre>
+			<heterogene>non</heterogene>
+			<ECTS>10</ECTS>
+			<type> Compétences </type>
+			<!-- <continuite>non</continuite> On peut ne pas le mettre avec les bonnes bornes ?? On ne le met que si il y a effectivement continuité. -->
+
+			<specialite>S1</specialite>
+			<personnel>P1</personnel>
+		</UF>
+	</UFs>
+
+	<UEs>
+		<UE idUE="UE1">
+			<code>A12PG3</code>
+			<intitule>Archerie</intitule>
+			<coefficient>2</coefficient>
+			<CM>4</CM>
+			<TD>4</TD>
+			<TP>6</TP>
+
+			<personnel>P1</personnel>
+			<UF>UF1</UF>
+			<epreuve>Ep1</epreuve>
+		</UE>
+	</UEs>
+
+	<epreuves>
+			<epreuve idEpreuve="Ep1">
+				<intitule>Examen final archerie</intitule>
+				<nature>Présentation</nature>
+			</epreuve>
+	</epreuves>
+
+	<departements>
+		<departement idDepartement="D1" >
+			<acronyme>GNOME</acronyme>
+			<nom>Génie Nain et Office des Mines et Extra-Montagnes</nom>
+			<dateCreation>122 AV JC</dateCreation>
+			<personnel>P2</personnel>
+		</Departement>
+	</departement>
+
+</maquettes>
