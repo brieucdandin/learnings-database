@@ -6,8 +6,8 @@
 		<personnel idPersonnel="P1">
 			<nom>Argentbois</nom>
 			<prenom>Jeanne</prenom>
-			<grade>Enseignante</grade>
-			<bureau>Clairière Vertevent</bureau>
+			<grade>Enseignant</grade>
+			<bureau>Clairière Vertevent arbre 3</bureau>
 			<tel>0677443311</tel>
 			<mail>jeanne.argentbois@foncombe.elv</mail>
 		</personnel>
@@ -22,19 +22,29 @@
 		</personnel>
 
 		<personnel idPersonnel="P3">
-			<nom>Edfandril</nom>
+			<nom>Faendril</nom>
 			<prenom>Maya</prenom>
-			<grade>Enseignante</grade>
-			<bureau>Mine du Nord</bureau>
-			<tel>0611000354</tel>
-			<mail>lebestnain@moria.dw</mail>
+			<grade>Enseignant</grade>
+			<bureau>Clairière Vertevent arbre 4</bureau>
+			<tel>0688993154</tel>
+			<mail>missmaya@foncombe.elv</mail>
 		</personnel>
 	</Personnels>
 
 
 	<promos>
-		<promo>
-			<personnel>P1</personnel>
+		<promo idPromo="Pro1">
+			<intitule>Première année armes elfe</intitule>
+			<annee>1</annee>
+
+			<personnel>P3</personnel>
+		</promo>
+
+		<promo idPromo="Pro2">
+			<intitule>Deuxième année armes elfe</intitule>
+			<annee>2</annee>
+
+			<personnel>P3</personnel>
 		</promo>
 	</promos>
 
@@ -43,59 +53,116 @@
 		<specialite idSpecialite="S1">
 			<intitule>Survie</intitule>
 			<personnel>P1</personnel>
+
+			<promo>Pro1</promo>
+			<promo>Pro2</promo>
 		</specialite>
 
 		<specialite idSpecialite="S2">
 			<intitule>Gelée royale</intitule>
-			<personnel>P2</personnel>
+
+			<personnel>P3</personnel>
+			<promo>Pro2</promo>
 		</specialite>
 	</specialites>
 
 
 	<UFs>
-		<UF idUF="UF1">
-			<code>E14PF9</code>
+		<UF codeUf="UF1">
 			<intitule>Enseignements elfiques</intitule>
-			<coefficient>6</coefficient>
-			<obligation>oui</obligation>
+			<obligation>true</obligation>
 			<semestre>1</semestre>
-			<heterogene>non</heterogene>
+			<heterogene>false</heterogene>
 			<ECTS>10</ECTS>
-			<type> Compétences </type>
-			<!-- <continuite>non</continuite> On peut ne pas le mettre avec les bonnes bornes ?? On ne le met que si il y a effectivement continuité. -->
+			<competences>true</competence>
+			<continuite>false</continuite>
 
 			<specialite>S1</specialite>
 			<personnel>P1</personnel>
 		</UF>
+
+		<UF codeUf="UF2">
+			<intitule>Enseignements nains</intitule>
+			<obligation>true</obligation>
+			<semestre>1</semestre>
+			<heterogene>true</heterogene>
+			<ECTS>8</ECTS>
+			<competences>false</competences>
+			<continuite>false</continuite>
+
+			<specialite>S1</specialite>
+			<personnel>P2</personnel>
+		</UF>
 	</UFs>
 
 	<UEs>
-		<UE idUE="UE1">
-			<code>A12PG3</code>
+		<UE codeUe="UE1">
 			<intitule>Archerie</intitule>
-			<coefficient>2</coefficient>
+			<coefficient>0.45</coefficient>
 			<CM>4</CM>
 			<TD>4</TD>
 			<TP>6</TP>
 
 			<personnel>P1</personnel>
 			<UF>UF1</UF>
-			<epreuve>Ep1</epreuve>
+		</UE>
+
+		<UE codeUe="UE2">
+			<intitule>Histoire des mineurs</intitule>
+			<coefficient>0.25</coefficient>
+			<CM>6</CM>
+			<TD>4</TD>
+			<TP>0</TP>
+
+			<personnel>P2</personnel>
+			<UF>UF2</UF>
+		</UE>
+
+		<UE codeUe="UE3">
+			<intitule>Archerie</intitule>
+			<coefficient>0.45</coefficient>
+			<CM>4</CM>
+			<TD>4</TD>
+			<TP>6</TP>
+
+			<personnel>P1</personnel>
+			<UF>E14PF9</UF>
 		</UE>
 	</UEs>
 
 	<epreuves>
-			<epreuve idEpreuve="Ep1">
+			<epreuve idEpreuve="EP1">
 				<intitule>Examen final archerie</intitule>
 				<nature>Présentation</nature>
+				<duree>2.50</duree>
+				<UE>UE1</UE>
+			</epreuve>
+
+			<epreuve idEpreuve="EP2">
+				<intitule>Examen intermédiaire archerie</intitule>
+				<nature>Présentation</nature>
+				<duree>2.50</duree>
+				<UE>UE2</UE>
+			</epreuve>
+
+			<epreuve idEpreuve="EP3">
+				<intitule>Examen papier mine</intitule>
+				<nature>Présentation</nature>
+				<duree>2.50</duree>
+			</epreuve>
+
+			<epreuve idEpreuve="EP4">
+				<intitule>Examen final archerie</intitule>
+				<nature>Présentation</nature>
+				<duree>2.50</duree>
 			</epreuve>
 	</epreuves>
 
 	<departements>
 		<departement idDepartement="D1" >
-			<acronyme>GNOME</acronyme>
-			<nom>Génie Nain et Office des Mines et Extra-Montagnes</nom>
-			<dateCreation>122 AV JC</dateCreation>
+			<acronyme>GNOM</acronyme>
+			<nom>Génie Nain et Office des Mines</nom>
+			<dateCreation>1222-12-24</dateCreation>
 			<personnel>P2</personnel>
 		</Departement>
 	</departement>
