@@ -16,17 +16,26 @@
 				</xs:element>
 
 				<xs:element ref="departements"/>
-				<xs:element ref="promos"/>
-				<xs:element ref="specialites"/>
-				<xs:element ref="ufs"/>
-				<xs:element ref="ues"/>
+				<xs:element ref="promo" minOccurs="1" maxOccurs="unbounded"/>
+				<xs:element ref="specialite" minOccurs="1" maxOccurs="unbounded"/>
+				<xs:element ref="uf" minOccurs="1" maxOccurs="unbounded"/>
+				<xs:element ref="ue" minOccurs="1" maxOccurs="unbounded"/>
 				<xs:element ref="epreuves"/>
+				<xs:element ref="competences"/>
 			</xs:sequence>
 		</xs:complexType>
 	</xs:element>
 
 
 	<!-- Départements -->
+	<xs:element name="departements">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="departement" minOccurs="1" maxOccurs="unbounded"/>  
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+
 	<xs:element name="departement">
 		<xs:complexType>
 			<xs:sequence>
@@ -77,7 +86,7 @@
 			<xs:sequence>
 				<!-- Responsable d'UF -->
 				<xs:element ref="personnel"/>
-				<!-- Spécialité -->
+				<!-- Spécialité qu'elle concerne -->
 				<xs:element ref="specialite" minOccurs="0" maxOccurs="1"/>
 
 				<xs:element name="intitule" type="xs:string"/>
@@ -98,7 +107,7 @@
 			<xs:sequence>
 				<!-- Responsable d'UE -->
 				<xs:element ref="personnel"/>
-				<!-- Une UE ppartient à une UF-->
+				<!-- Une UE appartient à une UF-->
 				<xs:element ref="uf"/>
 
 				<xs:element name="intitule" type="xs:string"/>
@@ -112,6 +121,14 @@
 	</xs:element>
 
 	<!-- Epreuves -->
+	<xs:element name="epreuves">
+		<xs:complexType>
+			<xs:sequence>
+				<!-- Epreuve d'une UE -->
+				<xs:element ref="epreuve" minOccurs="0" maxOccurs="unbounded"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
 	<xs:element name="epreuve">
 		<xs:complexType>
 			<xs:sequence>
@@ -125,11 +142,12 @@
 		</xs:complexType>
 	</xs:element>
 
-	<!-- Compétences
+	<!-- Compétences -->
 	<xs:element name="competences">
+		<xs:element ref="ue"/>
+
 		<xs:element name="intitule" type="xs:string"/>
 	</xs:element>
-	-->
 
 </xs:schema>
 
