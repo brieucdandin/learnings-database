@@ -1,10 +1,9 @@
 <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
 	<xs:element name="maquettes">
 		<xs:complexType>
 			<xs:sequence>
-
-
-				<!-- Personnels -->
+				<!-- Personnels -->	
 				<xs:element name="personnel">
 					<xs:element name="nom" type="xs:string"/>
 					<xs:element name="prenom" type="xs:string"/>
@@ -16,114 +15,121 @@
 					<xs:attribute name="idPersonnel" type="xs:ID"/>
 				</xs:element>
 
-				<!-- Départements -->
-				<xs:element name="departement">
-					<xs:complexType>
-						<xs:sequence>
-							<!-- Responsable de département -->
-							<xs:element ref="personnel"/> 
-
-							<xs:element name="acronyme" type="xs:string"/>
-							<xs:element name="nom" type="xs:string"/>
-							<xs:element name="dateCreation" type="xs:date"/> 
-						</xs:sequence>
-						<xs:attribute name="idDepartement" type="xs:ID"/>
-					</xs:complexType>
-				</xs:element>
-
-
-				<!-- Promos -->
-				<!-- $$$ Clef à construire entre promo et département. $$$ -->
-				<xs:element name="promo">
-					<xs:complexType>
-						<xs:sequence>
-							<!-- Responsable de promo -->
-							<xs:element ref="personnel"/>
-
-							<xs:element name="intitule" type="xs:string"/>
-							<xs:element name="annee" type="xs:int"/>
-						</xs:sequence>
-					</xs:complexType>
-				</xs:element>
-
-				<!-- Spécialités -->
-				<xs:element name="specialite">
-					<xs:complexType>
-						<xs:sequence>
-							<!-- Responsable de spécialité -->
-							<xs:element ref="personnel"/>
-							<!-- Une spécialité peut appartenir à jusqu'à 6 promos -->
-							<xs:element ref="promo" minOccurs="1" maxOccurs="6"/>
-
-							<xs:element name="intitule" type="xs:string"/>
-						</xs:sequence>
-						<xs:attribute name="idSpecialite" type="xs:ID"/>
-					</xs:complexType>
-				</xs:element>
-
-				<!-- UFs -->
-				<xs:element name="uf">
-					<xs:complexType>
-						<xs:sequence>
-							<!-- Responsable d'UF -->
-							<xs:element ref="personnel"/>
-							<!-- Spécialité -->
-							<xs:element ref="specialite" minOccurs="0" maxOccurs="1"/>
-
-							<xs:element name="intitule" type="xs:string"/>
-							<xs:element name="obligation" type="xs:boolean"/>
-							<xs:element name="semestre" type="xs:int"/>
-							<xs:element name="heterogene" type="xs:boolean"/>
-							<xs:element name="continuite" type="xs:boolean"/>
-							<xs:element name="ects" type="xs:int"/>
-							<xs:element name="competences" type="xs:boolean"/>
-						</xs:sequence>
-						<xs:attribute name="codeUf" type="xs:ID"/>
-					</xs:complexType>
-				</xs:element>
-
-				<!-- UEs -->
-				<xs:element name="ue">
-					<xs:complexType>
-						<xs:sequence>
-							<!-- Responsable d'UE -->
-							<xs:element ref="personnel"/>
-							<!-- Une UE ppartient à une UF-->
-							<xs:element ref="uf"/>
-
-							<xs:element name="intitule" type="xs:string"/>
-							<xs:element name="coefficient" type="xs:float"/>
-							<xs:element name="cm" type="xs:float"/>
-							<xs:element name="td" type="xs:float"/>
-							<xs:element name="tp" type="xs:float"/> 
-						</xs:sequence>
-						<xs:attribute name="codeUe" type="xs:ID"/>
-					</xs:complexType>
-				</xs:element>
-
-				<!-- Epreuves -->
-				<xs:element name="epreuve">
-					<xs:complexType>
-						<xs:sequence>
-							<!-- Epreuve d'une UE -->
-							<xs:element ref="ue"/>
-
-							<xs:element name="intitule" type="xs:string"/>
-							<xs:element name="nature" type="xs:string"/>
-							<xs:element name="durée" type="xs:float"/>
-						</xs:sequence>
-					</xs:complexType>
-				</xs:element>
-
-				<!-- Compétences
-				<xs:element name="competences">
-					<xs:element name="intitule" type="xs:string"/>
-				</xs:element>
-				-->
-
-
+				<xs:element ref="departements"/>
+				<xs:element ref="promos"/>
+				<xs:element ref="specialites"/>
+				<xs:element ref="ufs"/>
+				<xs:element ref="ues"/>
+				<xs:element ref="epreuves"/>
 			</xs:sequence>
 		</xs:complexType>
 	</xs:element>
+
+
+	<!-- Départements -->
+	<xs:element name="departement">
+		<xs:complexType>
+			<xs:sequence>
+				<!-- Responsable de département -->
+				<xs:element ref="personnel"/> 
+
+				<xs:element name="acronyme" type="xs:string"/>
+				<xs:element name="nom" type="xs:string"/>
+				<xs:element name="dateCreation" type="xs:date"/> 
+			</xs:sequence>
+			<xs:attribute name="idDepartement" type="xs:ID"/>
+		</xs:complexType>
+	</xs:element>
+
+
+	<!-- Promos -->
+	<!-- $$$ Clef à construire entre promo et département. $$$ -->
+	<xs:element name="promo">
+		<xs:complexType>
+			<xs:sequence>
+				<!-- Responsable de promo -->
+				<xs:element ref="personnel"/>
+
+				<xs:element name="intitule" type="xs:string"/>
+				<xs:element name="annee" type="xs:int"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+
+	<!-- Spécialités -->
+	<xs:element name="specialite">
+		<xs:complexType>
+			<xs:sequence>
+				<!-- Responsable de spécialité -->
+				<xs:element ref="personnel"/>
+				<!-- Une spécialité peut appartenir à jusqu'à 6 promos -->
+				<xs:element ref="promo" minOccurs="1" maxOccurs="6"/>
+
+				<xs:element name="intitule" type="xs:string"/>
+			</xs:sequence>
+			<xs:attribute name="idSpecialite" type="xs:ID"/>
+		</xs:complexType>
+	</xs:element>
+
+	<!-- UFs -->
+	<xs:element name="uf">
+		<xs:complexType>
+			<xs:sequence>
+				<!-- Responsable d'UF -->
+				<xs:element ref="personnel"/>
+				<!-- Spécialité -->
+				<xs:element ref="specialite" minOccurs="0" maxOccurs="1"/>
+
+				<xs:element name="intitule" type="xs:string"/>
+				<xs:element name="obligation" type="xs:boolean"/>
+				<xs:element name="semestre" type="xs:int"/>
+				<xs:element name="heterogene" type="xs:boolean"/>
+				<xs:element name="continuite" type="xs:boolean"/>
+				<xs:element name="ects" type="xs:int"/>
+				<xs:element name="competences" type="xs:boolean"/>
+			</xs:sequence>
+			<xs:attribute name="codeUf" type="xs:ID"/>
+		</xs:complexType>
+	</xs:element>
+
+	<!-- UEs -->
+	<xs:element name="ue">
+		<xs:complexType>
+			<xs:sequence>
+				<!-- Responsable d'UE -->
+				<xs:element ref="personnel"/>
+				<!-- Une UE ppartient à une UF-->
+				<xs:element ref="uf"/>
+
+				<xs:element name="intitule" type="xs:string"/>
+				<xs:element name="coefficient" type="xs:float"/>
+				<xs:element name="cm" type="xs:float"/>
+				<xs:element name="td" type="xs:float"/>
+				<xs:element name="tp" type="xs:float"/> 
+			</xs:sequence>
+			<xs:attribute name="codeUe" type="xs:ID"/>
+		</xs:complexType>
+	</xs:element>
+
+	<!-- Epreuves -->
+	<xs:element name="epreuve">
+		<xs:complexType>
+			<xs:sequence>
+				<!-- Epreuve d'une UE -->
+				<xs:element ref="ue"/>
+
+				<xs:element name="intitule" type="xs:string"/>
+				<xs:element name="nature" type="xs:string"/>
+				<xs:element name="durée" type="xs:float"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+
+	<!-- Compétences
+	<xs:element name="competences">
+		<xs:element name="intitule" type="xs:string"/>
+	</xs:element>
+	-->
+
 </xs:schema>
 
