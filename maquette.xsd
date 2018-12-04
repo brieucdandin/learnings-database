@@ -3,6 +3,7 @@
 		<xs:complexType>
 			<xs:sequence>
 
+
 				<!-- Personnels -->
 				<xs:element name="personnel">
 					<xs:element name="nom" type="xs:string"/>
@@ -103,20 +104,26 @@
 				<!-- Epreuves -->
 				<xs:element name="epreuve">
 					<xs:complexType>
-						<!-- Epreuve d'une UE -->
-						<xs:element ref="ue"/>
+						<xs:sequence>
+							<!-- Epreuve d'une UE -->
+							<xs:element ref="ue"/>
 
-						<xs:element name="intitule" type="xs:string"/>
-						<xs:element name="nature" type="xs:string"/>
-						<xs:element name="durée" type="xs:float"/>
+							<xs:element name="intitule" type="xs:string"/>
+							<xs:element name="nature" type="xs:string"/>
+							<xs:element name="durée" type="xs:float"/>
+						</xs:sequence>
+					</xs:complexType>
 				</xs:element>
-				
+
 				<!-- Compétences
 				<xs:element name="competences">
 					<xs:element name="intitule" type="xs:string"/>
 				</xs:element>
 				-->
+
+
 			</xs:sequence>
 		</xs:complexType>
 	</xs:element>
 </xs:schema>
+

@@ -1,4 +1,4 @@
-<?xml version"1.0" encoding="ISO-8859-1"?>
+<?xml version="1.0" encoding="ISO-8859-1"?>
 
 <maquettes>
 
@@ -29,7 +29,7 @@
 			<tel>0688993154</tel>
 			<mail>missmaya@foncombe.elv</mail>
 		</personnel>
-	</Personnels>
+	</personnels>
 
 
 	<promos>
@@ -67,7 +67,7 @@
 			<semestre>1</semestre>
 			<heterogene>false</heterogene>
 			<ECTS>10</ECTS>
-			<competences>true</competence>
+			<competences>true</competences>
 			<continuite>false</continuite>
 
 			<specialite>S1</specialite>
@@ -154,12 +154,12 @@
 	</epreuves>
 
 	<departements>
-		<departement idDepartement="D1" >
+		<departement idDepartement="D1">
 			<acronyme>GNOM</acronyme>
 			<nom>Génie Nain et Office des Mines</nom>
 			<dateCreation>1222-12-24</dateCreation>
 			<personnel>P2</personnel>
-		</Departement>
-	</departement>
+		</departement>
+	</departements>
 
 </maquettes>
