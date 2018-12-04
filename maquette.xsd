@@ -12,7 +12,7 @@
 					<xs:element name="tel" type="xs:string"/>
 					<xs:element name="mail" type="xs:string"/>
 
-					<xs:attribute name="idPersonnel"/>
+					<xs:attribute name="idPersonnel" type="xs:ID"/>
 				</xs:element>
 
 				<!-- Départements -->
@@ -30,7 +30,9 @@
 					</xs:complexType>
 				</xs:element>
 
+
 				<!-- Promos -->
+				<!-- $$$ Clef à construire entre promo et département. $$$ -->
 				<xs:element name="promo">
 					<xs:complexType>
 						<xs:sequence>
@@ -65,7 +67,7 @@
 							<!-- Responsable d'UF -->
 							<xs:element ref="personnel"/>
 							<!-- Spécialité -->
-							<xs:element ref="specialite"/>
+							<xs:element ref="specialite" minOccurs="0" maxOccurs="1"/>
 
 							<xs:element name="intitule" type="xs:string"/>
 							<xs:element name="obligation" type="xs:boolean"/>
@@ -108,11 +110,12 @@
 						<xs:element name="nature" type="xs:string"/>
 						<xs:element name="durée" type="xs:float"/>
 				</xs:element>
-
-				<!-- Compétences -->
+				
+				<!-- Compétences
 				<xs:element name="competences">
 					<xs:element name="intitule" type="xs:string"/>
 				</xs:element>
+				-->
 			</xs:sequence>
 		</xs:complexType>
 	</xs:element>
