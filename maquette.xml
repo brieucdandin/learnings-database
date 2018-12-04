@@ -57,13 +57,6 @@
 			<promo>Pro1</promo>
 			<promo>Pro2</promo>
 		</specialite>
-
-		<specialite idSpecialite="S2">
-			<intitule>Gelée royale</intitule>
-
-			<personnel>P3</personnel>
-			<promo>Pro2</promo>
-		</specialite>
 	</specialites>
 
 
@@ -90,7 +83,7 @@
 			<competences>false</competences>
 			<continuite>false</continuite>
 
-			<specialite>S1</specialite>
+			<promo>Pro2</promo>
 			<personnel>P2</personnel>
 		</UF>
 	</UFs>
@@ -98,10 +91,10 @@
 	<UEs>
 		<UE codeUe="UE1">
 			<intitule>Archerie</intitule>
-			<coefficient>0.45</coefficient>
-			<CM>4</CM>
-			<TD>4</TD>
-			<TP>6</TP>
+			<coefficient>1</coefficient>
+			<CM>6</CM>
+			<TD>6</TD>
+			<TP>10</TP>
 
 			<personnel>P1</personnel>
 			<UF>UF1</UF>
@@ -119,14 +112,14 @@
 		</UE>
 
 		<UE codeUe="UE3">
-			<intitule>Archerie</intitule>
-			<coefficient>0.45</coefficient>
-			<CM>4</CM>
+			<intitule>La pioche ou le marteau</intitule>
+			<coefficient>0.75</coefficient>
+			<CM>3</CM>
 			<TD>4</TD>
-			<TP>6</TP>
+			<TP>8</TP>
 
 			<personnel>P1</personnel>
-			<UF>E14PF9</UF>
+			<UF>UF2</UF>
 		</UE>
 	</UEs>
 
@@ -141,20 +134,22 @@
 			<epreuve idEpreuve="EP2">
 				<intitule>Examen intermédiaire archerie</intitule>
 				<nature>Présentation</nature>
+				<duree>1.25</duree>
+				<UE>UE1</UE>
+			</epreuve>
+
+			<epreuve idEpreuve="EP3">
+				<intitule>Examen histoire des mineurs</intitule>
+				<nature>QCM</nature>
 				<duree>2.50</duree>
 				<UE>UE2</UE>
 			</epreuve>
 
-			<epreuve idEpreuve="EP3">
-				<intitule>Examen papier mine</intitule>
-				<nature>Présentation</nature>
-				<duree>2.50</duree>
-			</epreuve>
-
 			<epreuve idEpreuve="EP4">
-				<intitule>Examen final archerie</intitule>
+				<intitule>Projet final forge</intitule>
 				<nature>Présentation</nature>
-				<duree>2.50</duree>
+				<duree>3.75</duree>
+				<UE>UE3</UE>
 			</epreuve>
 	</epreuves>
 
