@@ -32,6 +32,16 @@
 	</personnels>
 
 
+	<departements>
+		<departement idDepartement="D1">
+			<personnel>P2</personnel>
+			<acronyme>GNOM</acronyme>
+			<nom>Génie Nain et Office des Mines</nom>
+			<dateCreation>1222-12-24</dateCreation>
+		</departement>
+	</departements>
+
+
 	<promos>
 		<promo idPromo="Pro1">
 			<intitule>Première année armes elfe</intitule>
@@ -153,13 +163,5 @@
 			</epreuve>
 	</epreuves>
 
-	<departements>
-		<departement idDepartement="D1">
-			<acronyme>GNOM</acronyme>
-			<nom>Génie Nain et Office des Mines</nom>
-			<dateCreation>1222-12-24</dateCreation>
-			<personnel>P2</personnel>
-		</departement>
-	</departements>
 
 </maquettes>

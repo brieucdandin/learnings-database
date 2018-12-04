@@ -4,25 +4,39 @@
 		<xs:complexType>
 			<xs:sequence>
 				<!-- Personnels -->	
-				<xs:element name="personnel">
-					<xs:element name="nom" type="xs:string"/>
-					<xs:element name="prenom" type="xs:string"/>
-					<xs:element name="grade" type="xs:string"/>
-					<xs:element name="bureau" type="xs:string"/>
-					<xs:element name="tel" type="xs:string"/>
-					<xs:element name="mail" type="xs:string"/>
-
-					<xs:attribute name="idPersonnel" type="xs:ID"/>
-				</xs:element>
-
+				<xs:element ref="personnels"/>
 				<xs:element ref="departements"/>
-				<xs:element ref="promo" minOccurs="1" maxOccurs="unbounded"/>
-				<xs:element ref="specialite" minOccurs="1" maxOccurs="unbounded"/>
-				<xs:element ref="uf" minOccurs="1" maxOccurs="unbounded"/>
-				<xs:element ref="ue" minOccurs="1" maxOccurs="unbounded"/>
+				<xs:element ref="promos"/>
+				<xs:element ref="specialites"/>
+				<xs:element ref="ufs"/>
+				<xs:element ref="ues"/>
 				<xs:element ref="epreuves"/>
 				<xs:element ref="competences"/>
 			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+
+	<!-- Personnels -->
+	<xs:element name="personnels">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="personnel" minOccurs="1" maxOccurs="unbounded"/>  
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+
+	<xs:element name="personnel">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="nom" type="xs:string"/>
+				<xs:element name="prenom" type="xs:string"/>
+				<xs:element name="grade" type="xs:string"/>
+				<xs:element name="bureau" type="xs:string"/>
+				<xs:element name="tel" type="xs:string"/>
+				<xs:element name="mail" type="xs:string"/>
+			</xs:sequence>
+
+			<xs:attribute name="idPersonnel" type="xs:ID"/>
 		</xs:complexType>
 	</xs:element>
 
@@ -53,6 +67,14 @@
 
 	<!-- Promos -->
 	<!-- $$$ Clef à construire entre promo et département. $$$ -->
+	<xs:element name="promos">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="promo" minOccurs="1" maxOccurs="unbounded"/>  
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+
 	<xs:element name="promo">
 		<xs:complexType>
 			<xs:sequence>
@@ -66,6 +88,14 @@
 	</xs:element>
 
 	<!-- Spécialités -->
+		<xs:element name="specialites">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="specialite" minOccurs="1" maxOccurs="unbounded"/>  
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+
 	<xs:element name="specialite">
 		<xs:complexType>
 			<xs:sequence>
@@ -81,6 +111,14 @@
 	</xs:element>
 
 	<!-- UFs -->
+	<xs:element name="ufs">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="uf" minOccurs="1" maxOccurs="unbounded"/>  
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+
 	<xs:element name="uf">
 		<xs:complexType>
 			<xs:sequence>
@@ -102,6 +140,14 @@
 	</xs:element>
 
 	<!-- UEs -->
+	<xs:element name="ues">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="ue" minOccurs="1" maxOccurs="unbounded"/>  
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+
 	<xs:element name="ue">
 		<xs:complexType>
 			<xs:sequence>
@@ -124,11 +170,11 @@
 	<xs:element name="epreuves">
 		<xs:complexType>
 			<xs:sequence>
-				<!-- Epreuve d'une UE -->
-				<xs:element ref="epreuve" minOccurs="0" maxOccurs="unbounded"/>
+				<xs:element ref="epreuve" minOccurs="1" maxOccurs="unbounded"/>  
 			</xs:sequence>
 		</xs:complexType>
 	</xs:element>
+
 	<xs:element name="epreuve">
 		<xs:complexType>
 			<xs:sequence>
@@ -144,9 +190,21 @@
 
 	<!-- Compétences -->
 	<xs:element name="competences">
-		<xs:element ref="ue"/>
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="competence" minOccurs="1" maxOccurs="unbounded"/>  
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
 
-		<xs:element name="intitule" type="xs:string"/>
+	<xs:element name="competence">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="ue"/>
+
+				<xs:element name="intitule" type="xs:string"/>
+			</xs:sequence>
+		</xs:complexType>
 	</xs:element>
 
 </xs:schema>
