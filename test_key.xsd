@@ -1,0 +1,167 @@
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+	<xs:element name="maquette">
+		<xs:complexType>
+			<xs:sequence>
+				<!-- Personnels -->	
+				<xs:element name="personnels" type="personnelsTypes"/>
+				<xs:element name="departements" type="departementsTypes"/>
+				<xs:element name="promos" type="promosTypes"/>
+				<xs:element name="specialites" type="specialitesTypes"/>
+				<xs:element name="ufs" type="ufsTypes"/>
+				<xs:element name="ues" type="uesTypes"/>
+				<xs:element name="epreuves" type="epreuvesTypes"/>
+				<xs:element name="competences" type="competencesTypes"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+
+	<!-- Personnels -->
+	<xs:complexType name="personnelsTypes">
+		<xs:sequence>
+			<xs:element name="personnel" type="personnelType" maxOccurs="unbounded"/>  
+		</xs:sequence>
+	</xs:complexType>
+
+	<xs:complexType name="personnelType">
+		<xs:sequence>
+			<xs:element name="nom" type="xs:string"/>
+			<xs:element name="prenom" type="xs:string"/>
+			<xs:element name="grade" type="xs:string"/>
+			<xs:element name="bureau" type="xs:string"/>
+			<xs:element name="tel" type="xs:string"/>
+			<xs:element name="mail" type="xs:string"/>
+		</xs:sequence>
+		<xs:attribute name="idPersonnel" type="xs:ID"/>
+	</xs:complexType>
+
+
+	<!-- Départements -->
+	<xs:complexType name="departementsTypes">
+		<xs:sequence>
+			<xs:element name="departement" type="departementType" maxOccurs="unbounded"/>  
+		</xs:sequence>
+	</xs:complexType>
+
+	<xs:complexType name="departementType">
+		<xs:sequence>
+			<xs:element name="acronyme" type="xs:string"/>
+			<xs:element name="nom" type="xs:string"/>
+			<xs:element name="dateCreation" type="xs:date"/> 
+		</xs:sequence>
+		<xs:attribute name="idDepartement" type="xs:ID"/>
+		<xs:attribute name="responsable" type="xs:ID"/>
+	</xs:complexType>
+
+
+	<!-- Promos -->
+	<!-- $$$ Clef à construire entre promo et département. $$$ -->
+	<xs:element name="promos">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="promo" minOccurs="1" maxOccurs="unbounded"/>  
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+
+	<xs:element name="promo">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="intitule" type="xs:string"/>
+				<xs:element name="annee" type="xs:int"/>
+			</xs:sequence>
+			<xs:attribute name="idPromo" type="xs:ID"/>
+			<xs:attribute name="responsable" type="xs:ID"/>
+		</xs:complexType>
+	</xs:element>
+
+	<!-- Spécialités -->
+	<xs:complexType name="specialitesTypes">
+		<xs:sequence>
+			<xs:element name="specialite" type="specialiteType" maxOccurs="unbounded"/>  
+		</xs:sequence>
+	</xs:complexType>
+
+	<xs:complexType name="specialiteType">
+		<xs:sequence>
+			<xs:element name="intitule" type="xs:string"/>
+		</xs:sequence>
+		<xs:attribute name="idSpecialite" type="xs:ID"/>
+		<xs:attribute name="responsable" type="xs:ID"/>
+	</xs:complexType>
+
+	<!-- UFs -->
+	<xs:complexType name="ufsTypes">
+		<xs:sequence>
+			<xs:element name="uf" type="ufType" maxOccurs="unbounded"/>  
+		</xs:sequence>
+	</xs:complexType>
+
+	<xs:complexType name="ufType">
+		<xs:sequence>
+			<xs:element name="intitule" type="xs:string"/>
+			<xs:element name="obligation" type="xs:boolean"/>
+			<xs:element name="semestre" type="xs:int"/>
+			<xs:element name="heterogene" type="xs:boolean"/>
+			<xs:element name="continuite" type="xs:boolean"/>
+			<xs:element name="ects" type="xs:int"/>
+			<xs:element name="competences" type="xs:boolean"/>
+		</xs:sequence>
+		<xs:attribute name="codeUf" type="xs:ID"/>
+		<xs:attribute name="responsable" type="xs:ID"/>
+		<xs:attribute name="specialite" type="xs:ID"/>
+	</xs:complexType>
+
+	<!-- UEs -->
+	<xs:complexType name="uesTypes">
+		<xs:sequence>
+			<xs:element name="ue" type="ueType" maxOccurs="unbounded"/>  
+		</xs:sequence>
+	</xs:complexType>
+
+	<xs:complexType name="ueType">
+		<xs:sequence>
+			<xs:element name="intitule" type="xs:string"/>
+			<xs:element name="coefficient" type="xs:float"/>
+			<xs:element name="cm" type="xs:float"/>
+			<xs:element name="td" type="xs:float"/>
+			<xs:element name="tp" type="xs:float"/> 
+		</xs:sequence>
+		<xs:attribute name="codeUe" type="xs:ID"/>
+		<xs:attribute name="responsable" type="xs:ID"/>
+		<xs:attribute name="uf" type="xs:ID"/>
+	</xs:complexType>
+
+	<!-- Epreuves -->
+	<xs:complexType name="epreuvesTypes">
+		<xs:sequence>
+			<xs:element name="epreuve" type="epreuveType" maxOccurs="unbounded"/>  
+		</xs:sequence>
+	</xs:complexType>
+
+	<xs:complexType name="epreuveType">
+		<xs:sequence>
+			<xs:element name="intitule" type="xs:string"/>
+			<xs:element name="nature" type="xs:string"/>
+			<xs:element name="durée" type="xs:float"/>
+		</xs:sequence>
+		<xs:attribute name="idEpreuve" type="xs:ID"/>
+		<xs:attribute name="ue" type="xs:ID" />
+	</xs:complexType>
+
+	<!-- Compétences -->
+	<xs:complexType name="competencesTypes">
+		<xs:sequence>
+			<xs:element name="competence" type="competenceType" maxOccurs="unbounded"/>  
+		</xs:sequence>
+	</xs:complexType>
+
+	<xs:complexType name="competenceType">
+			<xs:sequence>
+				<xs:element name="intitule" type="xs:string"/>
+			</xs:sequence>
+			<xs:attribute name="idCompetence" type="xs:ID"/>
+			<xs:attribute name="ue" type="xs:ID"/>
+	</xs:complexType>
+
+</xs:schema>
