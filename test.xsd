@@ -4,7 +4,7 @@
 		<xs:complexType>
 			<xs:sequence>
 				<!-- Personnels -->	
-				<xs:element ref="personnels"/>
+				<xs:element ref="personnel" minOccurs="1" maxOccurs="unbounded"/>
 				<xs:element ref="departements"/>
 				<xs:element ref="promos"/>
 				<xs:element ref="specialites"/>
@@ -17,27 +17,15 @@
 	</xs:element>
 
 	<!-- Personnels -->
-	<xs:element name="personnels">
-		<xs:complexType>
-			<xs:sequence>
-				<xs:element ref="personnel" minOccurs="1" maxOccurs="unbounded"/>  
-			</xs:sequence>
-		</xs:complexType>
-	</xs:element>
-
 	<xs:element name="personnel">
-		<xs:complexType>
-			<xs:sequence>
-				<xs:element name="nom" type="xs:string"/>
-				<xs:element name="prenom" type="xs:string"/>
-				<xs:element name="grade" type="xs:string"/>
-				<xs:element name="bureau" type="xs:string"/>
-				<xs:element name="tel" type="xs:string"/>
-				<xs:element name="mail" type="xs:string"/>
-			</xs:sequence>
+		<xs:element name="nom" type="xs:string"/>
+		<xs:element name="prenom" type="xs:string"/>
+		<xs:element name="grade" type="xs:string"/>
+		<xs:element name="bureau" type="xs:string"/>
+		<xs:element name="tel" type="xs:string"/>
+		<xs:element name="mail" type="xs:string"/>
 
-			<xs:attribute name="idPersonnel" type="xs:ID"/>
-		</xs:complexType>
+		<xs:attribute name="idPersonnel" type="xs:ID"/>
 	</xs:element>
 
 
@@ -55,7 +43,6 @@
 			<xs:sequence>
 				<!-- Responsable de département -->
 				<xs:element ref="personnel"/> 
-				
 				<xs:element name="acronyme" type="xs:string"/>
 				<xs:element name="nom" type="xs:string"/>
 				<xs:element name="dateCreation" type="xs:date"/> 
