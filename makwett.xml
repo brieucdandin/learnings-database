@@ -71,61 +71,53 @@
 	<UFs>
 		<UF codeUf="ScuwinScuwin">
 			<intitule>Sculpture de têtes de canards</intitule>
-<!-- OOOOOUUUUUUUUUIIIIIIIIIII -->
-			<coefficient>17</coefficient>
+			<coefficient>1</coefficient>
 			<obligation>non</obligation>
 			<semestre>1</semestre>
-			<heterogene>non</heterogene>
-			<ECTS>10</ECTS>
-			<competences>oui</competence>
-			<!-- <continuite>non</continuite> On peut ne pas le mettre avec les bonnes bornes ?? On ne le met que si il y a effectivement continuité. -->
-
-			<specialite>S1</specialite>
-			<personnel>P1</personnel>
+			<heterogene>oui</heterogene>
+			<ECTS>0</ECTS>
+			<competences>non</competence>
+			<!-- <specialite></specialite> Yen a pas ! -->
+			<personnel>Palpha</personnel>
 		</UF>
 
-		<UF codeUf="E12AP01">
-			<intitule>Enseignements nains</intitule>
+		<UF codeUf="ABCd'air">
+			<intitule>42</intitule>
 			<coefficient>4</coefficient>
 			<obligation>oui</obligation>
 			<semestre>1</semestre>
-			<heterogene>oui</heterogene>
+			<heterogene>non</heterogene>
 			<ECTS>8</ECTS>
 			<competences>non</competences>
-			<!-- <continuite>non</continuite> On peut ne pas le mettre avec les bonnes bornes ?? On ne le met que si il y a effectivement continuité. -->
-
-			<specialite>S1</specialite>
-			<personnel>P1</personnel>
+			<specialite>Sbeta</specialite>
+			<personnel>Pgamma</personnel>
 		</UF>
 	</UFs>
 
 	<UEs>
-		<UE codeUe="Q33AF01">
-			<intitule>Archerie</intitule>
+		<UE codeUe="13_test_chiffre_au_debut">
+			<intitule>Archerie, comme chez Maël's université</intitule>
 			<coefficient>2</coefficient>
-			<CM>4</CM>
-			<TD>4</TD>
-			<TP>6</TP>
-
-			<personnel>P1</personnel>
-			<UF>E14PF9</UF>
-			<epreuve>Ep1</epreuve>
+			<TD>0</TD>
+			<TP>6</TP>	<!-- La pratique, il n'y a que ça de bon ! -->
+			<UF>ABCd'air</UF>
+			<epreuve>Epalpha</epreuve>
 		</UE>
 	</UEs>
 
 	<epreuves>
-			<epreuve idEpreuve="EP1">
-				<intitule>Examen final archerie</intitule>
-				<nature>Présentation</nature>
+			<epreuve idEpreuve="Epalpha">
+				<intitule>Tu wpinte ou tu tire ?</intitule>
+				<nature>Aller chercher la mouche</nature>
 			</epreuve>
 	</epreuves>
 
 	<departements>
-		<departement idDepartement="D1" >
-			<acronyme>GNOM</acronyme>
-			<nom>Génie Nain et Office des Mines</nom>
-			<dateCreation>1222-12-24</dateCreation>
-			<personnel>P2</personnel>
+		<departement idDepartement="Dalpha" >
+			<acronyme>ANCRE</acronyme>
+			<nom>Acronyme Nullement Crédible lors d'une Recherche d'Emploi</nom>
+			<dateCreation>-20000-4-13</dateCreation>
+			<personnel>Pbeta</personnel>
 		</Departement>
 	</departement>
 
