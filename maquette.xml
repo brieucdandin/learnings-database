@@ -70,96 +70,96 @@
 	</specialites>
 
 
-	<UFs>
-		<UF codeUf="UF1">
+	<ufs>
+		<uf codeUf="UF1">
 			<intitule>Enseignements elfiques</intitule>
 			<obligation>true</obligation>
 			<semestre>1</semestre>
 			<heterogene>false</heterogene>
-			<ECTS>10</ECTS>
+			<ects>10</ects>
 			<competences>true</competences>
 			<continuite>false</continuite>
 
 			<specialite>S1</specialite>
 			<personnel>P1</personnel>
-		</UF>
+		</uf>
 
-		<UF codeUf="UF2">
+		<uf codeUf="UF2">
 			<intitule>Enseignements nains</intitule>
 			<obligation>true</obligation>
 			<semestre>1</semestre>
 			<heterogene>true</heterogene>
-			<ECTS>8</ECTS>
+			<ects>8</ects>
 			<competences>false</competences>
 			<continuite>false</continuite>
 
 			<promo>Pro2</promo>
 			<personnel>P2</personnel>
-		</UF>
-	</UFs>
+		</uf>
+	</ufs>
 
-	<UEs>
-		<UE codeUe="UE1">
+	<ues>
+		<ue codeUe="UE1">
 			<intitule>Archerie</intitule>
 			<coefficient>1</coefficient>
-			<CM>6</CM>
-			<TD>6</TD>
-			<TP>10</TP>
+			<cm>6</cm>
+			<td>6</td>
+			<tp>10</tp>
 
 			<personnel>P1</personnel>
-			<UF>UF1</UF>
-		</UE>
+			<uf>UF1</uf>
+		</ue>
 
-		<UE codeUe="UE2">
+		<ue codeUe="UE2">
 			<intitule>Histoire des mineurs</intitule>
 			<coefficient>0.25</coefficient>
-			<CM>6</CM>
-			<TD>4</TD>
-			<TP>0</TP>
+			<cm>6</cm>
+			<td>4</td>
+			<tp>0</tp>
 
 			<personnel>P2</personnel>
-			<UF>UF2</UF>
-		</UE>
+			<uf>UF2</uf>
+		</ue>
 
-		<UE codeUe="UE3">
+		<ue codeUe="UE3">
 			<intitule>La pioche ou le marteau</intitule>
 			<coefficient>0.75</coefficient>
-			<CM>3</CM>
-			<TD>4</TD>
-			<TP>8</TP>
+			<cm>3</cm>
+			<td>4</td>
+			<tp>8</tp>
 
 			<personnel>P1</personnel>
-			<UF>UF2</UF>
-		</UE>
-	</UEs>
+			<uf>UF2</uf>
+		</ue>
+	</ues>
 
 	<epreuves>
 			<epreuve idEpreuve="EP1">
 				<intitule>Examen final archerie</intitule>
 				<nature>Présentation</nature>
 				<duree>2.50</duree>
-				<UE>UE1</UE>
+				<ue>UE1</ue>
 			</epreuve>
 
 			<epreuve idEpreuve="EP2">
 				<intitule>Examen intermédiaire archerie</intitule>
 				<nature>Présentation</nature>
 				<duree>1.25</duree>
-				<UE>UE1</UE>
+				<ue>UE1</ue>
 			</epreuve>
 
 			<epreuve idEpreuve="EP3">
 				<intitule>Examen histoire des mineurs</intitule>
 				<nature>QCM</nature>
 				<duree>2.50</duree>
-				<UE>UE2</UE>
+				<ue>UE2</ue>
 			</epreuve>
 
 			<epreuve idEpreuve="EP4">
 				<intitule>Projet final forge</intitule>
 				<nature>Présentation</nature>
 				<duree>3.75</duree>
-				<UE>UE3</UE>
+				<ue>UE3</ue>
 			</epreuve>
 	</epreuves>
 
