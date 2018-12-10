@@ -17,27 +17,33 @@
 		        <title>Maquette INSA</title>
 		    </head>
 		    <body>
-		        <h1>L'INSA compte 
-					<xsl:value-of select="count(/maquette/personnels/personnel)"/> 
-					personnes dans le personnel.
-				</h1>
-				<h2> Liste des personnes </h2>
-				<ul>
-					<xsl:for-each select="/maquette/personnels/personnel"> 
-					<xsl:sort  select="nom"></xsl:sort>
-							<xsl:choose>
-								<xsl:when test="nom = nom[not(preceding::nom = .)]">
-									<li>
-										<xsl:value-of select="nom"/>
-									</li>
-								</xsl:when>
-								<xsl:otherwise/>
-							</xsl:choose>
-					</xsl:for-each>
-				</ul>
+		        <h1> <xsl:value-of select="/formation/titre"/> </h1>
+				<xsl:for-each select="formation/UF">
+					<xsl:number count="UF" level="single"/>
+					<h2> </h2>
+					<xsl:value-of select="."/>
+					<xsl:apply-templates select="formation/UF"/>
+				</xsl:for-each>
 		    </body>
     	</html> 
 	</xsl:template>
 
+	<xsl:template match="UF">
+			<ul>
+				<li><xsl:value-of select="titre"/></li>
+				<li><xsl:value-of select="horaire"/></li>
+				<li><xsl:value-of select="ects"/> crédits ECTS</li>
+				<li>Responsable : <xsl:value-of select="enseignantResp"/></li>
+				<li>Les UE :</li>
+				<ul>
+					<xsl:for-each select="UEs/UE"> 
+						<li><xsl:value-of select="."/></li>
+					</xsl:for-each>
+				</ul>
+			</ul>	
+	</xsl:template>
+
+
 </xsl:stylesheet>
+
 

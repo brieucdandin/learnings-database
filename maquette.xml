@@ -41,7 +41,6 @@
 		</departement>
 	</departements>
 
-
 	<promos>
 		<promo idPromo="Pro1">
 			<responsable>P3</responsable>
@@ -63,7 +62,6 @@
 			<intitule>Survie</intitule>
 			<responsable>P1</responsable>
 
-			<promo>Pro1</promo>
 			<promo>Pro2</promo>
 		</specialite>
 	</specialites>
@@ -162,5 +160,9 @@
 			</epreuve>
 	</epreuves>
 
+	<departements_promos>
+		<departement_promo departement="D1" promo="Pro1"/>
+		<departement_promo departement="D1" promo="Pro2"/>
+	</departements_promos>
 
 </maquettes>
