@@ -1,6 +1,6 @@
 <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
 
-	<xs:element name="maquette">
+	<xs:element name="maquettes">
 		<xs:complexType>
 			<xs:sequence>
 				<!-- Personnels -->	
@@ -46,7 +46,7 @@
 	<xs:complexType name="departementType">
 		<xs:sequence>
 			<!-- Responsable de département -->
-			<xs:element ref="personnel"/> 
+			<xs:element name="responsable" type="personnelType"/> 
 			<xs:element name="acronyme" type="xs:string"/>
 			<xs:element name="nom" type="xs:string"/>
 			<xs:element name="dateCreation" type="xs:date"/> 
@@ -57,26 +57,22 @@
 
 	<!-- Promos -->
 	<!-- $$$ Clef à construire entre promo et département. $$$ -->
-	<xs:element name="promos">
-		<xs:complexType>
-			<xs:sequence>
-				<xs:element ref="promo" minOccurs="1" maxOccurs="unbounded"/>  
-			</xs:sequence>
-		</xs:complexType>
-	</xs:element>
+	<xs:complexType name="promosTypes">
+		<xs:sequence>
+			<xs:element name="promo" type="promoType" minOccurs="1" maxOccurs="unbounded"/>  
+		</xs:sequence>
+	</xs:complexType>
 
-	<xs:element name="promo">
-		<xs:complexType>
-			<xs:sequence>
-				<!-- Responsable de promo -->
-				<xs:element ref="personnel"/>
+	<xs:complexType name="promoType">
+		<xs:sequence>
+			<!-- Responsable de promo -->
+			<xs:element name="responsable" type="personnelType"/>
 
-				<xs:element name="intitule" type="xs:string"/>
-				<xs:element name="annee" type="xs:int"/>
-			</xs:sequence>
-			<xs:attribute name="idPromo" type="xs:ID"/>
-		</xs:complexType>
-	</xs:element>
+			<xs:element name="intitule" type="xs:string"/>
+			<xs:element name="annee" type="xs:int"/>
+		</xs:sequence>
+		<xs:attribute name="idPromo" type="xs:ID"/>
+	</xs:complexType>
 
 	<!-- Spécialités -->
 	<xs:complexType name="specialitesTypes">
@@ -88,9 +84,9 @@
 	<xs:complexType name="specialiteType">
 		<xs:sequence>
 			<!-- Responsable de spécialité -->
-			<xs:element ref="personnel"/>
+			<xs:element name="responsable" type="personnelType"/>
 			<!-- Une spécialité peut appartenir à jusqu'à 6 promos -->
-			<xs:element ref="promo" minOccurs="1" maxOccurs="6"/>
+			<xs:element name="app_promo" type="promoType" minOccurs="1" maxOccurs="6"/>
 
 			<xs:element name="intitule" type="xs:string"/>
 		</xs:sequence>
@@ -107,9 +103,9 @@
 	<xs:complexType name="ufType">
 		<xs:sequence>
 			<!-- Responsable d'UF -->
-			<xs:element ref="personnel"/>
+			<xs:element name="responsable" type="personnelType"/>
 			<!-- Spécialité qu'elle concerne -->
-			<xs:element ref="specialite" minOccurs="0" maxOccurs="1"/>
+			<xs:element name="spe" type="specialiteType" minOccurs="0" maxOccurs="1"/>
 
 			<xs:element name="intitule" type="xs:string"/>
 			<xs:element name="obligation" type="xs:boolean"/>
@@ -132,9 +128,9 @@
 	<xs:complexType name="ueType">
 		<xs:sequence>
 			<!-- Responsable d'UE -->
-			<xs:element ref="personnel"/>
+			<xs:element name="responsable" type="personnelType"/>
 			<!-- Une UE appartient à une UF-->
-			<xs:element ref="uf"/>
+			<xs:element name="app_uf" type="ufType"/>
 
 			<xs:element name="intitule" type="xs:string"/>
 			<xs:element name="coefficient" type="xs:float"/>
@@ -155,7 +151,7 @@
 	<xs:complexType name="epreuveType">
 		<xs:sequence>
 			<!-- Epreuve d'une UE -->
-			<xs:element ref="ue"/>
+			<xs:element name="app_ue" type="ueType"/>
 
 			<xs:element name="intitule" type="xs:string"/>
 			<xs:element name="nature" type="xs:string"/>
@@ -173,7 +169,7 @@
 
 	<xs:complexType name="competenceType">
 			<xs:sequence>
-				<xs:element ref="ue"/>
+				<xs:element name="app_ue" type="ueType"/>
 
 				<xs:element name="intitule" type="xs:string"/>
 			</xs:sequence>

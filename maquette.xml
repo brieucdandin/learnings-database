@@ -34,7 +34,7 @@
 
 	<departements>
 		<departement idDepartement="D1">
-			<personnel>P2</personnel>
+			<responsable>P2</responsable>
 			<acronyme>GNOM</acronyme>
 			<nom>Génie Nain et Office des Mines</nom>
 			<dateCreation>1222-12-24</dateCreation>
@@ -44,17 +44,16 @@
 
 	<promos>
 		<promo idPromo="Pro1">
+			<responsable>P3</responsable>
 			<intitule>Première année armes elfe</intitule>
 			<annee>1</annee>
-
-			<personnel>P3</personnel>
 		</promo>
 
 		<promo idPromo="Pro2">
 			<intitule>Deuxième année armes elfe</intitule>
 			<annee>2</annee>
 
-			<personnel>P3</personnel>
+			<responsable>P3</responsable>
 		</promo>
 	</promos>
 
@@ -62,7 +61,7 @@
 	<specialites>
 		<specialite idSpecialite="S1">
 			<intitule>Survie</intitule>
-			<personnel>P1</personnel>
+			<responsable>P1</responsable>
 
 			<promo>Pro1</promo>
 			<promo>Pro2</promo>
@@ -81,7 +80,7 @@
 			<continuite>false</continuite>
 
 			<specialite>S1</specialite>
-			<personnel>P1</personnel>
+			<responsable>P1</responsable>
 		</uf>
 
 		<uf codeUf="UF2">
@@ -94,7 +93,7 @@
 			<continuite>false</continuite>
 
 			<promo>Pro2</promo>
-			<personnel>P2</personnel>
+			<responsable>P2</responsable>
 		</uf>
 	</ufs>
 
@@ -106,7 +105,7 @@
 			<td>6</td>
 			<tp>10</tp>
 
-			<personnel>P1</personnel>
+			<responsable>P1</responsable>
 			<uf>UF1</uf>
 		</ue>
 
@@ -117,7 +116,7 @@
 			<td>4</td>
 			<tp>0</tp>
 
-			<personnel>P2</personnel>
+			<responsable>P2</responsable>
 			<uf>UF2</uf>
 		</ue>
 
@@ -128,7 +127,7 @@
 			<td>4</td>
 			<tp>8</tp>
 
-			<personnel>P1</personnel>
+			<responsable>P1</responsable>
 			<uf>UF2</uf>
 		</ue>
 	</ues>
