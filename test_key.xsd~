@@ -3,6 +3,7 @@
 	<xs:element name="maquette">
 		<xs:complexType>
 			<xs:sequence>
+				<!-- Personnels -->	
 				<xs:element name="personnels" type="personnelsTypes"/>
 				<xs:element name="departements" type="departementsTypes"/>
 				<xs:element name="promos" type="promosTypes"/>
