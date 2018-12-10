@@ -14,19 +14,19 @@
 	<xsl:template match="/">
 		<html>
 		    <head>
-		        <title>Mon premier document XSLT</title>
+		        <title>Maquette INSA</title>
 		    </head>
 		    <body>
-		        <h1>L'université contient 
-					<xsl:value-of select="count(//enseignants/enseignant)"/>
-					enseignants.
+		        <h1>L'INSA compte 
+					<xsl:value-of select="count(/maquette/personnels/personnel)"/> 
+					personnes dans le personnel.
 				</h1>
 				<h2> Liste des personnes </h2>
 				<ul>
-					<xsl:for-each select="/enseignants/enseignant"> 
-					<xsl:sort  select="departement"></xsl:sort>
+					<xsl:for-each select="/maquette/personnels/personnel"> 
+					<xsl:sort  select="nom"></xsl:sort>
 							<xsl:choose>
-								<xsl:when test="departement = departement[not(preceding::departement = .)]">
+								<xsl:when test="nom = nom[not(preceding::nom = .)]">
 									<li>
 										<xsl:value-of select="nom"/>
 									</li>
