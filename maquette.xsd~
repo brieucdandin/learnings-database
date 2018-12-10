@@ -14,10 +14,6 @@
 				<xs:element ref="competences"/>
 			</xs:sequence>
 		</xs:complexType>
-		<xs:keyref name="directeurDepartement" refer="personnelId">
-		<xs:selector xpath=".//departement"/>
-		<xs:field xpath="@directeur"/>
-	</xs:keyref>
 	</xs:element>
 
 	<!-- Personnels -->
@@ -42,10 +38,6 @@
 
 			<xs:attribute name="idPersonnel" type="xs:ID"/>
 		</xs:complexType>
-		<xs:key name="personnelId">
-		<xs:selector xpath="."/>
-		<xs:field xpath="@idPersonnel"/>
-	</xs:key>
 	</xs:element>
 
 
