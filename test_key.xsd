@@ -3,7 +3,6 @@
 	<xs:element name="maquette">
 		<xs:complexType>
 			<xs:sequence>
-				<!-- Personnels -->	
 				<xs:element name="personnels" type="personnelsTypes"/>
 				<xs:element name="departements" type="departementsTypes"/>
 				<xs:element name="promos" type="promosTypes"/>
@@ -36,6 +35,10 @@
 			<xs:element name="mail" type="xs:string"/>
 		</xs:sequence>
 		<xs:attribute name="idPersonnel" type="xs:ID"/>
+		<xs:key name="personnelId">
+			<xs:selector xpath="."/>
+			<xs:field xpath="@idPersonnel"/>
+		</xs:key>
 	</xs:complexType>
 
 
@@ -54,6 +57,10 @@
 		</xs:sequence>
 		<xs:attribute name="idDepartement" type="xs:ID"/>
 		<xs:attribute name="directeur" type="xs:ID"/>
+		<xs:key name="departementId">
+			<xs:selector xpath="/maquette/departements/departement"/>
+			<xs:field xpath="@idDepartement"/>
+		</xs:key>
 	</xs:complexType>
 
 
@@ -74,6 +81,10 @@
 			</xs:sequence>
 			<xs:attribute name="idPromo" type="xs:ID"/>
 			<xs:attribute name="responsable" type="xs:ID"/>
+			<xs:key name="promoId">
+				<xs:selector xpath="/maquette/promos/promo"/>
+				<xs:field xpath="@idPromo"/>
+			</xs:key>
 		</xs:complexType>
 	</xs:element>
 
@@ -180,18 +191,9 @@
 	<!-- *************************************************************************** -->
 
 	<!-- Clés -->
-	<xs:key name="personnelId">
-		<xs:selector xpath="/maquette/personnels/personnel"/>
-		<xs:field xpath="@idPersonnel"/>
-	</xs:key>
-	<xs:key name="departementId">
-		<xs:selector xpath="/maquette/departements/departement"/>
-		<xs:field xpath="@idDepartement"/>
-	</xs:key>
-	<xs:key name="promoId">
-		<xs:selector xpath="/maquette/promos/promo"/>
-		<xs:field xpath="@idPromo"/>
-	</xs:key>
+	
+
+
 	<xs:key name="specialiteId">
 		<xs:selector xpath="/maquette/specialites/specialite"/>
 		<xs:field xpath="@idSpecialite"/>
