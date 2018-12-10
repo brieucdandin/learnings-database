@@ -4,7 +4,7 @@
 		<xs:complexType>
 			<xs:sequence>
 				<!-- Personnels -->	
-				<xs:element ref="personnels"/>
+				<xs:element name="personnels" type="personnelsTypes"/>
 				<xs:element ref="departements"/>
 				<xs:element ref="promos"/>
 				<xs:element ref="specialites"/>
@@ -15,9 +15,9 @@
 			</xs:sequence>
 		</xs:complexType>
 		<xs:keyref name="directeurDepartement" refer="personnelId">
-		<xs:selector xpath=".//departement"/>
-		<xs:field xpath="@directeur"/>
-	</xs:keyref>
+			<xs:selector xpath=".//departement"/>
+			<xs:field xpath="@directeur"/>
+		</xs:keyref>
 	</xs:element>
 
 	<!-- Personnels -->
@@ -43,9 +43,9 @@
 			<xs:attribute name="idPersonnel" type="xs:ID"/>
 		</xs:complexType>
 		<xs:key name="personnelId">
-		<xs:selector xpath="."/>
-		<xs:field xpath="@idPersonnel"/>
-	</xs:key>
+			<xs:selector xpath="."/>
+			<xs:field xpath="@idPersonnel"/>
+		</xs:key>
 	</xs:element>
 
 
