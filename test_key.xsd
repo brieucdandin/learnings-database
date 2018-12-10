@@ -1,81 +1,5 @@
 <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
 
-	<!-- Clés -->
-
-	<xs:key name="specialiteId">
-		<xs:selector xpath="/maquette/specialites/specialite"/>
-		<xs:field xpath="@idSpecialite"/>
-	</xs:key>
-	<xs:key name="ufCode">
-		<xs:selector xpath="/maquette/ufs/uf"/>
-		<xs:field xpath="@codeUf"/>
-	</xs:key>
-	<xs:key name="ueCode">
-		<xs:selector xpath="/maquette/ues/ue"/>
-		<xs:field xpath="@codeUe"/>
-	</xs:key>
-	<xs:key name="epreuveId">
-		<xs:selector xpath="/maquette/epreuves/epreuve"/>
-		<xs:field xpath="@idEpreuve"/>
-	</xs:key>
-	<xs:key name="competenceId">
-		<xs:selector xpath="/maquette/competences/competence"/>
-		<xs:field xpath="@idCompetence"/>
-	</xs:key>
-
-	<!-- *************************************************************************** -->
-
-	<!-- Relations "simples" -->
-	<!-- Avec un personnel -->
-	<xs:keyref name="directeurDepartement" refer="personnelId">
-		<xs:selector xpath="/maquette/departements/departement"/>
-		<xs:field xpath="@directeur"/>
-	</xs:keyref>
-	<xs:keyref name="responsablePromo" refer="personnelId">
-		<xs:selector xpath="/maquette/promos/promo"/>
-		<xs:field xpath="@responsable"/>
-	</xs:keyref>
-	<xs:keyref name="responsableSpecialite" refer="personnelId">
-		<xs:selector xpath="/maquette/specialites/specialite"/>
-		<xs:field xpath="@responsable"/>
-	</xs:keyref>
-	<xs:keyref name="responsableUf" refer="personnelId">
-		<xs:selector xpath="/maquette/ufs/uf"/>
-		<xs:field xpath="@responsable"/>
-	</xs:keyref>
-	<xs:keyref name="responsableUe" refer="personnelId">
-		<xs:selector xpath="/maquette/ues/ue"/>
-		<xs:field xpath="@responsable"/>
-	</xs:keyref>
-	<!-- UF_Spécialité -->
-	<xs:keyref name="uf_specialite" refer="specialiteId">
-		<xs:selector xpath="/maquette/ufs/uf"/>
-		<xs:field xpath="@specialite"/>
-	</xs:keyref>
-	<!-- UE_UF -->
-	<xs:keyref name="uf_specialite" refer="ufCode">
-		<xs:selector xpath="/maquette/ues/ue"/>
-		<xs:field xpath="@uf"/>
-	</xs:keyref>
-	<!-- Epreuve_UE -->
-	<xs:keyref name="epreuve_ue" refer="ueCode">
-		<xs:selector xpath="/maquette/epreuves/epreuve"/>
-		<xs:field xpath="@ue"/>
-	</xs:keyref>
-
-	<!-- Relations n à n -->
-	<!-- Département - Promo -->
-	<xs:keyref name="lienDepartement" refer="departementId">
-		<xs:selector xpath="/maquette/departements_promos/departement_promo"/>
-		<xs:field xpath="@departement"/>
-	</xs:keyref>
-	<xs:keyref name="lienPromo" refer="promoId">
-		<xs:selector xpath="/maquette/departements_promos/departement_promo"/>
-		<xs:field xpath="@promo"/>
-	</xs:keyref>
-
-	<!-- *************************************************************************** -->
-
 	<!-- Personnels -->
 
 	<xs:complexType name="personnelType">
@@ -88,10 +12,6 @@
 			<xs:element name="mail" type="xs:string"/>
 		</xs:sequence>
 		<xs:attribute name="idPersonnel" type="xs:ID"/>
-		<xs:key name="personnelId">
-			<xs:selector xpath="."/>
-			<xs:field xpath="@idPersonnel"/>
-		</xs:key>
 	</xs:complexType>
 
 	<xs:complexType name="personnelsTypes">
@@ -110,10 +30,6 @@
 		</xs:sequence>
 		<xs:attribute name="idDepartement" type="xs:ID"/>
 		<xs:attribute name="directeur" type="xs:ID"/>
-		<xs:key name="departementId">
-			<xs:selector xpath="/maquette/departements/departement"/>
-			<xs:field xpath="@idDepartement"/>
-		</xs:key>
 	</xs:complexType>
 
 	<xs:complexType name="departementsTypes">
@@ -124,28 +40,20 @@
 
 	<!-- Promos -->
 
-	<xs:element name="promo">
-		<xs:complexType>
-			<xs:sequence>
-				<xs:element name="intitule" type="xs:string"/>
-				<xs:element name="annee" type="xs:int"/>
-			</xs:sequence>
-			<xs:attribute name="idPromo" type="xs:ID"/>
-			<xs:attribute name="responsable" type="xs:ID"/>
-			<xs:key name="promoId">
-				<xs:selector xpath="/maquette/promos/promo"/>
-				<xs:field xpath="@idPromo"/>
-			</xs:key>
-		</xs:complexType>
-	</xs:element>
+	<xs:complexType name="promoType">
+		<xs:sequence>
+			<xs:element name="intitule" type="xs:string"/>
+			<xs:element name="annee" type="xs:int"/>
+		</xs:sequence>
+		<xs:attribute name="idPromo" type="xs:ID"/>
+		<xs:attribute name="responsable" type="xs:ID"/>
+	</xs:complexType>
 
-	<xs:element name="promos">
-		<xs:complexType>
-			<xs:sequence>
-				<xs:element ref="promo" minOccurs="1" maxOccurs="unbounded"/>  
-			</xs:sequence>
-		</xs:complexType>
-	</xs:element>
+	<xs:complexType name="promosType">
+		<xs:sequence>
+			<xs:element name="promo" type="promoType" maxOccurs="unbounded"/>  
+		</xs:sequence>
+	</xs:complexType>
 
 	<!-- Spécialités -->
 
@@ -252,9 +160,49 @@
 			<xs:element name="departement_promo" type="departement_promoType" maxOccurs="unbounded"/>  
 		</xs:sequence>
 	</xs:complexType>
+
+	<!-- Promos-Spécialités -->
+
+	<xs:complexType name="promo_specialiteType">
+			<xs:attribute name="promo" type="xs:ID"/>
+			<xs:attribute name="specialite" type="xs:ID"/>
+	</xs:complexType>
+
+	<xs:complexType name="promos_specialitesTypes">
+		<xs:sequence>
+			<xs:element name="promo_specialite" type="promo_specialiteType" minOccures="0" maxOccurs="unbounded"/>  
+		</xs:sequence>
+	</xs:complexType>
+
+	<!-- Promos-UFs -->
+
+	<xs:complexType name="promo_ufType">
+			<xs:attribute name="promo" type="xs:ID"/>
+			<xs:attribute name="uf" type="xs:ID"/>
+	</xs:complexType>
+
+	<xs:complexType name="promos_ufsTypes">
+		<xs:sequence>
+			<xs:element name="promo_uf" type="promo_ufType" minOccurs="0" maxOccurs="unbounded"/>  
+		</xs:sequence>
+	</xs:complexType>
+
+	<!-- UEs-Compétences -->
+
+	<xs:complexType name="ue_competenceType">
+			<xs:attribute name="ue" type="xs:ID"/>
+			<xs:attribute name="competence" type="xs:ID"/>
+	</xs:complexType>
+
+	<xs:complexType name="ues_competencesTypes">
+		<xs:sequence>
+			<xs:element name="ue_competence" type="ue_competenceType" minOccurs="0" maxOccurs="unbounded"/>
+		</xs:sequence>
+	</xs:complexType>
 	
 	<!-- *************************************************************************** -->
 
+	<!-- Element racine -->
 	<xs:element name="maquette">
 		<xs:complexType>
 			<xs:sequence>
@@ -267,7 +215,123 @@
 				<xs:element name="epreuves" type="epreuvesTypes"/>
 				<xs:element name="competences" type="competencesTypes"/>
 				<xs:element name="departements_promos" type="departement_promoTypes"/>
+				<xs:element name="promos_specialites" type="promos_specialitesTypes"/>
+				<xs:element name="promos_ufs" type="promos_ufsTypes"/>
+				<xs:element name="ues_competences" type="ues_competencesTypes"/>
 			</xs:sequence>
 		</xs:complexType>
+
+		<!-- Clés -->
+		<xs:key name="personnelId">
+			<xs:selector xpath=".//personnel"/>
+			<xs:field xpath="@idPersonnel"/>
+		</xs:key>
+		<xs:key name="departementId">
+			<xs:selector xpath=".//departement"/>
+			<xs:field xpath="@idDepartement"/>
+		</xs:key>
+		<xs:key name="promoId">
+			<xs:selector xpath=".//promo"/>
+			<xs:field xpath="@idPromo"/>
+		</xs:key>
+		<xs:key name="specialiteId">
+			<xs:selector xpath=".//specialite"/>
+			<xs:field xpath="@idSpecialite"/>
+		</xs:key>
+		<xs:key name="ufCode">
+			<xs:selector xpath=".//uf"/>
+			<xs:field xpath="@codeUf"/>
+		</xs:key>
+		<xs:key name="ueCode">
+			<xs:selector xpath=".//ue"/>
+			<xs:field xpath="@codeUe"/>
+		</xs:key>
+		<xs:key name="epreuveId">
+			<xs:selector xpath=".//epreuve"/>
+			<xs:field xpath="@idEpreuve"/>
+		</xs:key>
+		<xs:key name="competenceId">
+			<xs:selector xpath=".//competence"/>
+			<xs:field xpath="@idCompetence"/>
+		</xs:key>
+
+		<!-- Références de clés -->
+
+		<!-- Relations "simples" -->
+		<!-- Avec un personnel -->
+		<xs:keyref name="directeurDepartement" refer="personnelId">
+			<xs:selector xpath=".//departement"/>
+			<xs:field xpath="@directeur"/>
+		</xs:keyref>
+		<xs:keyref name="responsablePromo" refer="personnelId">
+			<xs:selector xpath=".//promo"/>
+			<xs:field xpath="@responsable"/>
+		</xs:keyref>
+		<xs:keyref name="responsableSpecialite" refer="personnelId">
+			<xs:selector xpath=".//specialite"/>
+			<xs:field xpath="@responsable"/>
+		</xs:keyref>
+		<xs:keyref name="responsableUf" refer="personnelId">
+			<xs:selector xpath=".//uf"/>
+			<xs:field xpath="@responsable"/>
+		</xs:keyref>
+		<xs:keyref name="responsableUe" refer="personnelId">
+			<xs:selector xpath=".//ue"/>
+			<xs:field xpath="@responsable"/>
+		</xs:keyref>
+		<!-- UF_Spécialité -->
+		<xs:keyref name="uf_specialite" refer="specialiteId">
+			<xs:selector xpath=".//uf"/>
+			<xs:field xpath="@specialite"/>
+		</xs:keyref>
+		<!-- UE_UF -->
+		<xs:keyref name="uf_specialite" refer="ufCode">
+			<xs:selector xpath=".//ue"/>
+			<xs:field xpath="@uf"/>
+		</xs:keyref>
+		<!-- Epreuve_UE -->
+		<xs:keyref name="epreuve_ue" refer="ueCode">
+			<xs:selector xpath=".//epreuve"/>
+			<xs:field xpath="@ue"/>
+		</xs:keyref>
+
+		<!-- Relations n à n -->
+		<!-- Départements - Promos -->
+		<xs:keyref name="lienDepartement" refer="departementId">
+			<xs:selector xpath=".//departement_promo"/>
+			<xs:field xpath="@departement"/>
+		</xs:keyref>
+		<xs:keyref name="lienPromo" refer="promoId">
+			<xs:selector xpath=".//departement_promo"/>
+			<xs:field xpath="@promo"/>
+		</xs:keyref>
+		<!-- Promos - Spécialités -->
+		<xs:keyref name="lienPromo" refer="promoId">
+			<xs:selector xpath=".//promo_specialite"/>
+			<xs:field xpath="@promo"/>
+		</xs:keyref>
+		<xs:keyref name="lienSpecialite" refer="specialiteId">
+			<xs:selector xpath=".//promo_specialite"/>
+			<xs:field xpath="@specialite"/>
+		</xs:keyref>
+		<!-- Promos - UFs -->
+		<xs:keyref name="lienPromo" refer="promoId">
+			<xs:selector xpath=".//promo_uf"/>
+			<xs:field xpath="@promo"/>
+		</xs:keyref>
+		<xs:keyref name="lienUf" refer="ufCode">
+			<xs:selector xpath=".//promo_uf"/>
+			<xs:field xpath="@uf"/>
+		</xs:keyref>
+		<!-- UEs - Compétences -->
+		<xs:keyref name="lienUe" refer="ueCode">
+			<xs:selector xpath=".//ue_competence"/>
+			<xs:field xpath="@ue"/>
+		</xs:keyref>
+		<xs:keyref name="lienUf" refer="competenceId">
+			<xs:selector xpath=".//ue_competence"/>
+			<xs:field xpath="@competence"/>
+		</xs:keyref>
+
 	</xs:element>
 </xs:schema>
