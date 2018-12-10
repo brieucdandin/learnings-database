@@ -1,0 +1,46 @@
+<?xml version="1.0"  encoding="ISO-8859-1" ?>
+	<!--<?xml-stylesheet href="votreXSL" type="text/xsl"?>-->
+<?xml-stylesheet type="text/xsl" href= "enseignants.xsl" ?>
+<enseignants>
+  <enseignant>
+    <nom>Dupond</nom>
+    <departement>GEI</departement>
+  </enseignant>
+  <enseignant>
+    <nom>Yala</nom>
+    <departement>GEI</departement>
+  </enseignant>
+  <enseignant>
+    <nom>Durand</nom>
+    <departement>GP</departement>
+  </enseignant>
+  <enseignant>
+    <nom>Dauran</nom>
+    <departement>GMM</departement>
+  </enseignant>
+  <enseignant>
+    <nom>Perrin</nom>
+    <departement>GMM</departement>
+  </enseignant>
+  <enseignant>
+    <nom>Godart</nom>
+    <departement>GMM</departement>
+  </enseignant>
+  <enseignant>
+    <nom>Lucas</nom>
+    <departement>GP</departement>
+  </enseignant>
+  <enseignant>
+    <nom>Charoy</nom>
+    <departement>GP</departement>
+  </enseignant>
+  <enseignant>
+    <nom>Weiss</nom>
+    <departement>GP</departement>
+  </enseignant>
+  <enseignant>  	
+    <nom>Dupuis</nom>
+    <departement>GEI</departement>
+  </enseignant>
+</enseignants>
+
