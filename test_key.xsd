@@ -29,7 +29,7 @@
 			<xs:element name="dateCreation" type="xs:date"/> 
 		</xs:sequence>
 		<xs:attribute name="idDepartement" type="xs:ID"/>
-		<xs:attribute name="directeur" type="xs:ID"/>
+		<xs:attribute name="directeur" type="xs:IDREF"/>
 	</xs:complexType>
 
 	<xs:complexType name="departementsTypes">
@@ -46,10 +46,10 @@
 			<xs:element name="annee" type="xs:int"/>
 		</xs:sequence>
 		<xs:attribute name="idPromo" type="xs:ID"/>
-		<xs:attribute name="responsable" type="xs:ID"/>
+		<xs:attribute name="responsable" type="xs:IDREF"/>
 	</xs:complexType>
 
-	<xs:complexType name="promosType">
+	<xs:complexType name="promosTypes">
 		<xs:sequence>
 			<xs:element name="promo" type="promoType" maxOccurs="unbounded"/>  
 		</xs:sequence>
@@ -62,7 +62,7 @@
 			<xs:element name="intitule" type="xs:string"/>
 		</xs:sequence>
 		<xs:attribute name="idSpecialite" type="xs:ID"/>
-		<xs:attribute name="responsable" type="xs:ID"/>
+		<xs:attribute name="responsable" type="xs:IDREF"/>
 	</xs:complexType>
 
 	<xs:complexType name="specialitesTypes">
@@ -84,8 +84,8 @@
 			<xs:element name="competences" type="xs:boolean"/>
 		</xs:sequence>
 		<xs:attribute name="codeUf" type="xs:ID"/>
-		<xs:attribute name="responsable" type="xs:ID"/>
-		<xs:attribute name="specialite" type="xs:ID"/>
+		<xs:attribute name="responsable" type="xs:IDREF"/>
+		<xs:attribute name="specialite" type="xs:IDREF"/>
 	</xs:complexType>
 
 	<xs:complexType name="ufsTypes">
@@ -105,8 +105,8 @@
 			<xs:element name="tp" type="xs:float"/> 
 		</xs:sequence>
 		<xs:attribute name="codeUe" type="xs:ID"/>
-		<xs:attribute name="responsable" type="xs:ID"/>
-		<xs:attribute name="uf" type="xs:ID"/>
+		<xs:attribute name="responsable" type="xs:IDREF"/>
+		<xs:attribute name="uf" type="xs:IDREF"/>
 	</xs:complexType>
 
 	<xs:complexType name="uesTypes">
@@ -121,10 +121,10 @@
 		<xs:sequence>
 			<xs:element name="intitule" type="xs:string"/>
 			<xs:element name="nature" type="xs:string"/>
-			<xs:element name="durée" type="xs:float"/>
+			<xs:element name="duree" type="xs:float"/>
 		</xs:sequence>
 		<xs:attribute name="idEpreuve" type="xs:ID"/>
-		<xs:attribute name="ue" type="xs:ID" />
+		<xs:attribute name="ue" type="xs:IDREF" />
 	</xs:complexType>
 
 	<xs:complexType name="epreuvesTypes">
@@ -151,8 +151,8 @@
 	<!-- Départements-Promos -->
 
 	<xs:complexType name="departement_promoType">
-			<xs:attribute name="departement" type="xs:ID"/>
-			<xs:attribute name="promo" type="xs:ID"/>
+			<xs:attribute name="departement" type="xs:IDREF"/>
+			<xs:attribute name="promo" type="xs:IDREF"/>
 	</xs:complexType>
 
 	<xs:complexType name="departements_promosTypes">
@@ -164,21 +164,21 @@
 	<!-- Promos-Spécialités -->
 
 	<xs:complexType name="promo_specialiteType">
-			<xs:attribute name="promo" type="xs:ID"/>
-			<xs:attribute name="specialite" type="xs:ID"/>
+			<xs:attribute name="promo" type="xs:IDREF"/>
+			<xs:attribute name="specialite" type="xs:IDREF"/>
 	</xs:complexType>
 
 	<xs:complexType name="promos_specialitesTypes">
 		<xs:sequence>
-			<xs:element name="promo_specialite" type="promo_specialiteType" minOccures="0" maxOccurs="unbounded"/>  
+			<xs:element name="promo_specialite" type="promo_specialiteType" minOccurs="0" maxOccurs="unbounded"/>  
 		</xs:sequence>
 	</xs:complexType>
 
 	<!-- Promos-UFs -->
 
 	<xs:complexType name="promo_ufType">
-			<xs:attribute name="promo" type="xs:ID"/>
-			<xs:attribute name="uf" type="xs:ID"/>
+			<xs:attribute name="promo" type="xs:IDREF"/>
+			<xs:attribute name="uf" type="xs:IDREF"/>
 	</xs:complexType>
 
 	<xs:complexType name="promos_ufsTypes">
@@ -190,8 +190,8 @@
 	<!-- UEs-Compétences -->
 
 	<xs:complexType name="ue_competenceType">
-			<xs:attribute name="ue" type="xs:ID"/>
-			<xs:attribute name="competence" type="xs:ID"/>
+			<xs:attribute name="ue" type="xs:IDREF"/>
+			<xs:attribute name="competence" type="xs:IDREF"/>
 	</xs:complexType>
 
 	<xs:complexType name="ues_competencesTypes">
@@ -214,10 +214,10 @@
 				<xs:element name="ues" type="uesTypes"/>
 				<xs:element name="epreuves" type="epreuvesTypes"/>
 				<xs:element name="competences" type="competencesTypes"/>
-				<xs:element name="departements_promos" type="departement_promoTypes"/>
-				<xs:element name="promos_specialites" type="promos_specialitesTypes"/>
-				<xs:element name="promos_ufs" type="promos_ufsTypes"/>
-				<xs:element name="ues_competences" type="ues_competencesTypes"/>
+				<xs:element name="departements_promos" type="departements_promosTypes"/>
+				<xs:element name="promos_specialites" type="promos_specialitesTypes" minOccurs="0"/>
+				<xs:element name="promos_ufs" type="promos_ufsTypes" minOccurs="0"/>
+				<xs:element name="ues_competences" type="ues_competencesTypes" minOccurs="0"/>
 			</xs:sequence>
 		</xs:complexType>
 
@@ -285,7 +285,7 @@
 			<xs:field xpath="@specialite"/>
 		</xs:keyref>
 		<!-- UE_UF -->
-		<xs:keyref name="uf_specialite" refer="ufCode">
+		<xs:keyref name="ue_uf" refer="ufCode">
 			<xs:selector xpath=".//ue"/>
 			<xs:field xpath="@uf"/>
 		</xs:keyref>
@@ -301,12 +301,12 @@
 			<xs:selector xpath=".//departement_promo"/>
 			<xs:field xpath="@departement"/>
 		</xs:keyref>
-		<xs:keyref name="lienPromo" refer="promoId">
+		<xs:keyref name="lienPromoDP" refer="promoId">
 			<xs:selector xpath=".//departement_promo"/>
 			<xs:field xpath="@promo"/>
 		</xs:keyref>
 		<!-- Promos - Spécialités -->
-		<xs:keyref name="lienPromo" refer="promoId">
+		<xs:keyref name="lienPromoPS" refer="promoId">
 			<xs:selector xpath=".//promo_specialite"/>
 			<xs:field xpath="@promo"/>
 		</xs:keyref>
@@ -328,7 +328,7 @@
 			<xs:selector xpath=".//ue_competence"/>
 			<xs:field xpath="@ue"/>
 		</xs:keyref>
-		<xs:keyref name="lienUf" refer="competenceId">
+		<xs:keyref name="lienCompetence" refer="competenceId">
 			<xs:selector xpath=".//ue_competence"/>
 			<xs:field xpath="@competence"/>
 		</xs:keyref>

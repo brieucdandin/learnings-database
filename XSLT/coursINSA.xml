@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <?xml-stylesheet type="text/xsl" href= "coursINSA.xsl" ?>
-<!-- cci.xml -->
+<!-- 
 <!DOCTYPE formation SYSTEM "formation.dtd">
+cci.xml -->
 <formation code="4IRI-I" semestre="1">
 	<titre>Programme Informatique 4IR-I</titre>
    <niveau>4</niveau>

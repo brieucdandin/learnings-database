@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
 
-<maquettes>
+<maquette>
 
 	<personnels>
 		<personnel idPersonnel="P1">
@@ -33,8 +33,7 @@
 
 
 	<departements>
-		<departement idDepartement="D1">
-			<responsable>P2</responsable>
+		<departement idDepartement="D1" directeur="P2">
 			<acronyme>GNOM</acronyme>
 			<nom>Génie Nain et Office des Mines</nom>
 			<dateCreation>1222-12-24</dateCreation>
@@ -42,127 +41,108 @@
 	</departements>
 
 	<promos>
-		<promo idPromo="Pro1">
-			<responsable>P3</responsable>
+		<promo idPromo="Pro1" responsable="P3">
 			<intitule>Première année armes elfe</intitule>
 			<annee>1</annee>
 		</promo>
 
-		<promo idPromo="Pro2">
+		<promo idPromo="Pro2" responsable="P3">
 			<intitule>Deuxième année armes elfe</intitule>
 			<annee>2</annee>
-
-			<responsable>P3</responsable>
 		</promo>
 	</promos>
 
 
 	<specialites>
-		<specialite idSpecialite="S1">
+		<specialite idSpecialite="S1" responsable="P1">
 			<intitule>Survie</intitule>
-			<responsable>P1</responsable>
-
-			<promo>Pro2</promo>
 		</specialite>
 	</specialites>
 
 
 	<ufs>
-		<uf codeUf="UF1">
+		<uf codeUf="UF1" responsable="P1" specialite="S1">
 			<intitule>Enseignements elfiques</intitule>
 			<obligation>true</obligation>
 			<semestre>1</semestre>
 			<heterogene>false</heterogene>
+			<continuite>false</continuite>
 			<ects>10</ects>
 			<competences>true</competences>
-			<continuite>false</continuite>
-
-			<specialite>S1</specialite>
-			<responsable>P1</responsable>
 		</uf>
 
-		<uf codeUf="UF2">
+		<uf codeUf="UF2" responsable="P2">
 			<intitule>Enseignements nains</intitule>
 			<obligation>true</obligation>
 			<semestre>1</semestre>
 			<heterogene>true</heterogene>
+			<continuite>false</continuite>
 			<ects>8</ects>
 			<competences>false</competences>
-			<continuite>false</continuite>
-
-			<promo>Pro2</promo>
-			<responsable>P2</responsable>
 		</uf>
 	</ufs>
 
 	<ues>
-		<ue codeUe="UE1">
+		<ue codeUe="UE1" responsable="P1" uf="UF1">
 			<intitule>Archerie</intitule>
 			<coefficient>1</coefficient>
 			<cm>6</cm>
 			<td>6</td>
 			<tp>10</tp>
-
-			<responsable>P1</responsable>
-			<uf>UF1</uf>
 		</ue>
 
-		<ue codeUe="UE2">
+		<ue codeUe="UE2" responsable="P2" uf="UF2">
 			<intitule>Histoire des mineurs</intitule>
 			<coefficient>0.25</coefficient>
 			<cm>6</cm>
 			<td>4</td>
 			<tp>0</tp>
-
-			<responsable>P2</responsable>
-			<uf>UF2</uf>
 		</ue>
 
-		<ue codeUe="UE3">
+		<ue codeUe="UE3" responsable="P1" uf="UF2">
 			<intitule>La pioche ou le marteau</intitule>
 			<coefficient>0.75</coefficient>
 			<cm>3</cm>
 			<td>4</td>
 			<tp>8</tp>
-
-			<responsable>P1</responsable>
-			<uf>UF2</uf>
 		</ue>
 	</ues>
 
 	<epreuves>
-			<epreuve idEpreuve="EP1">
+			<epreuve idEpreuve="EP1" ue="UE1">
 				<intitule>Examen final archerie</intitule>
 				<nature>Présentation</nature>
 				<duree>2.50</duree>
-				<ue>UE1</ue>
 			</epreuve>
 
-			<epreuve idEpreuve="EP2">
+			<epreuve idEpreuve="EP2" ue="UE1">
 				<intitule>Examen intermédiaire archerie</intitule>
 				<nature>Présentation</nature>
 				<duree>1.25</duree>
-				<ue>UE1</ue>
 			</epreuve>
 
-			<epreuve idEpreuve="EP3">
+			<epreuve idEpreuve="EP3" ue="UE2">
 				<intitule>Examen histoire des mineurs</intitule>
 				<nature>QCM</nature>
 				<duree>2.50</duree>
-				<ue>UE2</ue>
 			</epreuve>
 
-			<epreuve idEpreuve="EP4">
+			<epreuve idEpreuve="EP4" ue="UE3">
 				<intitule>Projet final forge</intitule>
 				<nature>Présentation</nature>
 				<duree>3.75</duree>
-				<ue>UE3</ue>
 			</epreuve>
 	</epreuves>
+
+	<competences>
+		<competence idCompetence="C1">
+			<intitule> Apprendre à faire un bon miel </intitule>
+		</competence>
+	</competences>
 
 	<departements_promos>
 		<departement_promo departement="D1" promo="Pro1"/>
 		<departement_promo departement="D1" promo="Pro2"/>
 	</departements_promos>
 
-</maquettes>
+</maquette>
