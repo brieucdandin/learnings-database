@@ -16,7 +16,7 @@
 
 	<xs:complexType name="personnelsTypes">
 		<xs:sequence>
-			<xs:element name="personnel" type="personnelType" maxOccurs="unbounded"/>  
+			<xs:element name="personnel" type="personnelType" maxOccurs="unbounded"/>
 		</xs:sequence>
 	</xs:complexType>
 
@@ -26,7 +26,7 @@
 		<xs:sequence>
 			<xs:element name="acronyme" type="xs:string"/>
 			<xs:element name="nom" type="xs:string"/>
-			<xs:element name="dateCreation" type="xs:date"/> 
+			<xs:element name="dateCreation" type="xs:date"/>
 		</xs:sequence>
 		<xs:attribute name="idDepartement" type="xs:ID"/>
 		<xs:attribute name="directeur" type="xs:IDREF"/>
@@ -34,7 +34,7 @@
 
 	<xs:complexType name="departementsTypes">
 		<xs:sequence>
-			<xs:element name="departement" type="departementType" maxOccurs="unbounded"/>  
+			<xs:element name="departement" type="departementType" maxOccurs="unbounded"/>
 		</xs:sequence>
 	</xs:complexType>
 
@@ -51,7 +51,7 @@
 
 	<xs:complexType name="promosTypes">
 		<xs:sequence>
-			<xs:element name="promo" type="promoType" maxOccurs="unbounded"/>  
+			<xs:element name="promo" type="promoType" maxOccurs="unbounded"/>
 		</xs:sequence>
 	</xs:complexType>
 
@@ -67,7 +67,7 @@
 
 	<xs:complexType name="specialitesTypes">
 		<xs:sequence>
-			<xs:element name="specialite" type="specialiteType" maxOccurs="unbounded"/>  
+			<xs:element name="specialite" type="specialiteType" maxOccurs="unbounded"/>
 		</xs:sequence>
 	</xs:complexType>
 
@@ -90,7 +90,7 @@
 
 	<xs:complexType name="ufsTypes">
 		<xs:sequence>
-			<xs:element name="uf" type="ufType" maxOccurs="unbounded"/>  
+			<xs:element name="uf" type="ufType" maxOccurs="unbounded"/>
 		</xs:sequence>
 	</xs:complexType>
 
@@ -102,7 +102,7 @@
 			<xs:element name="coefficient" type="xs:float"/>
 			<xs:element name="cm" type="xs:float"/>
 			<xs:element name="td" type="xs:float"/>
-			<xs:element name="tp" type="xs:float"/> 
+			<xs:element name="tp" type="xs:float"/>
 		</xs:sequence>
 		<xs:attribute name="codeUe" type="xs:ID"/>
 		<xs:attribute name="responsable" type="xs:IDREF"/>
@@ -111,7 +111,7 @@
 
 	<xs:complexType name="uesTypes">
 		<xs:sequence>
-			<xs:element name="ue" type="ueType" maxOccurs="unbounded"/>  
+			<xs:element name="ue" type="ueType" maxOccurs="unbounded"/>
 		</xs:sequence>
 	</xs:complexType>
 
@@ -129,7 +129,7 @@
 
 	<xs:complexType name="epreuvesTypes">
 		<xs:sequence>
-			<xs:element name="epreuve" type="epreuveType" maxOccurs="unbounded"/>  
+			<xs:element name="epreuve" type="epreuveType" maxOccurs="unbounded"/>
 		</xs:sequence>
 	</xs:complexType>
 
@@ -144,7 +144,7 @@
 
 	<xs:complexType name="competencesTypes">
 		<xs:sequence>
-			<xs:element name="competence" type="competenceType" maxOccurs="unbounded"/>  
+			<xs:element name="competence" type="competenceType" maxOccurs="unbounded"/>
 		</xs:sequence>
 	</xs:complexType>
 
@@ -157,7 +157,7 @@
 
 	<xs:complexType name="departements_promosTypes">
 		<xs:sequence>
-			<xs:element name="departement_promo" type="departement_promoType" maxOccurs="unbounded"/>  
+			<xs:element name="departement_promo" type="departement_promoType" maxOccurs="unbounded"/>
 		</xs:sequence>
 	</xs:complexType>
 
@@ -170,7 +170,7 @@
 
 	<xs:complexType name="promos_specialitesTypes">
 		<xs:sequence>
-			<xs:element name="promo_specialite" type="promo_specialiteType" minOccurs="0" maxOccurs="unbounded"/>  
+			<xs:element name="promo_specialite" type="promo_specialiteType" minOccurs="0" maxOccurs="unbounded"/>
 		</xs:sequence>
 	</xs:complexType>
 
@@ -183,7 +183,7 @@
 
 	<xs:complexType name="promos_ufsTypes">
 		<xs:sequence>
-			<xs:element name="promo_uf" type="promo_ufType" minOccurs="0" maxOccurs="unbounded"/>  
+			<xs:element name="promo_uf" type="promo_ufType" minOccurs="0" maxOccurs="unbounded"/>
 		</xs:sequence>
 	</xs:complexType>
 
@@ -199,25 +199,31 @@
 			<xs:element name="ue_competence" type="ue_competenceType" minOccurs="0" maxOccurs="unbounded"/>
 		</xs:sequence>
 	</xs:complexType>
-	
+
+	<xs:complexType name ="maquetteType">
+		<xs:sequence>
+			<xs:element name="personnels" type="personnelsTypes"/>
+			<xs:element name="departements" type="departementsTypes"/>
+			<xs:element name="promos" type="promosTypes"/>
+			<xs:element name="specialites" type="specialitesTypes"/>
+			<xs:element name="ufs" type="ufsTypes"/>
+			<xs:element name="ues" type="uesTypes"/>
+			<xs:element name="epreuves" type="epreuvesTypes"/>
+			<xs:element name="competences" type="competencesTypes"/>
+			<xs:element name="departements_promos" type="departements_promosTypes"/>
+			<xs:element name="promos_specialites" type="promos_specialitesTypes" minOccurs="0"/>
+			<xs:element name="promos_ufs" type="promos_ufsTypes" minOccurs="0"/>
+			<xs:element name="ues_competences" type="ues_competencesTypes" minOccurs="0"/>
+		</xs:sequence>
+	</xs:complexType>
+
 	<!-- *************************************************************************** -->
 
 	<!-- Element racine -->
-	<xs:element name="maquette">
+	<xs:element name="maquettes">
 		<xs:complexType>
 			<xs:sequence>
-				<xs:element name="personnels" type="personnelsTypes"/>
-				<xs:element name="departements" type="departementsTypes"/>
-				<xs:element name="promos" type="promosTypes"/>
-				<xs:element name="specialites" type="specialitesTypes"/>
-				<xs:element name="ufs" type="ufsTypes"/>
-				<xs:element name="ues" type="uesTypes"/>
-				<xs:element name="epreuves" type="epreuvesTypes"/>
-				<xs:element name="competences" type="competencesTypes"/>
-				<xs:element name="departements_promos" type="departements_promosTypes"/>
-				<xs:element name="promos_specialites" type="promos_specialitesTypes" minOccurs="0"/>
-				<xs:element name="promos_ufs" type="promos_ufsTypes" minOccurs="0"/>
-				<xs:element name="ues_competences" type="ues_competencesTypes" minOccurs="0"/>
+				<xs:element name="maquette" type="maquetteType" maxOccurs="unbounded"/>
 			</xs:sequence>
 		</xs:complexType>
 
