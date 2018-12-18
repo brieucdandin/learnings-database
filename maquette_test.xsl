@@ -56,9 +56,7 @@ xmlns="http://www.w3.org/1999/xhtml">
       <!-- Pied de page du tableau -->
       <tfoot>
         <tr>
-          <th>UF / UE</th>
-          <th>Responsable</th>
-          <th>Code Apogée</th>
+          <th colspan="3">Total</th>
           <th>CM</th>
           <th>TD</th>
           <th>TP</th>
@@ -143,7 +141,12 @@ xmlns="http://www.w3.org/1999/xhtml">
 
   <xsl:template name="responsable">
     <xsl:param name="idresponsable"/>
-    <xsl:value-of select="$idresponsable"/>
+    <xsl:for-each select="/maquettes/maquette/personnels/personnel">
+      <xsl:if test="$idresponsable = @idPersonnel">
+        <xsl:value-of select="concat(nom,' ',prenom)"/>
+      </xsl:if>
+    </xsl:for-each>
+    <!-- <xsl:value-of select="$idresponsable"/> -->
     <!-- <xsl:value-of select="maquettes/maquette/personnels/personnel[@idPersonnel=idresponsable]/nom"/> -->
   </xsl:template>
 
