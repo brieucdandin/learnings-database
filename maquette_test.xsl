@@ -39,6 +39,7 @@ xmlns="http://www.w3.org/1999/xhtml">
   <xsl:template name="maquette">
     <!-- Création d'un tableau -->
     <table>
+      <!-- Titre du tableau -->
       <caption>Maquette Maël</caption>
       <!-- En-tête du tableau -->
       <thead>
