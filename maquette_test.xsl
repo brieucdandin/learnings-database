@@ -146,8 +146,6 @@ xmlns="http://www.w3.org/1999/xhtml">
         <xsl:value-of select="concat(nom,' ',prenom)"/>
       </xsl:if>
     </xsl:for-each>
-    <!-- <xsl:value-of select="$idresponsable"/> -->
-    <!-- <xsl:value-of select="maquettes/maquette/personnels/personnel[@idPersonnel=idresponsable]/nom"/> -->
   </xsl:template>
 
 </xsl:stylesheet>
