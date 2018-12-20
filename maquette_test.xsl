@@ -7,6 +7,10 @@ xmlns="http://www.w3.org/1999/xhtml">
     encoding="UTF-8"
     indent="no" />
 
+<!-- Test de la "Méthode Muench" -->
+<!-- On veut l'appliquer sur tous les attributs "responsable" -->
+<xsl:key name="id" match="//@responsable" use="."/>
+
   <xsl:template match="/">
     <html>
       <head>
@@ -19,132 +23,170 @@ xmlns="http://www.w3.org/1999/xhtml">
           {
             border: 1px solid black;
           }
-          caption
-          {
-            font-size: x-large;
-            font-weight: bold;
-            text-decoration: underline;
-          }
         </style>
         <title>Maquettes INSA Toulouse</title>
       </head>
       <body>
+        <xsl:for-each select="maquettes/maquette">
+          <table>
+            <caption>
+              <!-- Titre du tableau -->
+              <h1>
+                <xsl:value-of select="concat(promo/annee, 'A - ', promo/intitule,' - ',specialite/intitule)"/>
+              </h1>
+              <!-- Reponsable de la promo -->
+              Responsable de la promo <em><xsl:value-of select="promo/intitule"/></em> :
+              <xsl:call-template name="responsable">
+                <xsl:with-param name="idresponsable" select="promo/@responsable"/>
+              </xsl:call-template>
+              <br/>
+              <!-- Reponsable de la spécialité -->
+              <!-- Puisque la spécialité est optionnelle, on définit un template spécifique. -->
+              <xsl:call-template name="responsableSpe">
+                <xsl:with-param name="idresponsable" select="specialite/@responsable"/>
+                <xsl:with-param name="specialite" select="specialite/intitule"/>
+              </xsl:call-template>
+              <br/>
+            </caption>
 
-        <xsl:call-template name="maquette"/>
+            <!-- En-tête du tableau -->
+              <thead>
+                <tr>
+                  <th>UF / UE</th>
+                  <th>Responsable</th>
+                  <th>Code Apogée</th>
+                  <th>CM</th>
+                  <th>TD</th>
+                  <th>TP</th>
+                  <th>Total</th>
+                  <th>ECTS</th>
+                </tr>
+              </thead>
+              <!-- Pied de page du tableau -->
+              <!-- Sommes des colonnes -->
+              <tfoot>
+                <tr>
+                  <th colspan="3">Total</th>
+                  <th>somme CM</th>
+                  <th>somme TD</th>
+                  <th>somme TP</th>
+                  <th></th>
+                  <th>somme ECTS</th>
+                </tr>
+              </tfoot>
+              <!-- Corps du tableau -->
+              <tbody>
+                <xsl:for-each select="ufs/uf">
+                  <xsl:variable name="codeUf" select="@codeUf"/>
+                  <!-- Pour chaque UF, on affiche ses infos principales. -->
+                  <tr>
+                    <td><strong><xsl:value-of select="intitule"/></strong></td>
+                    <td>
+                      <xsl:call-template name="responsable">
+                        <xsl:with-param name="idresponsable" select="@responsable"/>
+                      </xsl:call-template>
+                    </td>
+                    <td><strong><xsl:value-of select="@codeUf"/></strong></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td><xsl:value-of select="ects"/></td>
+                  </tr>
+                  <!-- Pour chaque UE qui appartient à l'UF, on affiche ses infos principales -->
+                  <xsl:for-each select="../../ues/ue">
+                    <xsl:if test="$codeUf = @uf">
+                      <tr>
+                        <td><xsl:value-of select="intitule"/></td>
+                        <td>
+                          <xsl:call-template name="responsable">
+                            <xsl:with-param name="idresponsable" select="@responsable"/>
+                          </xsl:call-template>
+                        </td>
+                        <td><xsl:value-of select="@codeUe"/></td>
+                        <td><xsl:value-of select="cm"/></td>
+                        <td><xsl:value-of select="td"/></td>
+                        <td><xsl:value-of select="tp"/></td>
+                        <td><xsl:value-of select="cm+td+tp"/></td>
+                        <td></td>
+                      </tr>
+                    </xsl:if>
+                  </xsl:for-each>
+                </xsl:for-each>
+              </tbody>
+            </table>
 
+            <!-- Informations sur le département d'appartenance -->
+            <xsl:call-template name="departement">
+              <xsl:with-param name="iddepartement" select="@departement"/>
+            </xsl:call-template>
+
+            <!-- Informations sur les personnels impliqués -->
+            <h3>Personnels</h3>
+            <!-- select="//Id[generate-id(.)=generate-id(key('id', @val)[1])]" -->
+            <xsl:for-each select="//@responsable[generate-id(.)=generate-id(key('id', .)[1])]">
+
+                <xsl:call-template name="infoPersonnel">
+                  <xsl:with-param name="idpersonnel" select="."/>
+                </xsl:call-template>
+            </xsl:for-each>
+        </xsl:for-each>
       </body>
     </html>
   </xsl:template>
 
-  <xsl:template name="maquette">
-    <!-- Création d'un tableau -->
-    <table>
-      <!-- Titre du tableau -->
-      <caption>Maquette Maël</caption>
-      <!-- En-tête du tableau -->
-      <thead>
-        <tr>
-          <th>UF / UE</th>
-          <th>Responsable</th>
-          <th>Code Apogée</th>
-          <th>CM</th>
-          <th>TD</th>
-          <th>TP</th>
-          <th>Total</th>
-          <th>ECTS</th>
-        </tr>
-      </thead>
-      <!-- Pied de page du tableau -->
-      <tfoot>
-        <tr>
-          <th colspan="3">Total</th>
-          <th>CM</th>
-          <th>TD</th>
-          <th>TP</th>
-          <th>Total</th>
-          <th>ECTS</th>
-        </tr>
-      </tfoot>
-      <!-- Corps du tableau -->
-      <tbody>
-        <xsl:call-template name="corps_tableau"/>
-      </tbody>
-    </table>
-  </xsl:template>
-
-  <xsl:template name="corps_tableau">
-    <xsl:for-each select="maquettes/maquette/ufs/uf">
-      <xsl:variable name="codeUf" select="@codeUf"/>
-      <xsl:call-template name="uf">
-        <xsl:with-param name="intitule" select="intitule"/>
-        <xsl:with-param name="idresponsable" select="@responsable"/>
-        <xsl:with-param name="code" select="@codeUf"/>
-        <xsl:with-param name="ects" select="ects"/>
-      </xsl:call-template>
-      <xsl:for-each select="/maquettes/maquette/ues/ue">
-        <xsl:if test="$codeUf = @uf">
-          <xsl:call-template name="ue">
-            <xsl:with-param name="intitule" select="intitule"/>
-            <xsl:with-param name="idresponsable" select="@responsable"/>
-            <xsl:with-param name="code" select="@codeUe"/>
-            <xsl:with-param name="cm" select="cm"/>
-            <xsl:with-param name="td" select="td"/>
-            <xsl:with-param name="tp" select="tp"/>
-          </xsl:call-template>
-        </xsl:if>
-      </xsl:for-each>
+  <xsl:template name="responsable">
+    <xsl:param name="idresponsable"/>
+    <xsl:for-each select="/maquettes/personnels/personnel">
+      <xsl:if test="$idresponsable = @idPersonnel">
+        <xsl:value-of select="concat(nom,' ',prenom)"/>
+      </xsl:if>
     </xsl:for-each>
   </xsl:template>
 
-  <xsl:template name="uf">
-    <xsl:param name="intitule"/>
+  <xsl:template name="responsableSpe">
     <xsl:param name="idresponsable"/>
-    <xsl:param name="code"/>
-    <xsl:param name="ects"/>
-    <tr>
-      <td><strong><xsl:value-of select="$intitule"/></strong></td>
-      <td>
-        <xsl:call-template name="responsable">
-          <xsl:with-param name="idresponsable" select="$idresponsable"/>
-        </xsl:call-template>
-      </td>
-      <td><strong><xsl:value-of select="$code"/></strong></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td><xsl:value-of select="$ects"/></td>
-    </tr>
-  </xsl:template>
-
-  <xsl:template name="ue">
-    <xsl:param name="intitule"/>
-    <xsl:param name="idresponsable"/>
-    <xsl:param name="code"/>
-    <xsl:param name="cm"/>
-    <xsl:param name="td"/>
-    <xsl:param name="tp"/>
-    <tr>
-      <td><xsl:value-of select="$intitule"/></td>
-      <td>
-        <xsl:call-template name="responsable">
-          <xsl:with-param name="idresponsable" select="$idresponsable"/>
-        </xsl:call-template>
-      </td>
-      <td><xsl:value-of select="$code"/></td>
-      <td><xsl:value-of select="$cm"/></td>
-      <td><xsl:value-of select="$td"/></td>
-      <td><xsl:value-of select="$tp"/></td>
-      <td><xsl:value-of select="$cm+$td+$tp"/></td>
-      <td></td>
-    </tr>
-  </xsl:template>
-
-  <xsl:template name="responsable">
-    <xsl:param name="idresponsable"/>
-    <xsl:for-each select="/maquettes/maquette/personnels/personnel">
+    <xsl:param name="specialite"/>
+    <xsl:for-each select="/maquettes/personnels/personnel">
       <xsl:if test="$idresponsable = @idPersonnel">
-        <xsl:value-of select="concat(nom,' ',prenom)"/>
+        Responsable de la spécialité
+        <em><xsl:value-of select="$specialite"/></em>
+        <xsl:value-of select="concat(' : ',nom,' ',prenom)"/>
+      </xsl:if>
+    </xsl:for-each>
+  </xsl:template>
+
+  <xsl:template name="departement">
+    <xsl:param name="iddepartement"/>
+    <xsl:for-each select="/maquettes/departements/departement">
+      <xsl:if test="$iddepartement = @idDepartement">
+        <h3>Département</h3>
+        <xsl:value-of select="concat('Acronyme : ', acronyme)"/>
+        <br/>
+        <xsl:value-of select="concat('Nom : ', nom)"/>
+        <br/>
+        Directeur :
+        <xsl:call-template name="responsable">
+          <xsl:with-param name="idresponsable" select="@directeur"/>
+        </xsl:call-template>
+        <br/>
+        <xsl:value-of select="concat('Date de création : ', dateCreation)"/>
+      </xsl:if>
+    </xsl:for-each>
+  </xsl:template>
+
+  <xsl:template name="infoPersonnel">
+    <xsl:param name="idpersonnel"/>
+    <xsl:for-each select="/maquettes/personnels/personnel">
+      <xsl:if test="$idpersonnel = @idPersonnel">
+        <h5><xsl:value-of select="concat(nom,' ',prenom)"/></h5>
+        <xsl:value-of select="concat('Grade : ', grade)"/>
+        <br/>
+        <xsl:value-of select="concat('Bureau : ', bureau)"/>
+        <br/>
+        <xsl:value-of select="concat('Tel : ', tel)"/>
+        <br/>
+        <xsl:value-of select="concat('Mail : ', mail)"/>
       </xsl:if>
     </xsl:for-each>
   </xsl:template>
