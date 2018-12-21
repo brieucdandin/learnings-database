@@ -35,7 +35,7 @@
 
 
 		<departements>
-			<departement idDepartement="D1" directeur="P2">
+			<departement idDepartement="D1" responsable="P2">
 				<acronyme>GNOM</acronyme>
 				<nom>Génie Nain et Office des Mines</nom>
 				<dateCreation>1222-12-24</dateCreation>

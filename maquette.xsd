@@ -29,7 +29,7 @@
 			<xs:element name="dateCreation" type="xs:date"/>
 		</xs:sequence>
 		<xs:attribute name="idDepartement" type="xs:ID"/>
-		<xs:attribute name="directeur" type="xs:IDREF"/>
+		<xs:attribute name="responsable" type="xs:IDREF"/>
 	</xs:complexType>
 
 	<xs:complexType name="departementsTypes">
@@ -218,9 +218,9 @@
 
 		<!-- Relations "simples" -->
 		<!-- Avec un personnel -->
-		<xs:keyref name="directeurDepartement" refer="personnelId">
+		<xs:keyref name="responsableDepartement" refer="personnelId">
 			<xs:selector xpath=".//departement"/>
-			<xs:field xpath="@directeur"/>
+			<xs:field xpath="@responsable"/>
 		</xs:keyref>
 		<xs:keyref name="responsablePromo" refer="personnelId">
 			<xs:selector xpath=".//promo"/>
