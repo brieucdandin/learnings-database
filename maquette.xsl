@@ -46,6 +46,7 @@ xmlns="http://www.w3.org/1999/xhtml">
                 <tr>
                   <th>UF / UE</th>
                   <th>Responsable</th>
+                  <th>Département</th>
                   <th>Code Apogée</th>
                   <th>CM</th>
                   <th>TD</th>
@@ -58,12 +59,17 @@ xmlns="http://www.w3.org/1999/xhtml">
               <!-- Sommes des colonnes -->
               <tfoot>
                 <tr>
-                  <th colspan="3">Total</th>
-                  <th>somme CM</th>
-                  <th>somme TD</th>
-                  <th>somme TP</th>
-                  <th>somme heures</th>
-                  <th>somme ECTS</th>
+                  <th colspan="4">Total</th>
+                  <!-- Somme CM -->
+                  <th><xsl:value-of select="sum(ues/ue/cm)"/></th>
+                  <!-- Somme TD -->
+                  <th><xsl:value-of select="sum(ues/ue/td)"/></th>
+                  <!-- Somme TP -->
+                  <th><xsl:value-of select="sum(ues/ue/tp)"/></th>
+                  <!-- Somme heures -->
+                  <th><xsl:value-of select="sum(ues/ue/cm)+sum(ues/ue/td)+sum(ues/ue/tp)"/></th>
+                  <!-- Somme ECTS -->
+                  <th><xsl:value-of select="sum(ufs/uf/ects)"/></th>
                 </tr>
               </tfoot>
               <!-- Corps du tableau -->
@@ -75,6 +81,11 @@ xmlns="http://www.w3.org/1999/xhtml">
                     <td><strong><xsl:value-of select="intitule"/></strong></td>
                     <td>
                       <xsl:call-template name="responsable">
+                        <xsl:with-param name="idresponsable" select="@responsable"/>
+                      </xsl:call-template>
+                    </td>
+                    <td>
+                      <xsl:call-template name="departement">
                         <xsl:with-param name="idresponsable" select="@responsable"/>
                       </xsl:call-template>
                     </td>
@@ -95,6 +106,11 @@ xmlns="http://www.w3.org/1999/xhtml">
                             <xsl:with-param name="idresponsable" select="@responsable"/>
                           </xsl:call-template>
                         </td>
+                        <td>
+                          <xsl:call-template name="departement">
+                            <xsl:with-param name="idresponsable" select="@responsable"/>
+                          </xsl:call-template>
+                        </td>
                         <td><xsl:value-of select="@codeUe"/></td>
                         <td><xsl:value-of select="cm"/></td>
                         <td><xsl:value-of select="td"/></td>
@@ -110,8 +126,8 @@ xmlns="http://www.w3.org/1999/xhtml">
 
             <!-- Informations sur le département d'appartenance -->
             <h3>Département</h3>
-            <xsl:call-template name="departement">
-              <xsl:with-param name="iddepartement" select="@departement"/>
+            <xsl:call-template name="departementMaquette">
+              <xsl:with-param name="idresponsablepromo" select="promo/@responsable"/>
             </xsl:call-template>
 
             <!-- Informations sur les personnels impliqués -->
@@ -149,7 +165,18 @@ xmlns="http://www.w3.org/1999/xhtml">
   </xsl:template>
 
   <xsl:template name="departement">
-    <xsl:param name="iddepartement"/>
+    <xsl:param name="idresponsable"/>
+    <xsl:variable name="iddepartement" select="/maquettes/personnels/personnel[@idPersonnel = $idresponsable]/@appDepartement"/>
+    <xsl:value-of select="/maquettes/departements/departement[@idDepartement=$iddepartement]/acronyme"/>
+  </xsl:template>
+
+  <!-- On a l'id du responsable de la promo. -->
+  <!-- Il faut récupérer l'id de son département d'appartenance. -->
+  <!-- Puis afficher les infos de ce département -->
+
+  <xsl:template name="departementMaquette">
+    <xsl:param name="idresponsablepromo"/>
+    <xsl:variable name="iddepartement" select="/maquettes/personnels/personnel[@idPersonnel = $idresponsablepromo]/@appDepartement"/>
     <xsl:for-each select="/maquettes/departements/departement">
       <xsl:if test="$iddepartement = @idDepartement">
         <xsl:value-of select="concat('Acronyme : ', acronyme)"/>

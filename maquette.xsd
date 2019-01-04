@@ -12,6 +12,7 @@
 			<xs:element name="mail" type="xs:string"/>
 		</xs:sequence>
 		<xs:attribute name="idPersonnel" type="xs:ID"/>
+		<xs:attribute name="appDepartement" type="xs:IDREF"/>
 	</xs:complexType>
 
 	<xs:complexType name="personnelsTypes">
@@ -161,7 +162,6 @@
 			<xs:element name="ues_competences" type="ues_competencesTypes" minOccurs="0"/>
 		</xs:sequence>
 		<xs:attribute name="idMaquette" type="xs:ID"/>
-		<xs:attribute name="departement" type="xs:IDREF"/>
 	</xs:complexType>
 
 	<!-- *************************************************************************** -->
@@ -238,6 +238,11 @@
 			<xs:selector xpath=".//ue"/>
 			<xs:field xpath="@responsable"/>
 		</xs:keyref>
+		<!-- Un personnel appartient à un département -->
+		<xs:keyref name="departementApp" refer="departementId">
+			<xs:selector xpath=".//personnel"/>
+			<xs:field xpath="@appDepartement"/>
+		</xs:keyref>
 		<!-- UE_UF -->
 		<xs:keyref name="ue_uf" refer="ufCode">
 			<xs:selector xpath=".//ue"/>
@@ -247,11 +252,6 @@
 		<xs:keyref name="epreuve_ue" refer="ueCode">
 			<xs:selector xpath=".//epreuve"/>
 			<xs:field xpath="@ue"/>
-		</xs:keyref>
-		<!-- Maquette_Département -->
-		<xs:keyref name="maquette_departement" refer="departementId">
-			<xs:selector xpath=".//maquette"/>
-			<xs:field xpath="@departement"/>
 		</xs:keyref>
 
 		<!-- UEs - Compétences -->
