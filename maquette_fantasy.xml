@@ -42,11 +42,10 @@
 			</departement>
 		</departements>
 
-		<maquette idMaquette="M1">
+		<maquette idMaquette="M1" annee ="1" semestre="1">
 
 			<promo idPromo="Pro1" responsable="P3">
 				<intitule>Armes elfe</intitule>
-				<annee>1</annee>
 			</promo>
 
 			<specialite idSpecialite="S1" responsable="P1">
@@ -54,20 +53,20 @@
 			</specialite>
 
 			<ufs>
-				<uf codeUf="UF1" responsable="P1">
+				<uf idUf="UF1" responsable="P1">
+					<codeApogee>AUF1</codeApogee>
 					<intitule>Enseignements elfiques</intitule>
 					<obligation>true</obligation>
-					<semestre>1</semestre>
 					<heterogene>false</heterogene>
 					<continuite>false</continuite>
 					<ects>10</ects>
 					<competences>true</competences>
 				</uf>
 
-				<uf codeUf="UF2" responsable="P2">
+				<uf idUf="UF2" responsable="P2">
+					<codeApogee>AUF2</codeApogee>
 					<intitule>Enseignements nains</intitule>
 					<obligation>true</obligation>
-					<semestre>1</semestre>
 					<heterogene>true</heterogene>
 					<continuite>false</continuite>
 					<ects>8</ects>
@@ -76,7 +75,8 @@
 			</ufs>
 
 			<ues>
-				<ue codeUe="UE1" responsable="P1" uf="UF1">
+				<ue idUe="UE1" responsable="P1" uf="UF1">
+					<codeApogee>AUE1</codeApogee>
 					<intitule>Archerie</intitule>
 					<coefficient>1</coefficient>
 					<cm>6</cm>
@@ -84,7 +84,8 @@
 					<tp>10</tp>
 				</ue>
 
-				<ue codeUe="UE2" responsable="P2" uf="UF2">
+				<ue idUe="UE2" responsable="P2" uf="UF2">
+					<codeApogee>AUE2</codeApogee>
 					<intitule>Histoire des mineurs</intitule>
 					<coefficient>0.25</coefficient>
 					<cm>6</cm>
@@ -92,7 +93,8 @@
 					<tp>0</tp>
 				</ue>
 
-				<ue codeUe="UE3" responsable="P1" uf="UF2">
+				<ue idUe="UE3" responsable="P1" uf="UF2">
+					<codeApogee>AUE3</codeApogee>
 					<intitule>La pioche ou le marteau</intitule>
 					<coefficient>0.75</coefficient>
 					<cm>3</cm>
@@ -106,24 +108,32 @@
 						<intitule>Examen final archerie</intitule>
 						<nature>Présentation</nature>
 						<duree>2.50</duree>
+						<nApogee>AE1</nApogee>
+						<coeff>0.25</coeff>
 					</epreuve>
 
 					<epreuve idEpreuve="EP2" ue="UE1">
 						<intitule>Examen intermédiaire archerie</intitule>
 						<nature>Présentation</nature>
 						<duree>1.25</duree>
+						<nApogee>AE2</nApogee>
+						<coeff>0.25</coeff>
 					</epreuve>
 
 					<epreuve idEpreuve="EP3" ue="UE2">
 						<intitule>Examen histoire des mineurs</intitule>
 						<nature>QCM</nature>
 						<duree>2.50</duree>
+						<nApogee>AE3</nApogee>
+						<coeff>0.15</coeff>
 					</epreuve>
 
 					<epreuve idEpreuve="EP4" ue="UE3">
 						<intitule>Projet final forge</intitule>
 						<nature>Présentation</nature>
 						<duree>3.75</duree>
+						<nApogee>AE4</nApogee>
+						<coeff>0.35</coeff>
 					</epreuve>
 			</epreuves>
 

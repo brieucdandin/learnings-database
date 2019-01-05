@@ -44,7 +44,6 @@
 	<xs:complexType name="promoType">
 		<xs:sequence>
 			<xs:element name="intitule" type="xs:string"/>
-			<xs:element name="annee" type="xs:int"/>
 		</xs:sequence>
 		<xs:attribute name="idPromo" type="xs:ID"/>
 		<xs:attribute name="responsable" type="xs:IDREF"/>
@@ -64,15 +63,15 @@
 
 	<xs:complexType name="ufType">
 		<xs:sequence>
+			<xs:element name="codeApogee" type="xs:string" minOccurs="0"/>
 			<xs:element name="intitule" type="xs:string"/>
 			<xs:element name="obligation" type="xs:boolean"/>
-			<xs:element name="semestre" type="xs:int"/>
 			<xs:element name="heterogene" type="xs:boolean"/>
 			<xs:element name="continuite" type="xs:boolean"/>
-			<xs:element name="ects" type="xs:int"/>
+			<xs:element name="ects" type="xs:float"/>
 			<xs:element name="competences" type="xs:boolean"/>
 		</xs:sequence>
-		<xs:attribute name="codeUf" type="xs:ID"/>
+		<xs:attribute name="idUf" type="xs:ID"/>
 		<xs:attribute name="responsable" type="xs:IDREF"/>
 	</xs:complexType>
 
@@ -86,13 +85,14 @@
 
 	<xs:complexType name="ueType">
 		<xs:sequence>
+			<xs:element name="codeApogee" type="xs:string" minOccurs="0"/>
 			<xs:element name="intitule" type="xs:string"/>
 			<xs:element name="coefficient" type="xs:float"/>
 			<xs:element name="cm" type="xs:float"/>
 			<xs:element name="td" type="xs:float"/>
 			<xs:element name="tp" type="xs:float"/>
 		</xs:sequence>
-		<xs:attribute name="codeUe" type="xs:ID"/>
+		<xs:attribute name="idUe" type="xs:ID"/>
 		<xs:attribute name="responsable" type="xs:IDREF"/>
 		<xs:attribute name="uf" type="xs:IDREF"/>
 	</xs:complexType>
@@ -108,8 +108,12 @@
 	<xs:complexType name="epreuveType">
 		<xs:sequence>
 			<xs:element name="intitule" type="xs:string"/>
-			<xs:element name="nature" type="xs:string"/>
-			<xs:element name="duree" type="xs:float"/>
+			<!-- Format de l'épreuve (QCM, Présentation, Projet, IE...) -->
+			<xs:element name="nature" type="xs:string" minOccurs="0"/>
+			<xs:element name="duree" type="xs:float" minOccurs="0"/>
+			<xs:element name="nApogee" type="xs:string" minOccurs="0"/>
+			<!-- Attention : Le coeff de l'épreuve correspond à celui par rapport à l'UF et non à l'UE. -->
+			<xs:element name="coeff" type="xs:float"/>
 		</xs:sequence>
 		<xs:attribute name="idEpreuve" type="xs:ID"/>
 		<xs:attribute name="ue" type="xs:IDREF" />
@@ -162,6 +166,8 @@
 			<xs:element name="ues_competences" type="ues_competencesTypes" minOccurs="0"/>
 		</xs:sequence>
 		<xs:attribute name="idMaquette" type="xs:ID"/>
+		<xs:attribute name="annee" type="xs:byte"/>
+		<xs:attribute name="semestre" type="xs:byte"/>
 	</xs:complexType>
 
 	<!-- *************************************************************************** -->
@@ -193,13 +199,13 @@
 			<xs:selector xpath=".//specialite"/>
 			<xs:field xpath="@idSpecialite"/>
 		</xs:key>
-		<xs:key name="ufCode">
+		<xs:key name="ufId">
 			<xs:selector xpath=".//uf"/>
-			<xs:field xpath="@codeUf"/>
+			<xs:field xpath="@idUf"/>
 		</xs:key>
-		<xs:key name="ueCode">
+		<xs:key name="ueId">
 			<xs:selector xpath=".//ue"/>
-			<xs:field xpath="@codeUe"/>
+			<xs:field xpath="@idUe"/>
 		</xs:key>
 		<xs:key name="epreuveId">
 			<xs:selector xpath=".//epreuve"/>
@@ -244,18 +250,18 @@
 			<xs:field xpath="@appDepartement"/>
 		</xs:keyref>
 		<!-- UE_UF -->
-		<xs:keyref name="ue_uf" refer="ufCode">
+		<xs:keyref name="ue_uf" refer="ufId">
 			<xs:selector xpath=".//ue"/>
 			<xs:field xpath="@uf"/>
 		</xs:keyref>
 		<!-- Epreuve_UE -->
-		<xs:keyref name="epreuve_ue" refer="ueCode">
+		<xs:keyref name="epreuve_ue" refer="ueId">
 			<xs:selector xpath=".//epreuve"/>
 			<xs:field xpath="@ue"/>
 		</xs:keyref>
 
 		<!-- UEs - Compétences -->
-		<xs:keyref name="lienUe" refer="ueCode">
+		<xs:keyref name="lienUe" refer="ueId">
 			<xs:selector xpath=".//ue_competence"/>
 			<xs:field xpath="@ue"/>
 		</xs:keyref>

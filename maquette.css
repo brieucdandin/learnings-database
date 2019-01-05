@@ -1,8 +1,20 @@
-table
+table[id="maquette"]
 {
 	border-collapse: collapse; 
 }
-td, th
+
+#maquette td, #maquette th
 {
-	border: 1px solid black;
+	border: 0.1em solid black;
+}
+
+table[id="informations"]
+{
+	border-collapse: separate; 
+	border-spacing: 3em 0.1em;
+}
+
+.uf
+{
+	background-color: silver;
 }
