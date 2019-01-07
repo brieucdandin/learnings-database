@@ -185,6 +185,7 @@ xmlns="http://www.w3.org/1999/xhtml">
             
             <!-- Informations sur le département d'appartenance et les personnels impliqués -->
             <xsl:variable name="nbPersonnels" select="count(//@responsable[generate-id(.)=generate-id(key('id', .)[1])])"/>
+            <br/>
             <table id="informations">
               <thead>
                 <tr>
