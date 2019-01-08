@@ -173,7 +173,7 @@
 					<continuite>false</continuite>
 					<ects>3</ects>
 					<competences>false</competences>
-				</uf>				
+				</uf>
 			</ufs>
 
 			<ues>
@@ -350,5 +350,255 @@
 			</ues_competences>
 
 	</maquette>
+
+	<!-- Maquette 5IR SDBD -->
+	<maquette idMaquette="S9_5IR_AP" annee ="5" semestre="1">
+
+		<promo idPromo="SDBD" responsable="P3">
+			<intitule>Systèmes Distribitués et Big Data (SDBD)</intitule>
+		</promo>
+
+		<specialite idSpecialite="AP" responsable="P1">
+			<intitule>Analyse presprictive (AP)</intitule>
+		</specialite>
+
+		<ufs>
+			<uf idUf="ILAOS" responsable="NG">
+				<codeApogee>I5IRIL12</codeApogee>
+				<intitule>Ingénierie logicielle et architectures orientées services</intitule>
+				<obligation>false</obligation>
+				<heterogene>false</heterogene>
+				<continuite>false</continuite>
+				<ects>4</ects>
+				<competences>false</competences>
+			</uf>
+
+			<uf idUf="SF" responsable="FV">
+				<codeApogee>I5IRSF11</codeApogee>
+				<intitule>Sureté de fonctionnement</intitule>
+				<obligation>false</obligation>
+				<heterogene>false</heterogene>
+				<continuite>false</continuite>
+				<ects>3</ects>
+				<competences>false</competences>
+			</uf>
+		</ufs>
+
+		<uf idUf="ADP" responsable="MJH">
+			<codeApogee>I5IRAD12</codeApogee>
+			<intitule>Analyse descriptive et prédictive</intitule>
+			<obligation>false</obligation>
+			<heterogene>false</heterogene>
+			<continuite>false</continuite>
+			<ects>4</ects>
+			<competences>false</competences>
+		</uf>
+
+		<uf idUf="ITDM" responsable="VN">
+			<codeApogee>I5IRBD12</codeApogee>
+			<intitule>Infrastructures pour le traitement de données massives</intitule>
+			<obligation>false</obligation>
+			<heterogene>false</heterogene>
+			<continuite>false</continuite>
+			<ects>4</ects>
+			<competences>false</competences>
+		</uf>
+	</ufs>
+
+	<uf idUf="PSDBD" responsable="SA">
+		<codeApogee>I5IRPR12</codeApogee>
+		<intitule>Projet SDBD</intitule>
+		<obligation>false</obligation>
+		<heterogene>false</heterogene>
+		<continuite>false</continuite>
+		<ects>4</ects>
+		<competences>false</competences>
+	</uf>
+
+	<uf idUf="RHPE" responsable="MH">
+		<codeApogee>I5CCGE21</codeApogee>
+		<intitule>Relations humaines et prefessionnelles, éthique</intitule>
+		<obligation>false</obligation>
+		<heterogene>false</heterogene>
+		<continuite>false</continuite>
+		<ects>5</ects>
+		<competences>false</competences>
+	</uf>
+	</ufs>
+
+		<ues>
+			<ue idUe="IL" responsable="NG" uf="ILAOS">
+				<codeApogee></codeApogee>
+				<intitule>Ingénierie logicielle</intitule>
+				<coefficient></coefficient>
+				<cm>11.25</cm>
+				<td>8.75</td>
+			</ue>
+
+			<ue idUe="AOS" responsable="NG" uf="ILAOS">
+				<intitule>Architectures orientées services</intitule>
+				<cm>7.5</cm>
+				<td>15</td>
+				<tp>19.25</tp>
+			</ue>
+
+			<ue idUe="PSF" responsable="CB" uf="SF">
+				<codeApogee></codeApogee>
+				<intitule>Principes de la sureté de fonctionnement</intitule>
+				<coefficient></coefficient>
+				<cm>13.75</cm>
+				<td></td>
+				<tp>8.25</tp>
+			</ue>
+
+			<ue idUe="MT" responsable="FV" uf="SF">
+				<codeApogee></codeApogee>
+				<intitule>Modèles temporels</intitule>
+				<coefficient></coefficient>
+				<cm>6.25</cm>
+				<td></td>
+				<tp>8.25</tp>
+			</ue>
+
+			<ue idUe="VM" responsable="FV" uf="SF">
+				<codeApogee></codeApogee>
+				<intitule>Vérification de modèles</intitule>
+				<coefficient></coefficient>
+				<cm>8.75</cm>
+				<td></td>
+				<tp>5.5</tp>
+			</ue>
+
+			<ue idUe="AEVD" responsable="GT" uf="ADP">
+				<codeApogee></codeApogee>
+				<intitule>Analyse exploratoire et visualisation de données</intitule>
+				<coefficient></coefficient>
+				<cm>10</cm>
+				<td></td>
+				<tp>13.75</tp>
+			</ue>
+
+			<ue idUe="APP" responsable="MJH" uf="ADP">
+				<codeApogee></codeApogee>
+				<intitule>Apprentissage</intitule>
+				<coefficient></coefficient>
+				<cm>12.5</cm>
+				<td></td>
+				<tp>13.75</tp>
+			</ue>
+
+			<ue idUe="CTLAV" responsable="SY" uf="ITDM">
+				<codeApogee></codeApogee>
+				<intitule>Concepts et techniques logicielles associées à la virtualisation</intitule>
+				<coefficient></coefficient>
+				<cm>6.25</cm>
+				<tp>8.25</tp>
+			</ue>
+
+			<ue idUe="FTMDM" responsable="SY" uf="ITDM">
+				<codeApogee></codeApogee>
+				<intitule>Framework et technologies pour la manipulation de données massives</intitule>
+				<coefficient></coefficient>
+				<cm>8.75</cm>
+				<tp>16.5</tp>
+			</ue>
+
+			<ue idUe="IMDV" responsable="CC" uf="ITDM">
+				<codeApogee></codeApogee>
+				<intitule>Infrastructure matérielle distribuée et virtualisée</intitule>
+				<coefficient></coefficient>
+				<cm>8.75</cm>
+				<tp>16.5</tp>
+			</ue>
+
+			<ue idUe="PC" responsable="SA" uf="PSDBD">
+				<codeApogee></codeApogee>
+				<intitule>Projet commun UF IL, SOA, ADP, INFRA</intitule>
+				<coefficient></coefficient>
+				<tp>22</tp>
+			</ue>
+
+			<ue idUe="CTDMVPSDA" responsable="MJH" uf="PSDBD">
+				<codeApogee></codeApogee>
+				<intitule>Conférence : Traitement de données massives / Vie privée / Sécurité/ Domaine d'application</intitule>
+				<coefficient></coefficient>
+				<cm>3.75</cm>
+				<td></td>
+				<tp></tp>
+			</ue>
+
+			<ue idUe="AGL" responsable="MAD" uf="PSDBD">
+				<codeApogee></codeApogee>
+				<intitule>Anglais</intitule>
+				<coefficient></coefficient>
+				<cm></cm>
+				<td>35</td>
+				<tp></tp>
+			</ue>
+
+			<ue idUe="MA" responsable="MH" uf="RHPE">
+				<codeApogee></codeApogee>
+				<intitule>Management d'équipe</intitule>
+				<coefficient></coefficient>
+				<cm>20</cm>
+				<td></td>
+				<tp></tp>
+			</ue>
+
+			<ue idUe="PSE" responsable="MH" uf="RHPE">
+				<codeApogee></codeApogee>
+				<intitule>Psychologie sociale et éthique</intitule>
+				<coefficient></coefficient>
+				<cm></cm>
+				<td>20</td>
+				<tp></tp>
+			</ue>
+		</ues>
+
+		<epreuves>
+				<epreuve idEpreuve="EP1" ue="UE1">
+					<intitule>Examen final archerie</intitule>
+					<nature>Présentation</nature>
+					<duree>2.50</duree>
+					<nApogee>AE1</nApogee>
+					<coeff>0.25</coeff>
+				</epreuve>
+
+				<epreuve idEpreuve="EP2" ue="UE1">
+					<intitule>Examen intermédiaire archerie</intitule>
+					<nature>Présentation</nature>
+					<duree>1.25</duree>
+					<nApogee>AE2</nApogee>
+					<coeff>0.25</coeff>
+				</epreuve>
+
+				<epreuve idEpreuve="EP3" ue="UE2">
+					<intitule>Examen histoire des mineurs</intitule>
+					<nature>QCM</nature>
+					<duree>2.50</duree>
+					<nApogee>AE3</nApogee>
+					<coeff>0.15</coeff>
+				</epreuve>
+
+				<epreuve idEpreuve="EP4" ue="UE3">
+					<intitule>Projet final forge</intitule>
+					<nature>Présentation</nature>
+					<duree>3.75</duree>
+					<nApogee>AE4</nApogee>
+					<coeff>0.35</coeff>
+				</epreuve>
+		</epreuves>
+
+		<competences>
+			<competence idCompetence="C1">
+				<intitule> Apprendre à faire un bon miel </intitule>
+			</competence>
+		</competences>
+
+		<ues_competences>
+			<ue_competence ue="UE1" competence="C1"/>
+		</ues_competences>
+
+</maquette>
 
 </maquettes>

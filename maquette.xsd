@@ -56,7 +56,7 @@
 			<xs:element name="intitule" type="xs:string"/>
 		</xs:sequence>
 		<xs:attribute name="idSpecialite" type="xs:ID"/>
-		<xs:attribute name="responsable" type="xs:IDREF"/>
+		<xs:attribute name="responsable" type="xs:IDREF" use="optional"/>
 	</xs:complexType>
 
 	<!-- UFs -->
@@ -87,10 +87,10 @@
 		<xs:sequence>
 			<xs:element name="codeApogee" type="xs:string" minOccurs="0"/>
 			<xs:element name="intitule" type="xs:string"/>
-			<xs:element name="coefficient" type="xs:float"/>
-			<xs:element name="cm" type="xs:float"/>
-			<xs:element name="td" type="xs:float"/>
-			<xs:element name="tp" type="xs:float"/>
+			<xs:element name="coefficient" type="xs:float" minOccurs="0"/>
+			<xs:element name="cm" type="xs:float" minOccurs="0"/>
+			<xs:element name="td" type="xs:float" minOccurs="0"/>
+			<xs:element name="tp" type="xs:float" minOccurs="0"/>
 		</xs:sequence>
 		<xs:attribute name="idUe" type="xs:ID"/>
 		<xs:attribute name="responsable" type="xs:IDREF"/>
@@ -107,13 +107,13 @@
 
 	<xs:complexType name="epreuveType">
 		<xs:sequence>
-			<xs:element name="intitule" type="xs:string"/>
+			<xs:element name="intitule" type="xs:string" minOccurs="0"/>
 			<!-- Format de l'épreuve (QCM, Présentation, Projet, IE...) -->
 			<xs:element name="nature" type="xs:string" minOccurs="0"/>
 			<xs:element name="duree" type="xs:float" minOccurs="0"/>
 			<xs:element name="nApogee" type="xs:string" minOccurs="0"/>
 			<!-- Attention : Le coeff de l'épreuve correspond à celui par rapport à l'UF et non à l'UE. -->
-			<xs:element name="coeff" type="xs:float"/>
+			<xs:element name="coeff" type="xs:float" minOccurs="0"/>
 		</xs:sequence>
 		<xs:attribute name="idEpreuve" type="xs:ID"/>
 		<xs:attribute name="ue" type="xs:IDREF" />
