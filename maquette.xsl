@@ -27,7 +27,7 @@ xmlns="http://www.w3.org/1999/xhtml">
                 <xsl:value-of select="concat(@annee, 'A S', @semestre,' - ', promo/intitule,' - ',specialite/intitule)"/>
               </h1>
               <!-- Reponsable de la promo -->
-              Responsable de la promo <em><xsl:value-of select="promo/intitule"/></em> :
+              Responsable de <em><xsl:value-of select="promo/intitule"/></em> :
               <xsl:call-template name="responsable">
                 <xsl:with-param name="idresponsable" select="promo/@responsable"/>
               </xsl:call-template>
@@ -182,7 +182,7 @@ xmlns="http://www.w3.org/1999/xhtml">
               </tbody>
             </table>
 
-            
+
             <!-- Informations sur le département d'appartenance et les personnels impliqués -->
             <xsl:variable name="nbPersonnels" select="count(//@responsable[generate-id(.)=generate-id(key('id', .)[1])])"/>
             <br/>
@@ -190,7 +190,7 @@ xmlns="http://www.w3.org/1999/xhtml">
               <thead>
                 <tr>
                   <th><h3>Département</h3></th>
-                  <th colspan="{$nbPersonnels}"><h3>Personnels</h3></th>
+                  <th><h3>Personnels</h3></th>
                 </tr>
               </thead>
               <tbody>
@@ -230,7 +230,7 @@ xmlns="http://www.w3.org/1999/xhtml">
     <xsl:param name="specialite"/>
     <xsl:for-each select="/maquettes/personnels/personnel">
       <xsl:if test="$idresponsable = @idPersonnel">
-        Responsable de la spécialité
+        Responsable de
         <em><xsl:value-of select="$specialite"/></em>
         <xsl:value-of select="concat(' : ',nom,' ',prenom)"/>
       </xsl:if>
@@ -254,16 +254,19 @@ xmlns="http://www.w3.org/1999/xhtml">
     <xsl:variable name="iddepartement" select="/maquettes/personnels/personnel[@idPersonnel = $idresponsablepromo]/@appDepartement"/>
     <xsl:for-each select="/maquettes/departements/departement">
       <xsl:if test="$iddepartement = @idDepartement">
-        <xsl:value-of select="concat('Acronyme : ', acronyme)"/>
+        <em>Acronyme : </em>
+        <xsl:value-of select="acronyme"/>
         <br/>
-        <xsl:value-of select="concat('Nom : ', nom)"/>
+        <em>Nom : </em>
+        <xsl:value-of select="nom"/>
         <br/>
-        Directeur :
+        <em>Directeur : </em>
         <xsl:call-template name="responsable">
           <xsl:with-param name="idresponsable" select="@responsable"/>
         </xsl:call-template>
         <br/>
-        <xsl:value-of select="concat('Date de création : ', dateCreation)"/>
+        <em>Date de création : </em>
+        <xsl:value-of select="dateCreation"/>
       </xsl:if>
     </xsl:for-each>
   </xsl:template>
@@ -272,18 +275,22 @@ xmlns="http://www.w3.org/1999/xhtml">
     <xsl:param name="idpersonnel"/>
     <xsl:for-each select="/maquettes/personnels/personnel[$idpersonnel = @idPersonnel]">
       <h4><xsl:value-of select="concat(nom,' ',prenom)"/></h4>
-      <xsl:value-of select="concat('Grade : ', grade)"/>
+      <em>Grade : </em>
+      <xsl:value-of select="grade"/>
       <br/>
-      <xsl:value-of select="'Département : '"/>
+      <em>Département : </em>
       <xsl:call-template name="departement">
         <xsl:with-param name="idpersonnel" select="@idPersonnel"/>
       </xsl:call-template>
       <br/>
-      <xsl:value-of select="concat('Bureau : ', bureau)"/>
+      <em>Bureau : </em>
+      <xsl:value-of select="bureau"/>
       <br/>
-      <xsl:value-of select="concat('Tel : ', tel)"/>
+      <em>Tel : </em>
+      <xsl:value-of select="tel"/>
       <br/>
-      <xsl:value-of select="concat('Mail : ', mail)"/>
+      <em>Mail : </em>
+      <xsl:value-of select="mail"/>
     </xsl:for-each>
   </xsl:template>
 
