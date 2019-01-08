@@ -403,34 +403,43 @@
 			<ects>4</ects>
 			<competences>false</competences>
 		</uf>
+
+		<uf idUf="PSDBD" responsable="SA">
+			<codeApogee>I5IRPR12</codeApogee>
+			<intitule>Projet SDBD</intitule>
+			<obligation>false</obligation>
+			<heterogene>false</heterogene>
+			<continuite>false</continuite>
+			<ects>4</ects>
+			<competences>false</competences>
+		</uf>
+
+		<uf idUf="RHPE" responsable="MH">
+			<codeApogee>I5CCGE21</codeApogee>
+			<intitule>Relations humaines et prefessionnelles, éthique</intitule>
+			<obligation>false</obligation>
+			<heterogene>false</heterogene>
+			<continuite>false</continuite>
+			<ects>5</ects>
+			<competences>false</competences>
+		</uf>
+
+		<uf idUf="AP" responsable="PE">
+			<codeApogee>I5IRSD12</codeApogee>
+			<intitule>Analyse prescriptive (AP)</intitule>
+			<obligation>false</obligation>
+			<heterogene>false</heterogene>
+			<continuite>false</continuite>
+			<ects>6</ects>
+			<competences>false</competences>
+		</uf>
 	</ufs>
 
-	<uf idUf="PSDBD" responsable="SA">
-		<codeApogee>I5IRPR12</codeApogee>
-		<intitule>Projet SDBD</intitule>
-		<obligation>false</obligation>
-		<heterogene>false</heterogene>
-		<continuite>false</continuite>
-		<ects>4</ects>
-		<competences>false</competences>
-	</uf>
 
-	<uf idUf="RHPE" responsable="MH">
-		<codeApogee>I5CCGE21</codeApogee>
-		<intitule>Relations humaines et prefessionnelles, éthique</intitule>
-		<obligation>false</obligation>
-		<heterogene>false</heterogene>
-		<continuite>false</continuite>
-		<ects>5</ects>
-		<competences>false</competences>
-	</uf>
-	</ufs>
 
 		<ues>
 			<ue idUe="IL" responsable="NG" uf="ILAOS">
-				<codeApogee></codeApogee>
 				<intitule>Ingénierie logicielle</intitule>
-				<coefficient></coefficient>
 				<cm>11.25</cm>
 				<td>8.75</td>
 			</ue>
@@ -443,9 +452,7 @@
 			</ue>
 
 			<ue idUe="PSF" responsable="CB" uf="SF">
-				<codeApogee></codeApogee>
 				<intitule>Principes de la sureté de fonctionnement</intitule>
-				<coefficient></coefficient>
 				<cm>13.75</cm>
 				<td></td>
 				<tp>8.25</tp>
@@ -483,12 +490,10 @@
 				<intitule>Apprentissage</intitule>
 				<coefficient></coefficient>
 				<cm>12.5</cm>
-				<td></td>
 				<tp>13.75</tp>
 			</ue>
 
 			<ue idUe="CTLAV" responsable="SY" uf="ITDM">
-				<codeApogee></codeApogee>
 				<intitule>Concepts et techniques logicielles associées à la virtualisation</intitule>
 				<coefficient></coefficient>
 				<cm>6.25</cm>
@@ -553,50 +558,141 @@
 				<td>20</td>
 				<tp></tp>
 			</ue>
+
+			<ue idUe="APS" responsable="FR" uf="RHPE">
+				<codeApogee></codeApogee>
+				<intitule>Psychologie sociale et éthique</intitule>
+				<coefficient></coefficient>
+				<cm></cm>
+				<td>25</td>
+				<tp></tp>
+			</ue>
+
+			<ue idUe="PPI" responsable="TD" uf="RHPE">
+				<codeApogee></codeApogee>
+				<intitule>Psychologie sociale et éthique</intitule>
+				<coefficient></coefficient>
+				<cm></cm>
+				<td>10</td>
+				<tp></tp>
+			</ue>
+
+			<ue idUe="TM" responsable="MJH" uf="AP">
+				<intitule>Transitoire : métaheuristique</intitule>
+				<cm>6.25</cm>
+				<tp>5.5</tp>
+			</ue>
+
+			<ue idUe="MO" responsable="MJH" uf="AP">
+				<intitule>Méthodes et Outils</intitule>
+				<cm>20</cm>
+				<tp>13.75</tp>
+			</ue>
+
+			<ue idUe="PAP" responsable="MJH" uf="AP">
+				<intitule>Projet Analyse Prescriptive</intitule>
+				<cm>1.25</cm>
+				<tp>13.75</tp>
+			</ue>
 		</ues>
 
 		<epreuves>
-				<epreuve idEpreuve="EP1" ue="UE1">
-					<intitule>Examen final archerie</intitule>
-					<nature>Présentation</nature>
-					<duree>2.50</duree>
-					<nApogee>AE1</nApogee>
+				<epreuve idEpreuve="EPSF" ue="PSF">
+					<nature>Autre</nature>
+					<nApogee>E1</nApogee>
+					<coeff>0.33</coeff>
+				</epreuve>
+
+				<epreuve idEpreuve="EMT" ue="MT">
+					<nature>IE</nature>
+					<nApogee>E2</nApogee>
+					<coeff>0.33</coeff>
+				</epreuve>
+
+				<epreuve idEpreuve="EVM" ue="VM">
+					<nature>IE</nature>
+					<nApogee>E3</nApogee>
+					<coeff>0.33</coeff>
+				</epreuve>
+
+				<epreuve idEpreuve="ECTLAV" ue="CTLAV">
+					<nature>IE</nature>
+					<nApogee>E1</nApogee>
+					<coeff>0.45</coeff>
+				</epreuve>
+
+				<epreuve idEpreuve="EFTMDM" ue="FTMDM">
+					<nature>Soutenance</nature>
+					<nApogee>E2</nApogee>
+					<coeff>0.30</coeff>
+				</epreuve>
+
+				<epreuve idEpreuve="EIMDV" ue="IMDV">
+					<nature>IE</nature>
+					<nApogee>E3</nApogee>
 					<coeff>0.25</coeff>
 				</epreuve>
 
-				<epreuve idEpreuve="EP2" ue="UE1">
-					<intitule>Examen intermédiaire archerie</intitule>
-					<nature>Présentation</nature>
-					<duree>1.25</duree>
-					<nApogee>AE2</nApogee>
-					<coeff>0.25</coeff>
+				<epreuve idEpreuve="EAGL1" ue="AGL">
+					<nature>Rapport</nature>
+				</epreuve>
+				<epreuve idEpreuve="EAGL2" ue="AGL">
+					<nature>Soutenance</nature>
 				</epreuve>
 
-				<epreuve idEpreuve="EP3" ue="UE2">
-					<intitule>Examen histoire des mineurs</intitule>
-					<nature>QCM</nature>
-					<duree>2.50</duree>
-					<nApogee>AE3</nApogee>
-					<coeff>0.15</coeff>
+				<epreuve idEpreuve="EPC1" ue="PC">
+					<nature>Oral</nature>
+					<nApogee>E1</nApogee>
+					<coeff>0.17</coeff>
+				</epreuve>
+				<epreuve idEpreuve="EPC2" ue="PC">
+					<nature>Ecrit</nature>
+					<nApogee>E1</nApogee>
+					<coeff>0.17</coeff>
 				</epreuve>
 
-				<epreuve idEpreuve="EP4" ue="UE3">
-					<intitule>Projet final forge</intitule>
-					<nature>Présentation</nature>
-					<duree>3.75</duree>
-					<nApogee>AE4</nApogee>
-					<coeff>0.35</coeff>
+				<epreuve idEpreuve="ECTDM1" ue="CTDM">
+					<nature>Oral</nature>
+					<nApogee>E2</nApogee>
+					<coeff>0.11</coeff>
+				</epreuve>
+				<epreuve idEpreuve="ECTDM2" ue="CTDM">
+					<nature>Ecrit</nature>
+					<nApogee>E2</nApogee>
+					<coeff>0.11</coeff>
+				</epreuve>
+
+				<epreuve idEpreuve="EAPS" ue="APS">
+					<nature>Stage</nature>
+					<nApogee>E3</nApogee>
+					<coeff>0.22</coeff>
+				</epreuve>
+
+				<epreuve idEpreuve="EPPI1" ue="PPI">
+					<nature>Oral</nature>
+					<nApogee>E4</nApogee>
+					<coeff>0.11</coeff>
+				</epreuve>
+				<epreuve idEpreuve="EPPI2" ue="PPI">
+					<nature>Rapport</nature>
+					<nApogee>E4</nApogee>
+					<coeff>0.11</coeff>
 				</epreuve>
 		</epreuves>
 
 		<competences>
-			<competence idCompetence="C1">
-				<intitule> Apprendre à faire un bon miel </intitule>
+			<competence idCompetence="GP">
+				<intitule> Gestion de projet </intitule>
+			</competence>
+
+			<competence idCompetence="OMP">
+				<intitule> Ouverture au monde professionnel </intitule>
 			</competence>
 		</competences>
 
 		<ues_competences>
-			<ue_competence ue="UE1" competence="C1"/>
+			<ue_competence ue="PC" competence="GP"/>
+			<ue_competence ue="CTDM" competence="OMP"/>
 		</ues_competences>
 
 </maquette>

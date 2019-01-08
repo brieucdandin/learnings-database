@@ -123,12 +123,38 @@ xmlns="http://www.w3.org/1999/xhtml">
                       </xsl:if>
                     </td>
                     <!-- CM/TD/TP/Total -->
-                    <td><xsl:value-of select="sum(/maquettes/maquette/ues/ue[@uf=$idUf]/cm)"/></td>
-                    <td><xsl:value-of select="sum(/maquettes/maquette/ues/ue[@uf=$idUf]/td)"/></td>
-                    <td><xsl:value-of select="sum(/maquettes/maquette/ues/ue[@uf=$idUf]/tp)"/></td>
-                    <td><xsl:value-of select="sum(/maquettes/maquette/ues/ue[@uf=$idUf]/cm)+sum(/maquettes/maquette/ues/ue[@uf=$idUf]/td)+sum(/maquettes/maquette/ues/ue[@uf=$idUf]/tp)"/></td>
+                    <xsl:variable name="cm" select="sum(/maquettes/maquette/ues/ue[@uf=$idUf]/cm)"/>
+                    <xsl:variable name="td" select="sum(/maquettes/maquette/ues/ue[@uf=$idUf]/td)"/>
+                    <xsl:variable name="tp" select="sum(/maquettes/maquette/ues/ue[@uf=$idUf]/tp)"/>
+
+                    <td>
+                      <xsl:if test="not($cm = 0)">
+                        <xsl:value-of select="$cm"/>
+                      </xsl:if>
+                    </td>
+                    <td>
+                      <xsl:if test="not($td = 0)">
+                        <xsl:value-of select="$td"/>
+                      </xsl:if>
+                    </td>
+                    <td>
+                      <xsl:if test="not($tp = 0)">
+                        <xsl:value-of select="$tp"/>
+                      </xsl:if>
+                    </td>
+                    <td>
+                      <xsl:if test="not($cm + $td + $tp = 0)">
+                        <xsl:value-of select="$cm + $td + $tp"/>
+                      </xsl:if>
+                    </td>
+
                     <!-- Contrôles : Durée + Intitulé + Nature + N° Apogée + Coeff -->
-                    <td><xsl:value-of select="sum(/maquettes/maquette/epreuves/epreuve[@ue = /maquettes/maquette/ues/ue[@uf=$idUf]/@idUe]/duree)"/></td>
+                    <td>
+                      <xsl:variable name="duree" select="sum(/maquettes/maquette/epreuves/epreuve[@ue = /maquettes/maquette/ues/ue[@uf=$idUf]/@idUe]/duree)"/>
+                      <xsl:if test="not(duree = 0)">
+                        <xsl:value-of select="duree"/>
+                      </xsl:if>
+                    </td>
                     <td colspan="4"/>
                     <!-- ECTS -->
                     <td><xsl:value-of select="ects"/></td>
@@ -150,10 +176,29 @@ xmlns="http://www.w3.org/1999/xhtml">
                               </td>
                               <td rowspan="{$nbEpreuves}"><xsl:value-of select="/maquettes/maquette/ues/ue[@idUe=$idUe]/codeApogee"/></td>
                               <td colspan="3" rowspan="{$nbEpreuves}"></td>
-                              <td rowspan="{$nbEpreuves}"><xsl:value-of select="/maquettes/maquette/ues/ue[@idUe=$idUe]/cm"/></td>
-                              <td rowspan="{$nbEpreuves}"><xsl:value-of select="/maquettes/maquette/ues/ue[@idUe=$idUe]/td"/></td>
-                              <td rowspan="{$nbEpreuves}"><xsl:value-of select="/maquettes/maquette/ues/ue[@idUe=$idUe]/tp"/></td>
-                              <td rowspan="{$nbEpreuves}"><xsl:value-of select="/maquettes/maquette/ues/ue[@idUe=$idUe]/cm + /maquettes/maquette/ues/ue[@idUe=$idUe]/td + /maquettes/maquette/ues/ue[@idUe=$idUe]/tp"/></td>
+                              <xsl:variable name="cm" select="sum(/maquettes/maquette/ues/ue[@idUe=$idUe]/cm)"/>
+                              <xsl:variable name="td" select="sum(/maquettes/maquette/ues/ue[@idUe=$idUe]/td)"/>
+                              <xsl:variable name="tp" select="sum(/maquettes/maquette/ues/ue[@idUe=$idUe]/tp)"/>
+                              <td rowspan="{$nbEpreuves}">
+                                <xsl:if test="not($cm = 0)">
+                                  <xsl:value-of select="$cm"/>
+                                </xsl:if>
+                              </td>
+                              <td rowspan="{$nbEpreuves}">
+                                <xsl:if test="not($td = 0)">
+                                  <xsl:value-of select="$td"/>
+                                </xsl:if>
+                              </td>
+                              <td rowspan="{$nbEpreuves}">
+                                <xsl:if test="not($tp = 0)">
+                                  <xsl:value-of select="$tp"/>
+                                </xsl:if>
+                              </td>
+                              <td rowspan="{$nbEpreuves}">
+                                <xsl:if test="not($cm + $td + $tp = 0)">
+                                  <xsl:value-of select="$cm + $td + $tp"/>
+                                </xsl:if>
+                              </td>
                               <!-- Contrôles : Durée + Intitulé + Nature + N° Apogée + Coeff -->
                               <!-- Pour chaque épreuve de l'UF, on affiche ses infos. -->
                               <td><xsl:value-of select="duree"/></td>

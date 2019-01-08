@@ -121,7 +121,7 @@
 
 	<xs:complexType name="epreuvesTypes">
 		<xs:sequence>
-			<xs:element name="epreuve" type="epreuveType" maxOccurs="unbounded"/>
+			<xs:element name="epreuve" type="epreuveType" minOccurs="0" maxOccurs="unbounded"/>
 		</xs:sequence>
 	</xs:complexType>
 
@@ -161,8 +161,8 @@
 			<xs:element name="specialite" type="specialiteType" minOccurs="0"/>
 			<xs:element name="ufs" type="ufsTypes"/>
 			<xs:element name="ues" type="uesTypes"/>
-			<xs:element name="epreuves" type="epreuvesTypes"/>
-			<xs:element name="competences" type="competencesTypes"/>
+			<xs:element name="epreuves" type="epreuvesTypes" minOccurs="0"/>
+			<xs:element name="competences" type="competencesTypes" minOccurs="0"/>
 			<xs:element name="ues_competences" type="ues_competencesTypes" minOccurs="0"/>
 		</xs:sequence>
 		<xs:attribute name="idMaquette" type="xs:ID"/>
