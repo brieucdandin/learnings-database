@@ -5,53 +5,47 @@
 <maquettes>
 
 		<personnels>
-			<personnel idPersonnel="P1" appDepartement="D1">
+			<personnel idPersonnel="NVW" appDepartement="GEI">
 				<nom>Van Wambeke</nom>
 				<prenom>Nicolas</prenom>
 				<grade>Externe</grade>
-				<bureau></bureau>
+				<bureau>GEI-103</bureau>
 				<tel></tel>
 				<mail>nicolas@vanwambeke.net</mail>
 			</personnel>
-
-			<personnel idPersonnel="P2" appDepartement="D1">
+			<personnel idPersonnel="DD" appDepartement="GEI">
 				<nom>Dragomirescu</nom>
 				<prenom>Daniela</prenom>
 				<grade>Enseignante</grade>
-				<bureau></bureau>
+				<bureau>GEI-103</bureau>
 				<tel>0611000354</tel>
 				<mail>lebestnain@moria.dw</mail>
 			</personnel>
-
-			<personnel idPersonnel="P3" appDepartement="D1">
+			<personnel idPersonnel="SA" appDepartement="GEI">
 				<nom>Abdellatif</nom>
 				<prenom>Slim</prenom>
 				<grade>Enseignant</grade>
-				<bureau></bureau>
+				<bureau>GEI-102</bureau>
 				<tel>0655443322</tel>
 				<mail>abdellatif@insa-toulouse.fr</mail>
 			</personnel>
-		</personnels>
-		<personnels>
-			<personnel idPersonnel="P4" appDepartement="D1">
+			<personnel idPersonnel="SY" appDepartement="GEI">
 				<nom>Yangui</nom>
 				<prenom>Sami</prenom>
 				<grade>Enseignant</grade>
-				<bureau></bureau>
+				<bureau>GEI-101</bureau>
 				<tel>0755263571</tel>
 				<mail>yangui@insa-toulouse.fr</mail>
 			</personnel>
-
-			<personnel idPersonnel="P5" appDepartement="D1">
+			<personnel idPersonnel="EA" appDepartement="GEI">
 				<nom>Alata</nom>
 				<prenom>Eric</prenom>
 				<grade>Enseignant-chercheur</grade>
-				<bureau></bureau>
+				<bureau>GEI-104</bureau>
 				<tel>0611080354</tel>
 				<mail>alata@insa-toulouse.fr</mail>
 			</personnel>
-
-			<personnel idPersonnel="P6" appDepartement="D1">
+			<personnel idPersonnel="CC" appDepartement="GEI">
 				<nom>Chassot</nom>
 				<prenom>Christophe</prenom>
 				<grade>Enseignant</grade>
@@ -59,8 +53,7 @@
 				<tel>0611293174</tel>
 				<mail>chassot@insa-toulouse.fr</mail>
 			</personnel>
-
-			<personnel idPersonnel="P7" appDepartement="D2">
+			<personnel idPersonnel="SJ" appDepartement="CSH">
 				<nom>Shea</nom>
 				<prenom>Joseph</prenom>
 				<grade>Enseignant</grade>
@@ -68,7 +61,7 @@
 				<tel>0561559485</tel>
 				<mail>shea.joseph@insa-toulouse.fr</mail>
 			</personnel>
-			<personnel idPersonnel="P8" appDepartement="GEI">
+			<personnel idPersonnel="TD" appDepartement="CSH">
 				<nom>Dupont</nom>
 				<prenom>Thierry</prenom>
 				<grade>Externe</grade>
@@ -76,7 +69,6 @@
 				<tel>0561559481</tel>
 				<mail>thierry.dupont@insa-toulouse.fr</mail>
 			</personnel>
-
 			<personnel idPersonnel="LL" appDepartement="CSH">
 				<nom>Leclert</nom>
 				<prenom>Lucie</prenom>
@@ -84,6 +76,102 @@
 				<bureau>CSH-B107</bureau>
 				<tel>0561559483</tel>
 				<mail>lucie.leclert@insa-toulouse.fr</mail>
+			</personnel>
+			<personnel idPersonnel="PP" appDepartement="GEI">
+				<nom>Pinel</nom>
+				<prenom>Pierre</prenom>
+				<grade>Enseignant</grade>
+				<bureau>GEI-104</bureau>
+				<tel></tel>
+				<mail>pinel@insa-toulouse.fr</mail>
+			</personnel>
+			<personnel idPersonnel="FV" appDepartement="GEI">
+				<nom>Verdanat</nom>
+				<prenom>François</prenom>
+				<grade>Enseignant</grade>
+				<bureau>GEI-101</bureau>
+				<tel></tel>
+				<mail>verdanat@insa-toulouse.fr</mail>
+			</personnel>
+			<personnel idPersonnel="VN" appDepartement="GEI">
+				<nom>Nicomette</nom>
+				<prenom>Vincent</prenom>
+				<grade>Enseignant</grade>
+				<bureau>GEI-107</bureau>
+				<tel>0522898989</tel>
+				<mail>nicomett@laas.fr</mail>
+			</personnel>
+			<personnel idPersonnel="SR" appDepartement="CAPS">
+				<nom>Rossard</nom>
+				<prenom>Sylvie</prenom>
+				<grade>Enseignant</grade>
+				<bureau></bureau>
+				<tel>0511441144</tel>
+				<mail>rossard@insa-toulouse.fr</mail>
+			</personnel>
+			<personnel idPersonnel="PD" appDepartement="CAPS">
+				<nom>Ducousso</nom>
+				<prenom>Philippe</prenom>
+				<grade>Enseignant</grade>
+				<bureau></bureau>
+				<tel>0511441144</tel>
+				<mail>ducousso@insa-toulouse.fr</mail>
+			</personnel>
+			<personnel idPersonnel="CL" appDepartement="CSH">
+				<nom>Lauvray</nom>
+				<prenom>Colette</prenom>
+				<grade>Enseignant</grade>
+				<bureau>CSH-B21</bureau>
+				<tel>0522898989</tel>
+				<mail>lauvray@laas.fr</mail>
+			</personnel>
+			<personnel idPersonnel="PE" appDepartement="GEI">
+				<nom>Esquirol</nom>
+				<prenom>Patrick</prenom>
+				<grade>Enseignant</grade>
+				<bureau>GEI-106</bureau>
+				<tel>0567027714</tel>
+				<mail>esquirol@insa-toulouse.fr</mail>
+			</personnel>
+			<personnel idPersonnel="DLB" appDepartement="GEI">
+				<nom>Le Botlan</nom>
+				<prenom>Didier</prenom>
+				<grade>Enseignant</grade>
+				<bureau>GEI-111</bureau>
+				<tel>0512345678</tel>
+				<mail>lebotlan@insa-toulouse.fr</mail>
+			</personnel>
+			<personnel idPersonnel="MS" appDepartement="GEI">
+				<nom>Siala</nom>
+				<prenom>Mohamed</prenom>
+				<grade>Enseignant</grade>
+				<bureau>GEI-109</bureau>
+				<tel>0598765432</tel>
+				<mail>siala@insa-toulouse.fr</mail>
+			</personnel>
+			<personnel idPersonnel="NG" appDepartement="GEI">
+				<nom>Guermouche</nom>
+				<prenom>Nawal</prenom>
+				<grade>Enseignant-chercheur</grade>
+				<bureau>GEI-109</bureau>
+				<tel>0566666666</tel>
+				<mail>guermouc@laas.fr</mail>
+			</personnel>
+			<personnel idPersonnel="LD" appDepartement="GEI">
+				<nom>Dairaine</nom>
+				<prenom>Laurent</prenom>
+				<grade>Enseignant</grade>
+				<bureau>GEI-110</bureau>
+				<tel>0505050505</tel>
+				<mail>dairaine@isae.fr</mail>
+			</personnel>
+			<personnel idPersonnel="VM" appDepartement="GEI">
+				<nom>Mahout</nom>
+				<prenom>Vincent</prenom>
+				<grade>Enseignant</grade>
+				<bureau>GEI-112</bureau>
+				<tel>0500220022</tel>
+				<mail>mahout@insa-toulouse.fr</mail>
 			</personnel>
 		</personnels>
 
@@ -98,16 +186,20 @@
 				<nom>Centre des Sciences Humaines</nom>
 				<dateCreation>1963-10-21</dateCreation>
 			</departement>
+			<departement idDepartement="CAPS" responsable="PD">
+				<acronyme>CAPS</acronyme>
+				<nom>Centre d'activité physiques et sportives</nom>
+				<dateCreation>1963-10-21</dateCreation>
+			</departement>
 		</departements>
 
 		<maquette idMaquette="S7_4IR_SI" annee ="4" semestre="1">
-
-			<promo idPromo="Pro1" responsable="P3">
-				<intitule>Armes elfe</intitule>
+			<promo idPromo="IR" responsable="PP">
+				<intitule>Informatique et réseaux</intitule>
 			</promo>
 
-			<specialite idSpecialite="S1" responsable="P1">
-				<intitule>Survie</intitule>
+			<specialite idSpecialite="SI" responsable="PP">
+				<intitule>Systèmes informatiques</intitule>
 			</specialite>
 
 			<ufs>
@@ -308,19 +400,19 @@
 			</ues>
 
 			<epreuves>
-					<epreuve idEpreuve="EP1" ue="UE1">
-						<intitule>Examen final archerie</intitule>
-						<nature>Présentation</nature>
-						<duree>2.50</duree>
-						<nApogee>AE1</nApogee>
+					<epreuve idEpreuve="COO" ue="COO">
+						<intitule></intitule>
+						<nature>IE</nature>
+						<duree>1.25</duree>
+						<nApogee>E1</nApogee>
 						<coeff>0.25</coeff>
 					</epreuve>
 
-					<epreuve idEpreuve="EP2" ue="UE1">
-						<intitule>Examen intermédiaire archerie</intitule>
+					<epreuve idEpreuve="POO" ue="POO">
+						<intitule></intitule>
 						<nature>Présentation</nature>
-						<duree>1.25</duree>
-						<nApogee>AE2</nApogee>
+						<duree></duree>
+						<nApogee>E2</nApogee>
 						<coeff>0.25</coeff>
 					</epreuve>
 
