@@ -10,7 +10,6 @@
 				<prenom>Nicolas</prenom>
 				<grade>Externe</grade>
 				<bureau>GEI-103</bureau>
-				<tel></tel>
 				<mail>nicolas@vanwambeke.net</mail>
 			</personnel>
 			<personnel idPersonnel="DD" appDepartement="GEI">
@@ -82,7 +81,6 @@
 				<prenom>Pierre</prenom>
 				<grade>Enseignant</grade>
 				<bureau>GEI-104</bureau>
-				<tel></tel>
 				<mail>pinel@insa-toulouse.fr</mail>
 			</personnel>
 			<personnel idPersonnel="FV" appDepartement="GEI">
@@ -90,7 +88,6 @@
 				<prenom>François</prenom>
 				<grade>Enseignant</grade>
 				<bureau>GEI-101</bureau>
-				<tel></tel>
 				<mail>verdanat@insa-toulouse.fr</mail>
 			</personnel>
 			<personnel idPersonnel="VN" appDepartement="GEI">
@@ -105,7 +102,6 @@
 				<nom>Rossard</nom>
 				<prenom>Sylvie</prenom>
 				<grade>Enseignant</grade>
-				<bureau></bureau>
 				<tel>0511441144</tel>
 				<mail>rossard@insa-toulouse.fr</mail>
 			</personnel>
@@ -173,6 +169,54 @@
 				<tel>0500220022</tel>
 				<mail>mahout@insa-toulouse.fr</mail>
 			</personnel>
+			<personnel idPersonnel="CB" appDepartement="GEI">
+				<nom>Baron</nom>
+				<prenom>Claude</prenom>
+				<grade>Enseignant</grade>
+				<bureau>GEI-113</bureau>
+			</personnel>
+			<personnel idPersonnel="MJH" appDepartement="GEI">
+				<nom>Huguet</nom>
+				<prenom>Marie-Jo</prenom>
+				<grade>Enseignant</grade>
+				<bureau>GEI-120</bureau>
+				<tel>0599772235</tel>
+			</personnel>
+			<personnel idPersonnel="GT" appDepartement="GEI">
+				<nom>Tredan</nom>
+				<prenom>G.</prenom>
+				<grade>Enseignant</grade>
+				<bureau>GEI-118</bureau>
+			</personnel>
+			<personnel idPersonnel="MAD" appDepartement="CSH">
+				<nom>Detourbe</nom>
+				<prenom>M.A.</prenom>
+				<grade>Enseignant</grade>
+				<bureau>CSH-B10</bureau>
+				<mail>ma.detourbe@insa-toulouse.fr</mail>
+			</personnel>
+
+			<personnel idPersonnel="HH" appDepartement="CSH">
+				<nom>Hereng</nom>
+				<prenom>H.</prenom>
+				<grade>Enseignant</grade>
+				<bureau>CSH-B14</bureau>
+				<mail>h.hereng@insa-toulouse.fr</mail>
+			</personnel>
+			<personnel idPersonnel="NN" appDepartement="CSH">
+				<nom>Negrel</nom>
+				<prenom>N.</prenom>
+				<grade>Enseignant</grade>
+				<bureau>CSH-B14</bureau>
+			</personnel>
+			<personnel idPersonnel="FR" appDepartement="APS">
+				<nom>Rey</nom>
+				<prenom>Françoise</prenom>
+				<grade>Enseignant</grade>
+				<mail>rey@insa-toulouse.fr</mail>
+				<tel>0512312312</tel>
+			</personnel>
+
 		</personnels>
 
 		<departements>
@@ -270,87 +314,54 @@
 
 			<ues>
 				<ue idUe="COO" responsable="NVW" uf="CP">
-					<codeApogee></codeApogee>
 					<intitule>Conception Orientée Objets</intitule>
-					<coefficient>0.33</coefficient>
 					<cm>10</cm>
 					<td>16.25</td>
-					<tp>0</tp>
 				</ue>
 				<ue idUe="POO" responsable="SY" uf="CP">
-					<codeApogee></codeApogee>
 					<intitule>Programmation orientée objets</intitule>
-					<coefficient>0.66</coefficient>
 					<cm>7.5</cm>
 					<td>8.75</td>
 					<tp>33</tp>
 				</ue>
 				<ue idUe="IR" responsable="CC" uf="IS">
-					<codeApogee></codeApogee>
 					<intitule>Interconnexion de réseaux</intitule>
-					<coefficient>0.35</coefficient>
 					<cm>15</cm>
 					<td>1.25</td>
 					<tp>8.25</tp>
 				</ue>
 				<ue idUe="AR" responsable="FV" uf="IS">
-					<codeApogee></codeApogee>
 					<intitule>Algorithmique répartie</intitule>
-					<coefficient>0.3</coefficient>
 					<cm>10</cm>
-					<td></td>
-					<tp></tp>
 				</ue>
 				<ue idUe="SII" responsable="VN" uf="IS">
-					<codeApogee></codeApogee>
 					<intitule>Sécurité informatique et dans l'internet</intitule>
-					<coefficient>0.35</coefficient>
 					<cm>17.5</cm>
 					<td>2.5</td>
 					<tp>8.25</tp>
 				</ue>
 				<ue idUe="APS" responsable="SR" uf="GA">
-					<codeApogee></codeApogee>
 					<intitule>APS</intitule>
-					<coefficient>0.5</coefficient>
-					<cm></cm>
 					<td>25</td>
-					<tp></tp>
 				</ue>
 				<ue idUe="PPI" responsable="VN" uf="IS">
-					<codeApogee></codeApogee>
 					<intitule>PPI</intitule>
-					<coefficient>0.5</coefficient>
-					<cm></cm>
-					<td></td>
-					<tp></tp>
 				</ue>
 				<ue idUe="D" responsable="LL" uf="CM">
-					<codeApogee></codeApogee>
 					<intitule>Droit</intitule>
-					<coefficient>0.33</coefficient>
 					<cm>15</cm>
-					<td></td>
-					<tp></tp>
 				</ue>
 				<ue idUe="F" responsable="CL" uf="CM">
-					<codeApogee></codeApogee>
 					<intitule>Finance</intitule>
 					<coefficient>0.33</coefficient>
 					<cm>15</cm>
-					<td></td>
-					<tp></tp>
 				</ue>
 				<ue idUe="M" responsable="LL" uf="CM">
-					<codeApogee></codeApogee>
 					<intitule>Marketing</intitule>
 					<coefficient>0.33</coefficient>
 					<cm>15</cm>
-					<td></td>
-					<tp></tp>
 				</ue>
 				<ue idUe="PF" responsable="DLB" uf="IF">
-					<codeApogee></codeApogee>
 					<intitule>Programmation fonctionnelle</intitule>
 					<coefficient>0.4</coefficient>
 					<cm>6.25</cm>
@@ -358,7 +369,6 @@
 					<tp>11</tp>
 				</ue>
 				<ue idUe="LPL" responsable="PE" uf="IF">
-					<codeApogee></codeApogee>
 					<intitule>Logique et programmation logique</intitule>
 					<coefficient>0.4</coefficient>
 					<cm>16.25</cm>
@@ -366,91 +376,158 @@
 					<tp>11</tp>
 				</ue>
 				<ue idUe="AA" responsable="MS" uf="IF">
-					<codeApogee></codeApogee>
 					<intitule>Algorithmique avancée</intitule>
 					<coefficient>0.2</coefficient>
 					<cm>6.25</cm>
 					<td>3.75</td>
-					<tp></tp>
 				</ue>
 				<ue idUe="DSI" responsable="LD" uf="SI">
-					<codeApogee></codeApogee>
 					<intitule>Direction des systèmes d'information</intitule>
 					<coefficient>0.3</coefficient>
 					<cm>10</cm>
-					<td></td>
-					<tp></tp>
 				</ue>
 				<ue idUe="MDSI" responsable="NG" uf="SI">
-					<codeApogee></codeApogee>
 					<intitule>Modèles de données et systèmes d'information</intitule>
 					<coefficient>0.7</coefficient>
 					<cm>13.75</cm>
 					<td>21.25</td>
-					<tp></tp>
 				</ue>
 				<ue idUe="IMM" responsable="VM" uf="IM">
-					<codeApogee></codeApogee>
 					<intitule>Informatique matérielle : microcontrôleurs</intitule>
 					<coefficient>1</coefficient>
 					<cm>13.75</cm>
 					<td>21.25</td>
-					<tp></tp>
 				</ue>
 			</ues>
 
 			<epreuves>
 					<epreuve idEpreuve="COO" ue="COO">
-						<intitule></intitule>
 						<nature>IE</nature>
 						<duree>1.25</duree>
 						<nApogee>E1</nApogee>
-						<coeff>0.25</coeff>
+						<coeff>0.33</coeff>
 					</epreuve>
-
 					<epreuve idEpreuve="POO" ue="POO">
-						<intitule></intitule>
-						<nature>Présentation</nature>
-						<duree></duree>
+						<nature>Projet</nature>
 						<nApogee>E2</nApogee>
-						<coeff>0.25</coeff>
+						<coeff>0.66</coeff>
 					</epreuve>
 
-					<epreuve idEpreuve="EP3" ue="UE2">
-						<intitule>Examen histoire des mineurs</intitule>
-						<nature>QCM</nature>
-						<duree>2.50</duree>
-						<nApogee>AE3</nApogee>
-						<coeff>0.15</coeff>
-					</epreuve>
-
-					<epreuve idEpreuve="EP4" ue="UE3">
-						<intitule>Projet final forge</intitule>
-						<nature>Présentation</nature>
-						<duree>3.75</duree>
-						<nApogee>AE4</nApogee>
+					<epreuve idEpreuve="IR" ue="IR">
+						<nature>IE</nature>
+						<duree>1.25</duree>
+						<nApogee>E1</nApogee>
 						<coeff>0.35</coeff>
 					</epreuve>
+					<epreuve idEpreuve="AR" ue="AR">
+						<nature>IE</nature>
+						<duree>1.25</duree>
+						<nApogee>E2</nApogee>
+						<coeff>0.3</coeff>
+					</epreuve>
+					<epreuve idEpreuve="SII" ue="SII">
+						<nature>IE</nature>
+						<duree>1.25</duree>
+						<nApogee>E3</nApogee>
+						<coeff>0.35</coeff>
+					</epreuve>
+
+					<epreuve idEpreuve="APS" ue="APS">
+						<nApogee>E1</nApogee>
+						<coeff>0.5</coeff>
+					</epreuve>
+					<epreuve idEpreuve="PPI" ue="PPI">
+						<nApogee>E2</nApogee>
+						<coeff>0.5</coeff>
+					</epreuve>
+
+					<epreuve idEpreuve="D" ue="D">
+						<nature>IE</nature>
+						<duree>1.25</duree>
+						<nApogee>E1</nApogee>
+						<coeff>0.35</coeff>
+					</epreuve>
+					<epreuve idEpreuve="F1" ue="F">
+						<nature>IE</nature>
+						<duree>1.25</duree>
+						<nApogee>E2</nApogee>
+						<coeff>0.165</coeff>
+					</epreuve>
+					<epreuve idEpreuve="F2" ue="F">
+						<nature>CC</nature>
+						<nApogee>E2</nApogee>
+						<coeff>0.165</coeff>
+					</epreuve>
+					<epreuve idEpreuve="M1" ue="M">
+						<nature>IE</nature>
+						<duree>1.25</duree>
+						<nApogee>E3</nApogee>
+						<coeff>0.165</coeff>
+					</epreuve>
+					<epreuve idEpreuve="M2" ue="M">
+						<nature>CC</nature>
+						<nApogee>E3</nApogee>
+						<coeff>0.165</coeff>
+					</epreuve>
+
+					<epreuve idEpreuve="PF" ue="PF">
+						<nature>IE</nature>
+						<duree>2</duree>
+						<nApogee>E1</nApogee>
+						<coeff>0.4</coeff>
+					</epreuve>
+					<epreuve idEpreuve="LPL" ue="LPL">
+						<nature>IE</nature>
+						<duree>1.25</duree>
+						<nApogee>E2</nApogee>
+						<coeff>0.4</coeff>
+					</epreuve>
+					<epreuve idEpreuve="AA" ue="AA">
+						<nature>IE</nature>
+						<duree>1.25</duree>
+						<nApogee>E3</nApogee>
+						<coeff>0.2</coeff>
+
+					<epreuve idEpreuve="DSI" ue="DSI">
+						<nature>IE</nature>
+						<duree>1.25</duree>
+						<nApogee>E1</nApogee>
+						<coeff>0.4</coeff>
+					</epreuve>
+					<epreuve idEpreuve="MDSI1" ue="MDSI">
+						<nature>IE</nature>
+						<duree>1.25</duree>
+						<nApogee>E2</nApogee>
+						<coeff>0.525</coeff>
+					</epreuve>
+					<epreuve idEpreuve="MDSI2" ue="MDSI">
+						<nature>Projet</nature>
+						<nApogee>E3</nApogee>
+						<coeff>0.175</coeff>
+					</epreuve>
+
+					<epreuve idEpreuve="IMM1" ue="IMM">
+						<nature>CC</nature>
+						<nApogee>E1</nApogee>
+						<coeff>0.5</coeff>
+					</epreuve>
+					<epreuve idEpreuve="IMM2" ue="IMM">
+						<nature>Projet</nature>
+						<nApogee>E2</nApogee>
+						<coeff>0.5</coeff>
+					</epreuve>
 			</epreuves>
-
-			<competences>
-				<!-- Il n'y a pas de compétences. -->
-			</competences>
-
-			<ues_competences>
-				<!-- Il n'y a pas de compétences. -->
-			</ues_competences>
 
 	</maquette>
 
 	<!-- Maquette 5IR SDBD -->
 	<maquette idMaquette="S9_5IR_AP" annee ="5" semestre="1">
 
-		<promo idPromo="SDBD" responsable="P3">
+		<promo idPromo="SDBD" responsable="MJH">
 			<intitule>Systèmes Distribitués et Big Data (SDBD)</intitule>
 		</promo>
 
-		<specialite idSpecialite="AP" responsable="P1">
+		<specialite idSpecialite="AP" responsable="PE">
 			<intitule>Analyse presprictive (AP)</intitule>
 		</specialite>
 
@@ -506,9 +583,9 @@
 			<competences>false</competences>
 		</uf>
 
-		<uf idUf="RHPE" responsable="MH">
+		<uf idUf="RHPE" responsable="HH">
 			<codeApogee>I5CCGE21</codeApogee>
-			<intitule>Relations humaines et prefessionnelles, éthique</intitule>
+			<intitule>Relations humaines et professionnelles, éthique</intitule>
 			<obligation>false</obligation>
 			<heterogene>false</heterogene>
 			<continuite>false</continuite>
