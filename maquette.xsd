@@ -6,9 +6,9 @@
 		<xs:sequence>
 			<xs:element name="nom" type="xs:string"/>
 			<xs:element name="prenom" type="xs:string"/>
-			<xs:element name="grade" type="xs:string"/>
-			<xs:element name="bureau" type="xs:string"/>
-			<xs:element name="tel" type="xs:string"/>
+			<xs:element name="grade" type="xs:string" minOccurs="0"/>
+			<xs:element name="bureau" type="xs:string" minOccurs="0"/>
+			<xs:element name="tel" type="xs:string" minOccurs="0"/>
 			<xs:element name="mail" type="xs:string"/>
 		</xs:sequence>
 		<xs:attribute name="idPersonnel" type="xs:ID"/>
@@ -27,7 +27,7 @@
 		<xs:sequence>
 			<xs:element name="acronyme" type="xs:string"/>
 			<xs:element name="nom" type="xs:string"/>
-			<xs:element name="dateCreation" type="xs:date"/>
+			<xs:element name="dateCreation" type="xs:date" minOccurs="0"/>
 		</xs:sequence>
 		<xs:attribute name="idDepartement" type="xs:ID"/>
 		<xs:attribute name="responsable" type="xs:IDREF"/>
@@ -87,7 +87,6 @@
 		<xs:sequence>
 			<xs:element name="codeApogee" type="xs:string" minOccurs="0"/>
 			<xs:element name="intitule" type="xs:string"/>
-			<xs:element name="coefficient" type="xs:float" minOccurs="0"/>
 			<xs:element name="cm" type="xs:float" minOccurs="0"/>
 			<xs:element name="td" type="xs:float" minOccurs="0"/>
 			<xs:element name="tp" type="xs:float" minOccurs="0"/>

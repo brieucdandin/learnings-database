@@ -2,7 +2,8 @@
 <!-- Lien vers le XSLT -->
 <?xml-stylesheet type="text/xsl" href= "maquette.xsl" ?>
 
-<maquettes>
+<maquettes xmlns:xs="http://www.w3.org/2001/XMLSchema-instance"
+        xs:noNamespaceSchemaLocation="maquette.xsd">
 
 		<personnels>
 			<personnel idPersonnel="P1" appDepartement="D1">
@@ -152,12 +153,12 @@
 	<!-- Maquette 5IR SDBD -->
 	<maquette idMaquette="S9_5IR_AP" annee ="5" semestre="1">
 
-		<promo idPromo="SDBD" responsable="P3">
-			<intitule>Systèmes Distribués et Big Data (SDBD)</intitule>
+		<promo idPromo="SDBD" responsable="MJH">
+			<intitule>Systèmes Distribitués et Big Data (SDBD)</intitule>
 		</promo>
 
-		<specialite idSpecialite="AP" responsable="P1">
-			<intitule>Analyse prescriptive (AP)</intitule>
+		<specialite idSpecialite="AP" responsable="PE">
+			<intitule>Analyse presprictive (AP)</intitule>
 		</specialite>
 
 		<ufs>
@@ -180,6 +181,7 @@
 				<ects>3</ects>
 				<competences>false</competences>
 			</uf>
+		</ufs>
 
 		<uf idUf="ADP" responsable="MJH">
 			<codeApogee>I5IRAD12</codeApogee>
@@ -211,7 +213,7 @@
 			<competences>false</competences>
 		</uf>
 
-		<uf idUf="RHPE" responsable="MH">
+		<uf idUf="RHPE" responsable="HH">
 			<codeApogee>I5CCGE21</codeApogee>
 			<intitule>Relations humaines et professionnelles, éthique</intitule>
 			<obligation>false</obligation>
@@ -231,6 +233,8 @@
 			<competences>false</competences>
 		</uf>
 	</ufs>
+
+
 
 		<ues>
 			<ue idUe="IL" responsable="NG" uf="ILAOS">
@@ -254,7 +258,6 @@
 
 			<ue idUe="MT" responsable="FV" uf="SF">
 				<intitule>Modèles temporels</intitule>
-				<coefficient></coefficient>
 				<cm>6.25</cm>
 				<tp>8.25</tp>
 			</ue>
@@ -267,7 +270,6 @@
 
 			<ue idUe="AEVD" responsable="GT" uf="ADP">
 				<intitule>Analyse exploratoire et visualisation de données</intitule>
-				<coefficient></coefficient>
 				<cm>10</cm>
 				<tp>13.75</tp>
 			</ue>
@@ -291,59 +293,43 @@
 			</ue>
 
 			<ue idUe="IMDV" responsable="CC" uf="ITDM">
-				<codeApogee></codeApogee>
 				<intitule>Infrastructure matérielle distribuée et virtualisée</intitule>
-				<coefficient></coefficient>
 				<cm>8.75</cm>
 				<tp>16.5</tp>
 			</ue>
 
 			<ue idUe="PC" responsable="SA" uf="PSDBD">
-				<codeApogee></codeApogee>
 				<intitule>Projet commun UF IL, SOA, ADP, INFRA</intitule>
-				<coefficient></coefficient>
 				<tp>22</tp>
 			</ue>
 
 			<ue idUe="CTDMVPSDA" responsable="MJH" uf="PSDBD">
-				<codeApogee></codeApogee>
 				<intitule>Conférence : Traitement de données massives / Vie privée / Sécurité/ Domaine d'application</intitule>
-				<coefficient></coefficient>
 				<cm>3.75</cm>
 			</ue>
 
 			<ue idUe="AGL" responsable="MAD" uf="PSDBD">
-				<codeApogee></codeApogee>
 				<intitule>Anglais</intitule>
-				<coefficient></coefficient>
 				<td>35</td>
 			</ue>
 
 			<ue idUe="MA" responsable="MH" uf="RHPE">
-				<codeApogee></codeApogee>
 				<intitule>Management d'équipe</intitule>
-				<coefficient></coefficient>
 				<cm>20</cm>
 			</ue>
 
 			<ue idUe="PSE" responsable="MH" uf="RHPE">
-				<codeApogee></codeApogee>
 				<intitule>Psychologie sociale et éthique</intitule>
-				<coefficient></coefficient>
 				<td>20</td>
 			</ue>
 
 			<ue idUe="APS" responsable="FR" uf="RHPE">
-				<codeApogee></codeApogee>
 				<intitule>Psychologie sociale et éthique</intitule>
-				<coefficient></coefficient>
 				<td>25</td>
 			</ue>
 
 			<ue idUe="PPI" responsable="TD" uf="RHPE">
-				<codeApogee></codeApogee>
 				<intitule>Psychologie sociale et éthique</intitule>
-				<coefficient></coefficient>
 				<td>10</td>
 			</ue>
 

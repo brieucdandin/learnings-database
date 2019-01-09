@@ -2,7 +2,8 @@
 <!-- Lien vers le XSLT -->
 <?xml-stylesheet type="text/xsl" href= "maquette.xsl" ?>
 
-<maquettes>
+<maquettes xmlns:xs="http://www.w3.org/2001/XMLSchema-instance"
+        xs:noNamespaceSchemaLocation="maquette.xsd">
 
 		<personnels>
 			<personnel idPersonnel="NVW" appDepartement="GEI">
@@ -623,127 +624,84 @@
 			<ue idUe="PSF" responsable="CB" uf="SF">
 				<intitule>Principes de la sureté de fonctionnement</intitule>
 				<cm>13.75</cm>
-				<td></td>
 				<tp>8.25</tp>
 			</ue>
 
 			<ue idUe="MT" responsable="FV" uf="SF">
-				<codeApogee></codeApogee>
 				<intitule>Modèles temporels</intitule>
-				<coefficient></coefficient>
 				<cm>6.25</cm>
-				<td></td>
 				<tp>8.25</tp>
 			</ue>
 
 			<ue idUe="VM" responsable="FV" uf="SF">
-				<codeApogee></codeApogee>
 				<intitule>Vérification de modèles</intitule>
-				<coefficient></coefficient>
 				<cm>8.75</cm>
-				<td></td>
 				<tp>5.5</tp>
 			</ue>
 
 			<ue idUe="AEVD" responsable="GT" uf="ADP">
-				<codeApogee></codeApogee>
 				<intitule>Analyse exploratoire et visualisation de données</intitule>
-				<coefficient></coefficient>
 				<cm>10</cm>
-				<td></td>
 				<tp>13.75</tp>
 			</ue>
 
 			<ue idUe="APP" responsable="MJH" uf="ADP">
-				<codeApogee></codeApogee>
 				<intitule>Apprentissage</intitule>
-				<coefficient></coefficient>
 				<cm>12.5</cm>
 				<tp>13.75</tp>
 			</ue>
 
 			<ue idUe="CTLAV" responsable="SY" uf="ITDM">
 				<intitule>Concepts et techniques logicielles associées à la virtualisation</intitule>
-				<coefficient></coefficient>
 				<cm>6.25</cm>
 				<tp>8.25</tp>
 			</ue>
 
 			<ue idUe="FTMDM" responsable="SY" uf="ITDM">
-				<codeApogee></codeApogee>
 				<intitule>Framework et technologies pour la manipulation de données massives</intitule>
-				<coefficient></coefficient>
 				<cm>8.75</cm>
 				<tp>16.5</tp>
 			</ue>
 
 			<ue idUe="IMDV" responsable="CC" uf="ITDM">
-				<codeApogee></codeApogee>
 				<intitule>Infrastructure matérielle distribuée et virtualisée</intitule>
-				<coefficient></coefficient>
 				<cm>8.75</cm>
 				<tp>16.5</tp>
 			</ue>
 
 			<ue idUe="PC" responsable="SA" uf="PSDBD">
-				<codeApogee></codeApogee>
 				<intitule>Projet commun UF IL, SOA, ADP, INFRA</intitule>
-				<coefficient></coefficient>
 				<tp>22</tp>
 			</ue>
 
 			<ue idUe="CTDMVPSDA" responsable="MJH" uf="PSDBD">
-				<codeApogee></codeApogee>
 				<intitule>Conférence : Traitement de données massives / Vie privée / Sécurité/ Domaine d'application</intitule>
-				<coefficient></coefficient>
 				<cm>3.75</cm>
-				<td></td>
-				<tp></tp>
 			</ue>
 
 			<ue idUe="AGL" responsable="MAD" uf="PSDBD">
-				<codeApogee></codeApogee>
 				<intitule>Anglais</intitule>
-				<coefficient></coefficient>
-				<cm></cm>
 				<td>35</td>
-				<tp></tp>
 			</ue>
 
 			<ue idUe="MA" responsable="MH" uf="RHPE">
-				<codeApogee></codeApogee>
 				<intitule>Management d'équipe</intitule>
-				<coefficient></coefficient>
 				<cm>20</cm>
-				<td></td>
-				<tp></tp>
 			</ue>
 
 			<ue idUe="PSE" responsable="MH" uf="RHPE">
-				<codeApogee></codeApogee>
 				<intitule>Psychologie sociale et éthique</intitule>
-				<coefficient></coefficient>
-				<cm></cm>
 				<td>20</td>
-				<tp></tp>
 			</ue>
 
 			<ue idUe="APS" responsable="FR" uf="RHPE">
-				<codeApogee></codeApogee>
 				<intitule>Psychologie sociale et éthique</intitule>
-				<coefficient></coefficient>
-				<cm></cm>
 				<td>25</td>
-				<tp></tp>
 			</ue>
 
 			<ue idUe="PPI" responsable="TD" uf="RHPE">
-				<codeApogee></codeApogee>
 				<intitule>Psychologie sociale et éthique</intitule>
-				<coefficient></coefficient>
-				<cm></cm>
 				<td>10</td>
-				<tp></tp>
 			</ue>
 
 			<ue idUe="TM" responsable="MJH" uf="AP">
