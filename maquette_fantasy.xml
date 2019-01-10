@@ -147,8 +147,7 @@
 			<ues_competences>
 				<ue_competence ue="UE1" competence="C1"/>
 			</ues_competences>
-
-	</maquette>
+    </maquette>
 
 	<!-- Maquette 5IR SDBD -->
 	<maquette idMaquette="S9_5IR_AP" annee ="5" semestre="1">
@@ -234,9 +233,7 @@
 		</uf>
 	</ufs>
 
-
-
-		<ues>
+	<ues>
 			<ue idUe="IL" responsable="NG" uf="ILAOS">
 				<intitule>Ingénierie logicielle</intitule>
 				<cm>11.25</cm>
@@ -272,7 +269,7 @@
 				<intitule>Analyse exploratoire et visualisation de données</intitule>
 				<cm>10</cm>
 				<tp>13.75</tp>
-			</ue>
+      </ue>
 
 			<ue idUe="APP" responsable="MJH" uf="ADP">
 				<intitule>Apprentissage</intitule>
@@ -450,7 +447,6 @@
 			<ue_competence ue="PC" competence="GP"/>
 			<ue_competence ue="CTDM" competence="OMP"/>
 		</ues_competences>
-
 </maquette>
 
 </maquettes>

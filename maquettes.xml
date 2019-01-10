@@ -2,10 +2,8 @@
 <!-- Lien vers le XSLT -->
 <?xml-stylesheet type="text/xsl" href= "maquette.xsl" ?>
 
-<maquettes xmlns:xs="http://www.w3.org/2001/XMLSchema-instance"
-        xs:noNamespaceSchemaLocation="maquette.xsd">
-
-		<personnels>
+<maquettes xmlns:xs="http://www.w3.org/2001/XMLSchema-instance" xs:noNamespaceSchemaLocation="maquette.xsd">
+  <personnels>
 			<personnel idPersonnel="NVW" appDepartement="GEI">
 				<nom>Van Wambeke</nom>
 				<prenom>Nicolas</prenom>
@@ -220,7 +218,7 @@
 
 		</personnels>
 
-		<departements>
+  <departements>
 			<departement idDepartement="GEI" responsable="DD">
 				<acronyme>GEI</acronyme>
 				<nom>Génie Electronique et Informatique</nom>
@@ -233,297 +231,295 @@
 			</departement>
 			<departement idDepartement="CAPS" responsable="PD">
 				<acronyme>CAPS</acronyme>
-				<nom>Centre d'activité physiques et sportives</nom>
+				<nom>Centre des activités physiques et sportives</nom>
 				<dateCreation>1963-10-21</dateCreation>
 			</departement>
 		</departements>
 
-		<maquette idMaquette="S7_4IR_SI" annee ="4" semestre="1">
-			<promo idPromo="IR" responsable="PP">
-				<intitule>Informatique et réseaux</intitule>
-			</promo>
+	<maquette idMaquette="S7_4IR_SI" annee ="4" semestre="1">
+		<promo idPromo="IR" responsable="PP">
+			<intitule>Informatique et réseaux</intitule>
+		</promo>
 
-			<specialite idSpecialite="SI" responsable="PP">
-				<intitule>Systèmes informatiques</intitule>
-			</specialite>
+		<specialite idSpecialite="SI" responsable="PP">
+			<intitule>Systèmes informatiques</intitule>
+		</specialite>
 
-			<ufs>
-				<uf idUf="CP" responsable="SA">
-					<codeApogee>I4IRIL11</codeApogee>
-					<intitule>Développer ses compétences managériales</intitule>
-					<obligation>true</obligation>
-					<heterogene>false</heterogene>
-					<continuite>false</continuite>
-					<ects>4</ects>
-					<competences>false</competences>
-				</uf>
-				<uf idUf="IS" responsable="EA">
-					<codeApogee>I4IRRS11</codeApogee>
-					<intitule>Internet et sécurité</intitule>
-					<obligation>true</obligation>
-					<heterogene>true</heterogene>
-					<continuite>false</continuite>
-					<ects>5</ects>
-					<competences>false</competences>
-				</uf>
-				<uf idUf="GA" responsable="SR">
-					<codeApogee>L4IRIL11</codeApogee>
-					<intitule>Grandir en autonomie</intitule>
-					<obligation>true</obligation>
-					<heterogene>true</heterogene>
-					<continuite>false</continuite>
-					<ects>5</ects>
-					<competences>false</competences>
-				</uf>
-				<uf idUf="CM" responsable="LL">
-					<codeApogee>I4CCGE11</codeApogee>
-					<intitule>Développer ses compétences managériales</intitule>
-					<obligation>true</obligation>
-					<heterogene>true</heterogene>
-					<continuite>false</continuite>
-					<ects>4</ects>
-					<competences>false</competences>
-				</uf>
-				<uf idUf="IF" responsable="PE">
-					<codeApogee>L4IRIF11</codeApogee>
-					<intitule>Informatique fondamentale</intitule>
-					<obligation>true</obligation>
-					<heterogene>false</heterogene>
-					<continuite>false</continuite>
-					<ects>6</ects>
-					<competences>false</competences>
-				</uf>
-				<uf idUf="SI" responsable="NG">
-					<codeApogee>L4IRIF21</codeApogee>
-					<intitule>Systèmes d'information</intitule>
-					<obligation>true</obligation>
-					<heterogene>true</heterogene>
-					<continuite>false</continuite>
-					<ects>3</ects>
-					<competences>false</competences>
-				</uf>
-				<uf idUf="IM" responsable="VM">
-					<codeApogee>L4IRIF31</codeApogee>
-					<intitule>Informatique matérielle : microcontrôleurs</intitule>
-					<obligation>true</obligation>
-					<heterogene>true</heterogene>
-					<continuite>false</continuite>
-					<ects>3</ects>
-					<competences>false</competences>
-				</uf>
-			</ufs>
+		<ufs>
+			<uf idUf="CP" responsable="SA">
+				<codeApogee>I4IRIL11</codeApogee>
+				<intitule>Développer ses compétences managériales</intitule>
+				<obligation>true</obligation>
+				<heterogene>false</heterogene>
+				<continuite>false</continuite>
+				<ects>4</ects>
+				<competences>false</competences>
+			</uf>
+			<uf idUf="IS" responsable="EA">
+				<codeApogee>I4IRRS11</codeApogee>
+				<intitule>Internet et sécurité</intitule>
+				<obligation>true</obligation>
+				<heterogene>true</heterogene>
+				<continuite>false</continuite>
+				<ects>5</ects>
+				<competences>false</competences>
+			</uf>
+			<uf idUf="GA" responsable="SR">
+				<codeApogee>L4IRIL11</codeApogee>
+				<intitule>Grandir en autonomie</intitule>
+				<obligation>true</obligation>
+				<heterogene>true</heterogene>
+				<continuite>false</continuite>
+				<ects>5</ects>
+				<competences>false</competences>
+			</uf>
+			<uf idUf="CM" responsable="LL">
+				<codeApogee>I4CCGE11</codeApogee>
+				<intitule>Développer ses compétences managériales</intitule>
+				<obligation>true</obligation>
+				<heterogene>true</heterogene>
+				<continuite>false</continuite>
+				<ects>4</ects>
+				<competences>false</competences>
+			</uf>
+			<uf idUf="IF" responsable="PE">
+				<codeApogee>L4IRIF11</codeApogee>
+				<intitule>Informatique fondamentale</intitule>
+				<obligation>true</obligation>
+				<heterogene>false</heterogene>
+				<continuite>false</continuite>
+				<ects>6</ects>
+				<competences>false</competences>
+			</uf>
+			<uf idUf="SI" responsable="NG">
+				<codeApogee>L4IRIF21</codeApogee>
+				<intitule>Systèmes d'information</intitule>
+				<obligation>true</obligation>
+				<heterogene>true</heterogene>
+				<continuite>false</continuite>
+				<ects>3</ects>
+				<competences>false</competences>
+			</uf>
+			<uf idUf="IM" responsable="VM">
+				<codeApogee>L4IRIF31</codeApogee>
+				<intitule>Informatique matérielle : microcontrôleurs</intitule>
+				<obligation>true</obligation>
+				<heterogene>true</heterogene>
+				<continuite>false</continuite>
+				<ects>3</ects>
+				<competences>false</competences>
+			</uf>
+		</ufs>
 
-			<ues>
-				<ue idUe="COO" responsable="NVW" uf="CP">
-					<intitule>Conception Orientée Objets</intitule>
-					<cm>10</cm>
-					<td>16.25</td>
-				</ue>
-				<ue idUe="POO" responsable="SY" uf="CP">
-					<intitule>Programmation orientée objets</intitule>
-					<cm>7.5</cm>
-					<td>8.75</td>
-					<tp>33</tp>
-				</ue>
-				<ue idUe="IR" responsable="CC" uf="IS">
-					<intitule>Interconnexion de réseaux</intitule>
-					<cm>15</cm>
-					<td>1.25</td>
-					<tp>8.25</tp>
-				</ue>
-				<ue idUe="AR" responsable="FV" uf="IS">
-					<intitule>Algorithmique répartie</intitule>
-					<cm>10</cm>
-				</ue>
-				<ue idUe="SII" responsable="VN" uf="IS">
-					<intitule>Sécurité informatique et dans l'internet</intitule>
-					<cm>17.5</cm>
-					<td>2.5</td>
-					<tp>8.25</tp>
-				</ue>
-				<ue idUe="APS" responsable="SR" uf="GA">
-					<intitule>APS</intitule>
-					<td>25</td>
-				</ue>
-				<ue idUe="PPI" responsable="VN" uf="IS">
-					<intitule>PPI</intitule>
-				</ue>
-				<ue idUe="D" responsable="LL" uf="CM">
-					<intitule>Droit</intitule>
-					<cm>15</cm>
-				</ue>
-				<ue idUe="F" responsable="CL" uf="CM">
-					<intitule>Finance</intitule>
-					<coefficient>0.33</coefficient>
-					<cm>15</cm>
-				</ue>
-				<ue idUe="M" responsable="LL" uf="CM">
-					<intitule>Marketing</intitule>
-					<coefficient>0.33</coefficient>
-					<cm>15</cm>
-				</ue>
-				<ue idUe="PF" responsable="DLB" uf="IF">
-					<intitule>Programmation fonctionnelle</intitule>
-					<coefficient>0.4</coefficient>
-					<cm>6.25</cm>
-					<td>10</td>
-					<tp>11</tp>
-				</ue>
-				<ue idUe="LPL" responsable="PE" uf="IF">
-					<intitule>Logique et programmation logique</intitule>
-					<coefficient>0.4</coefficient>
-					<cm>16.25</cm>
-					<td>7.5</td>
-					<tp>11</tp>
-				</ue>
-				<ue idUe="AA" responsable="MS" uf="IF">
-					<intitule>Algorithmique avancée</intitule>
-					<coefficient>0.2</coefficient>
-					<cm>6.25</cm>
-					<td>3.75</td>
-				</ue>
-				<ue idUe="DSI" responsable="LD" uf="SI">
-					<intitule>Direction des systèmes d'information</intitule>
-					<coefficient>0.3</coefficient>
-					<cm>10</cm>
-				</ue>
-				<ue idUe="MDSI" responsable="NG" uf="SI">
-					<intitule>Modèles de données et systèmes d'information</intitule>
-					<coefficient>0.7</coefficient>
-					<cm>13.75</cm>
-					<td>21.25</td>
-				</ue>
-				<ue idUe="IMM" responsable="VM" uf="IM">
-					<intitule>Informatique matérielle : microcontrôleurs</intitule>
-					<coefficient>1</coefficient>
-					<cm>13.75</cm>
-					<td>21.25</td>
-				</ue>
-			</ues>
+		<ues>
+			<ue idUe="COO" responsable="NVW" uf="CP">
+				<intitule>Conception Orientée Objets</intitule>
+				<cm>10</cm>
+				<td>16.25</td>
+			</ue>
+			<ue idUe="POO" responsable="SY" uf="CP">
+				<intitule>Programmation orientée objets</intitule>
+				<cm>7.5</cm>
+				<td>8.75</td>
+				<tp>33</tp>
+			</ue>
+			<ue idUe="IR" responsable="CC" uf="IS">
+				<intitule>Interconnexion de réseaux</intitule>
+				<cm>15</cm>
+				<td>1.25</td>
+				<tp>8.25</tp>
+			</ue>
+			<ue idUe="AR" responsable="FV" uf="IS">
+				<intitule>Algorithmique répartie</intitule>
+				<cm>10</cm>
+			</ue>
+			<ue idUe="SII" responsable="VN" uf="IS">
+				<intitule>Sécurité informatique et dans l'internet</intitule>
+				<cm>17.5</cm>
+				<td>2.5</td>
+				<tp>8.25</tp>
+			</ue>
+			<ue idUe="APS" responsable="SR" uf="GA">
+				<intitule>APS</intitule>
+				<td>25</td>
+			</ue>
+			<ue idUe="PPI" responsable="VN" uf="IS">
+				<intitule>PPI</intitule>
+			</ue>
+			<ue idUe="D" responsable="LL" uf="CM">
+				<intitule>Droit</intitule>
+				<cm>15</cm>
+			</ue>
+			<ue idUe="F" responsable="CL" uf="CM">
+				<intitule>Finance</intitule>
+				<coefficient>0.33</coefficient>
+				<cm>15</cm>
+			</ue>
+			<ue idUe="M" responsable="LL" uf="CM">
+				<intitule>Marketing</intitule>
+				<coefficient>0.33</coefficient>
+				<cm>15</cm>
+			</ue>
+			<ue idUe="PF" responsable="DLB" uf="IF">
+				<intitule>Programmation fonctionnelle</intitule>
+				<coefficient>0.4</coefficient>
+				<cm>6.25</cm>
+				<td>10</td>
+				<tp>11</tp>
+			</ue>
+			<ue idUe="LPL" responsable="PE" uf="IF">
+				<intitule>Logique et programmation logique</intitule>
+				<coefficient>0.4</coefficient>
+				<cm>16.25</cm>
+				<td>7.5</td>
+				<tp>11</tp>
+			</ue>
+			<ue idUe="AA" responsable="MS" uf="IF">
+				<intitule>Algorithmique avancée</intitule>
+				<coefficient>0.2</coefficient>
+				<cm>6.25</cm>
+				<td>3.75</td>
+			</ue>
+			<ue idUe="DSI" responsable="LD" uf="SI">
+				<intitule>Direction des systèmes d'information</intitule>
+				<coefficient>0.3</coefficient>
+				<cm>10</cm>
+			</ue>
+			<ue idUe="MDSI" responsable="NG" uf="SI">
+				<intitule>Modèles de données et systèmes d'information</intitule>
+				<coefficient>0.7</coefficient>
+				<cm>13.75</cm>
+				<td>21.25</td>
+			</ue>
+			<ue idUe="IMM" responsable="VM" uf="IM">
+				<intitule>Informatique matérielle : microcontrôleurs</intitule>
+				<coefficient>1</coefficient>
+				<cm>13.75</cm>
+				<td>21.25</td>
+			</ue>
+		</ues>
 
-			<epreuves>
-					<epreuve idEpreuve="COO" ue="COO">
-						<nature>IE</nature>
-						<duree>1.25</duree>
-						<nApogee>E1</nApogee>
-						<coeff>0.33</coeff>
-					</epreuve>
-					<epreuve idEpreuve="POO" ue="POO">
-						<nature>Projet</nature>
-						<nApogee>E2</nApogee>
-						<coeff>0.66</coeff>
-					</epreuve>
+		<epreuves>
+				<epreuve idEpreuve="COO" ue="COO">
+					<nature>IE</nature>
+					<duree>1.25</duree>
+					<nApogee>E1</nApogee>
+					<coeff>0.33</coeff>
+				</epreuve>
+				<epreuve idEpreuve="POO" ue="POO">
+					<nature>Projet</nature>
+					<nApogee>E2</nApogee>
+					<coeff>0.66</coeff>
+				</epreuve>
 
-					<epreuve idEpreuve="IR" ue="IR">
-						<nature>IE</nature>
-						<duree>1.25</duree>
-						<nApogee>E1</nApogee>
-						<coeff>0.35</coeff>
-					</epreuve>
-					<epreuve idEpreuve="AR" ue="AR">
-						<nature>IE</nature>
-						<duree>1.25</duree>
-						<nApogee>E2</nApogee>
-						<coeff>0.3</coeff>
-					</epreuve>
-					<epreuve idEpreuve="SII" ue="SII">
-						<nature>IE</nature>
-						<duree>1.25</duree>
-						<nApogee>E3</nApogee>
-						<coeff>0.35</coeff>
-					</epreuve>
+				<epreuve idEpreuve="IR" ue="IR">
+					<nature>IE</nature>
+					<duree>1.25</duree>
+					<nApogee>E1</nApogee>
+					<coeff>0.35</coeff>
+				</epreuve>
+				<epreuve idEpreuve="AR" ue="AR">
+					<nature>IE</nature>
+					<duree>1.25</duree>
+					<nApogee>E2</nApogee>
+					<coeff>0.3</coeff>
+				</epreuve>
+				<epreuve idEpreuve="SII" ue="SII">
+					<nature>IE</nature>
+					<duree>1.25</duree>
+					<nApogee>E3</nApogee>
+					<coeff>0.35</coeff>
+				</epreuve>
 
-					<epreuve idEpreuve="APS" ue="APS">
-						<nApogee>E1</nApogee>
-						<coeff>0.5</coeff>
-					</epreuve>
-					<epreuve idEpreuve="PPI" ue="PPI">
-						<nApogee>E2</nApogee>
-						<coeff>0.5</coeff>
-					</epreuve>
+				<epreuve idEpreuve="APS" ue="APS">
+					<nApogee>E1</nApogee>
+					<coeff>0.5</coeff>
+				</epreuve>
+				<epreuve idEpreuve="PPI" ue="PPI">
+					<nApogee>E2</nApogee>
+					<coeff>0.5</coeff>
+				</epreuve>
 
-					<epreuve idEpreuve="D" ue="D">
-						<nature>IE</nature>
-						<duree>1.25</duree>
-						<nApogee>E1</nApogee>
-						<coeff>0.35</coeff>
-					</epreuve>
-					<epreuve idEpreuve="F1" ue="F">
-						<nature>IE</nature>
-						<duree>1.25</duree>
-						<nApogee>E2</nApogee>
-						<coeff>0.165</coeff>
-					</epreuve>
-					<epreuve idEpreuve="F2" ue="F">
-						<nature>CC</nature>
-						<nApogee>E2</nApogee>
-						<coeff>0.165</coeff>
-					</epreuve>
-					<epreuve idEpreuve="M1" ue="M">
-						<nature>IE</nature>
-						<duree>1.25</duree>
-						<nApogee>E3</nApogee>
-						<coeff>0.165</coeff>
-					</epreuve>
-					<epreuve idEpreuve="M2" ue="M">
-						<nature>CC</nature>
-						<nApogee>E3</nApogee>
-						<coeff>0.165</coeff>
-					</epreuve>
+				<epreuve idEpreuve="D" ue="D">
+					<nature>IE</nature>
+					<duree>1.25</duree>
+					<nApogee>E1</nApogee>
+					<coeff>0.35</coeff>
+				</epreuve>
+				<epreuve idEpreuve="F1" ue="F">
+					<nature>IE</nature>
+					<duree>1.25</duree>
+					<nApogee>E2</nApogee>
+					<coeff>0.165</coeff>
+				</epreuve>
+				<epreuve idEpreuve="F2" ue="F">
+					<nature>CC</nature>
+					<nApogee>E2</nApogee>
+					<coeff>0.165</coeff>
+				</epreuve>
+				<epreuve idEpreuve="M1" ue="M">
+					<nature>IE</nature>
+					<duree>1.25</duree>
+					<nApogee>E3</nApogee>
+					<coeff>0.165</coeff>
+				</epreuve>
+				<epreuve idEpreuve="M2" ue="M">
+					<nature>CC</nature>
+					<nApogee>E3</nApogee>
+					<coeff>0.165</coeff>
+				</epreuve>
 
-					<epreuve idEpreuve="PF" ue="PF">
-						<nature>IE</nature>
-						<duree>2</duree>
-						<nApogee>E1</nApogee>
-						<coeff>0.4</coeff>
-					</epreuve>
-					<epreuve idEpreuve="LPL" ue="LPL">
-						<nature>IE</nature>
-						<duree>1.25</duree>
-						<nApogee>E2</nApogee>
-						<coeff>0.4</coeff>
-					</epreuve>
-					<epreuve idEpreuve="AA" ue="AA">
-						<nature>IE</nature>
-						<duree>1.25</duree>
-						<nApogee>E3</nApogee>
-						<coeff>0.2</coeff>
+				<epreuve idEpreuve="PF" ue="PF">
+					<nature>IE</nature>
+					<duree>2</duree>
+					<nApogee>E1</nApogee>
+					<coeff>0.4</coeff>
+				</epreuve>
+				<epreuve idEpreuve="LPL" ue="LPL">
+					<nature>IE</nature>
+					<duree>1.25</duree>
+					<nApogee>E2</nApogee>
+					<coeff>0.4</coeff>
+				</epreuve>
+				<epreuve idEpreuve="AA" ue="AA">
+					<nature>IE</nature>
+					<duree>1.25</duree>
+					<nApogee>E3</nApogee>
+					<coeff>0.2</coeff>
 
-					<epreuve idEpreuve="DSI" ue="DSI">
-						<nature>IE</nature>
-						<duree>1.25</duree>
-						<nApogee>E1</nApogee>
-						<coeff>0.4</coeff>
-					</epreuve>
-					<epreuve idEpreuve="MDSI1" ue="MDSI">
-						<nature>IE</nature>
-						<duree>1.25</duree>
-						<nApogee>E2</nApogee>
-						<coeff>0.525</coeff>
-					</epreuve>
-					<epreuve idEpreuve="MDSI2" ue="MDSI">
-						<nature>Projet</nature>
-						<nApogee>E3</nApogee>
-						<coeff>0.175</coeff>
-					</epreuve>
+				<epreuve idEpreuve="DSI" ue="DSI">
+					<nature>IE</nature>
+					<duree>1.25</duree>
+					<nApogee>E1</nApogee>
+					<coeff>0.4</coeff>
+				</epreuve>
+				<epreuve idEpreuve="MDSI1" ue="MDSI">
+					<nature>IE</nature>
+					<duree>1.25</duree>
+					<nApogee>E2</nApogee>
+					<coeff>0.525</coeff>
+				</epreuve>
+				<epreuve idEpreuve="MDSI2" ue="MDSI">
+					<nature>Projet</nature>
+					<nApogee>E3</nApogee>
+					<coeff>0.175</coeff>
+				</epreuve>
 
-					<epreuve idEpreuve="IMM1" ue="IMM">
-						<nature>CC</nature>
-						<nApogee>E1</nApogee>
-						<coeff>0.5</coeff>
-					</epreuve>
-					<epreuve idEpreuve="IMM2" ue="IMM">
-						<nature>Projet</nature>
-						<nApogee>E2</nApogee>
-						<coeff>0.5</coeff>
-					</epreuve>
-			</epreuves>
-
-	</maquette>
+				<epreuve idEpreuve="IMM1" ue="IMM">
+					<nature>CC</nature>
+					<nApogee>E1</nApogee>
+					<coeff>0.5</coeff>
+				</epreuve>
+				<epreuve idEpreuve="IMM2" ue="IMM">
+					<nature>Projet</nature>
+					<nApogee>E2</nApogee>
+					<coeff>0.5</coeff>
+				</epreuve>
+		</epreuves>
+  </maquette>
 
 	<!-- Maquette 5IR SDBD -->
-	<maquette idMaquette="S9_5IR_AP" annee ="5" semestre="1">
-
+  <maquette idMaquette="S9_5IR_AP" annee ="5" semestre="1">
 		<promo idPromo="SDBD" responsable="MJH">
 			<intitule>Systèmes Distribitués et Big Data (SDBD)</intitule>
 		</promo>
@@ -551,61 +547,58 @@
 				<continuite>false</continuite>
 				<ects>3</ects>
 				<competences>false</competences>
-			</uf>
-		</ufs>
+      </uf>
 
-		<uf idUf="ADP" responsable="MJH">
-			<codeApogee>I5IRAD12</codeApogee>
-			<intitule>Analyse descriptive et prédictive</intitule>
-			<obligation>false</obligation>
-			<heterogene>false</heterogene>
-			<continuite>false</continuite>
-			<ects>4</ects>
-			<competences>false</competences>
-		</uf>
+  		<uf idUf="ADP" responsable="MJH">
+  			<codeApogee>I5IRAD12</codeApogee>
+  			<intitule>Analyse descriptive et prédictive</intitule>
+  			<obligation>false</obligation>
+  			<heterogene>false</heterogene>
+  			<continuite>false</continuite>
+  			<ects>4</ects>
+  			<competences>false</competences>
+      </uf>
 
-		<uf idUf="ITDM" responsable="VN">
-			<codeApogee>I5IRBD12</codeApogee>
-			<intitule>Infrastructures pour le traitement de données massives</intitule>
-			<obligation>false</obligation>
-			<heterogene>false</heterogene>
-			<continuite>false</continuite>
-			<ects>4</ects>
-			<competences>false</competences>
-		</uf>
+  		<uf idUf="ITDM" responsable="VN">
+  			<codeApogee>I5IRBD12</codeApogee>
+  			<intitule>Infrastructures pour le traitement de données massives</intitule>
+  			<obligation>false</obligation>
+  			<heterogene>false</heterogene>
+  			<continuite>false</continuite>
+  			<ects>4</ects>
+  			<competences>false</competences>
+  		</uf>
 
-		<uf idUf="PSDBD" responsable="SA">
-			<codeApogee>I5IRPR12</codeApogee>
-			<intitule>Projet SDBD</intitule>
-			<obligation>false</obligation>
-			<heterogene>false</heterogene>
-			<continuite>false</continuite>
-			<ects>4</ects>
-			<competences>false</competences>
-		</uf>
+  		<uf idUf="PSDBD" responsable="SA">
+  			<codeApogee>I5IRPR12</codeApogee>
+  			<intitule>Projet SDBD</intitule>
+  			<obligation>false</obligation>
+  			<heterogene>false</heterogene>
+  			<continuite>false</continuite>
+  			<ects>4</ects>
+  			<competences>false</competences>
+  		</uf>
 
-		<uf idUf="RHPE" responsable="HH">
-			<codeApogee>I5CCGE21</codeApogee>
-			<intitule>Relations humaines et professionnelles, éthique</intitule>
-			<obligation>false</obligation>
-			<heterogene>false</heterogene>
-			<continuite>false</continuite>
-			<ects>5</ects>
-			<competences>false</competences>
-		</uf>
+  		<uf idUf="RHPE" responsable="HH">
+  			<codeApogee>I5CCGE21</codeApogee>
+  			<intitule>Relations humaines et professionnelles, éthique</intitule>
+  			<obligation>false</obligation>
+  			<heterogene>false</heterogene>
+  			<continuite>false</continuite>
+  			<ects>5</ects>
+  			<competences>false</competences>
+      </uf>
 
-		<uf idUf="AP" responsable="PE">
-			<codeApogee>I5IRSD12</codeApogee>
-			<intitule>Analyse prescriptive (AP)</intitule>
-			<obligation>false</obligation>
-			<heterogene>false</heterogene>
-			<continuite>false</continuite>
-			<ects>6</ects>
-			<competences>false</competences>
-		</uf>
-	</ufs>
-
-
+  		<uf idUf="AP" responsable="PE">
+        <codeApogee>I5IRSD12</codeApogee>
+        <intitule>Analyse prescriptive (AP)</intitule>
+        <obligation>false</obligation>
+        <heterogene>false</heterogene>
+        <continuite>false</continuite>
+        <ects>6</ects>
+        <competences>false</competences>
+      </uf>
+    </ufs>
 
 		<ues>
 			<ue idUe="IL" responsable="NG" uf="ILAOS">
@@ -821,7 +814,5 @@
 			<ue_competence ue="PC" competence="GP"/>
 			<ue_competence ue="CTDM" competence="OMP"/>
 		</ues_competences>
-
-</maquette>
-
+  </maquette>
 </maquettes>
