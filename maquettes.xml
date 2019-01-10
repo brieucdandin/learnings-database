@@ -173,8 +173,6 @@
 				<prenom>Claude</prenom>
 				<grade>Enseignant</grade>
 				<bureau>GEI-113</bureau>
-				<tel></tel>
-				<mail></mail>
 			</personnel>
 			<personnel idPersonnel="MJH" appDepartement="GEI">
 				<nom>Huguet</nom>
@@ -210,14 +208,13 @@
 				<grade>Enseignant</grade>
 				<bureau>CSH-B14</bureau>
 			</personnel>
-			<personnel idPersonnel="FR" appDepartement="APS">
+			<personnel idPersonnel="FR" appDepartement="CAPS">
 				<nom>Rey</nom>
 				<prenom>Françoise</prenom>
 				<grade>Enseignant</grade>
-				<mail>rey@insa-toulouse.fr</mail>
 				<tel>0512312312</tel>
+				<mail>rey@insa-toulouse.fr</mail>
 			</personnel>
-
 	</personnels>
 
   	<departements>
@@ -244,7 +241,7 @@
 			<intitule>Informatique et réseaux</intitule>
 		</promo>
 
-		<specialite idSpecialite="SI" responsable="PP">
+		<specialite idSpecialite="SSI" responsable="PP">
 			<intitule>Systèmes informatiques</intitule>
 		</specialite>
 
@@ -326,7 +323,7 @@
 				<td>8.75</td>
 				<tp>33</tp>
 			</ue>
-			<ue idUe="IR" responsable="CC" uf="IS">
+			<ue idUe="IDR" responsable="CC" uf="IS">
 				<intitule>Interconnexion de réseaux</intitule>
 				<cm>15</cm>
 				<td>1.25</td>
@@ -416,7 +413,7 @@
 					<coeff>0.66</coeff>
 				</epreuve>
 
-				<epreuve idEpreuve="EIR" ue="IR">
+				<epreuve idEpreuve="EIR" ue="IDR">
 					<nature>IE</nature>
 					<duree>1.25</duree>
 					<nApogee>E1</nApogee>
@@ -437,12 +434,12 @@
 					<coeff>0.35</coeff>
 				</epreuve>
 
-				<epreuve idEpreuve="EAPS" ue="APS">
+				<epreuve idEpreuve="EAPS4IR" ue="APS4IR">
 					<nApogee>E1</nApogee>
 					<coeff>0.5</coeff>
 				</epreuve>
 
-				<epreuve idEpreuve="EPPI" ue="PPI">
+				<epreuve idEpreuve="EPPI4IR" ue="PPI4IR">
 					<nApogee>E2</nApogee>
 					<coeff>0.5</coeff>
 				</epreuve>
@@ -694,12 +691,12 @@
 				<td>35</td>
 			</ue>
 
-			<ue idUe="MA" responsable="MH" uf="RHPE">
+			<ue idUe="MA" responsable="HH" uf="RHPE">
 				<intitule>Management d'équipe</intitule>
 				<cm>20</cm>
 			</ue>
 
-			<ue idUe="PSE" responsable="MH" uf="RHPE">
+			<ue idUe="PSE" responsable="HH" uf="RHPE">
 				<intitule>Psychologie sociale et éthique</intitule>
 				<td>20</td>
 			</ue>
@@ -788,12 +785,12 @@
 				<coeff>0.17</coeff>
 			</epreuve>
 
-			<epreuve idEpreuve="ECTDM1" ue="CTDM">
+			<epreuve idEpreuve="ECTDM1" ue="CTDMVPSDA">
 				<nature>Oral</nature>
 				<nApogee>E2</nApogee>
 				<coeff>0.11</coeff>
 			</epreuve>
-			<epreuve idEpreuve="ECTDM2" ue="CTDM">
+			<epreuve idEpreuve="ECTDM2" ue="CTDMVPSDA">
 				<nature>Ecrit</nature>
 				<nApogee>E2</nApogee>
 				<coeff>0.11</coeff>
@@ -829,7 +826,7 @@
 
 		<ues_competences>
 			<ue_competence ue="PC" competence="GP"/>
-			<ue_competence ue="CTDM" competence="OMP"/>
+			<ue_competence ue="CTDMVPSDA" competence="OMP"/>
 		</ues_competences>
     </maquette>
 </maquettes>
