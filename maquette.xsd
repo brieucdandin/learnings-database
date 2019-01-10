@@ -9,7 +9,7 @@
 			<xs:element name="grade" type="xs:string" minOccurs="0"/>
 			<xs:element name="bureau" type="xs:string" minOccurs="0"/>
 			<xs:element name="tel" type="xs:string" minOccurs="0"/>
-			<xs:element name="mail" type="xs:string"/>
+			<xs:element name="mail" type="xs:string" minOccurs="0"/>
 		</xs:sequence>
 		<xs:attribute name="idPersonnel" type="xs:ID"/>
 		<xs:attribute name="appDepartement" type="xs:IDREF"/>
@@ -90,6 +90,7 @@
 			<xs:element name="cm" type="xs:float" minOccurs="0"/>
 			<xs:element name="td" type="xs:float" minOccurs="0"/>
 			<xs:element name="tp" type="xs:float" minOccurs="0"/>
+			<xs:element name="coeff" type="xs:float" minOccurs="0"/>
 		</xs:sequence>
 		<xs:attribute name="idUe" type="xs:ID"/>
 		<xs:attribute name="responsable" type="xs:IDREF"/>

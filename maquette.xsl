@@ -52,7 +52,7 @@ xmlns="http://www.w3.org/1999/xhtml">
                   <th rowspan="2">TD</th>
                   <th rowspan="2">TP</th>
                   <th rowspan="2">Total</th>
-                  <th colspan="5">Controles</th>
+                  <th colspan="6">Controles</th>
                   <th rowspan="2">ECTS</th>
                   <th rowspan="2">Compétences</th>
                 </tr>
@@ -66,7 +66,7 @@ xmlns="http://www.w3.org/1999/xhtml">
                   <th>Intitulé</th>
                   <th>Nature</th>
                   <th>N° Apogée</th>
-                  <th>Coeff</th>
+                  <th colspan="2">Coeff</th>
                 </tr>
               </thead>
               <!-- Pied de page du tableau -->
@@ -84,7 +84,7 @@ xmlns="http://www.w3.org/1999/xhtml">
                   <th><xsl:value-of select="sum(ues/ue/cm)+sum(ues/ue/td)+sum(ues/ue/tp)"/></th>
                   <!-- Contrôles -->
                   <th><xsl:value-of select="sum(epreuves/epreuve/duree)"/></th>
-                  <th colspan="4"></th>
+                  <th colspan="5"></th>
                   <!-- Somme ECTS -->
                   <th><xsl:value-of select="sum(ufs/uf/ects)"/></th>
                   <th/>
@@ -155,7 +155,7 @@ xmlns="http://www.w3.org/1999/xhtml">
                         <xsl:value-of select="duree"/>
                       </xsl:if>
                     </td>
-                    <td colspan="4"/>
+                    <td colspan="5"/>
                     <!-- ECTS -->
                     <td><xsl:value-of select="ects"/></td>
                     <td/>
@@ -206,6 +206,8 @@ xmlns="http://www.w3.org/1999/xhtml">
                               <td><xsl:value-of select="nature"/></td>
                               <td><xsl:value-of select="nApogee"/></td>
                               <td><xsl:value-of select="coeff"/></td>
+                              <td rowspan="{$nbEpreuves}"><xsl:value-of select="/maquettes/maquette/ues/ue[@idUe=$idUe]/coefficient"/></td>
+                              <!-- ECTS -->
                               <td rowspan="{$nbEpreuves}"/>
                               <!-- Affiche la compétence si elle existe. -->
                               <td rowspan="{$nbEpreuves}"><xsl:value-of select="/maquettes/maquette/competences/competence[@idCompetence = /maquettes/maquette/ues_competences/ue_competence[@ue=$idUe]/@competence]/intitule"/></td>
