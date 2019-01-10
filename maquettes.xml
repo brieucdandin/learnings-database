@@ -3,7 +3,7 @@
 <?xml-stylesheet type="text/xsl" href= "maquette.xsl" ?>
 
 <maquettes xmlns:xs="http://www.w3.org/2001/XMLSchema-instance" xs:noNamespaceSchemaLocation="maquette.xsd">
-  <personnels>
+    <personnels>
 			<personnel idPersonnel="NVW" appDepartement="GEI">
 				<nom>Van Wambeke</nom>
 				<prenom>Nicolas</prenom>
@@ -173,6 +173,8 @@
 				<prenom>Claude</prenom>
 				<grade>Enseignant</grade>
 				<bureau>GEI-113</bureau>
+				<tel></tel>
+				<mail></mail>
 			</personnel>
 			<personnel idPersonnel="MJH" appDepartement="GEI">
 				<nom>Huguet</nom>
@@ -216,9 +218,9 @@
 				<tel>0512312312</tel>
 			</personnel>
 
-		</personnels>
+	</personnels>
 
-  <departements>
+  	<departements>
 			<departement idDepartement="GEI" responsable="DD">
 				<acronyme>GEI</acronyme>
 				<nom>Génie Electronique et Informatique</nom>
@@ -234,7 +236,8 @@
 				<nom>Centre des activités physiques et sportives</nom>
 				<dateCreation>1963-10-21</dateCreation>
 			</departement>
-		</departements>
+	
+	</departements>
 
 	<maquette idMaquette="S7_4IR_SI" annee ="4" semestre="1">
 		<promo idPromo="IR" responsable="PP">
@@ -339,11 +342,11 @@
 				<td>2.5</td>
 				<tp>8.25</tp>
 			</ue>
-			<ue idUe="APS" responsable="SR" uf="GA">
+			<ue idUe="APS4IR" responsable="SR" uf="GA">
 				<intitule>APS</intitule>
 				<td>25</td>
 			</ue>
-			<ue idUe="PPI" responsable="VN" uf="IS">
+			<ue idUe="PPI4IR" responsable="VN" uf="IS">
 				<intitule>PPI</intitule>
 			</ue>
 			<ue idUe="D" responsable="LL" uf="CM">
@@ -400,131 +403,145 @@
 		</ues>
 
 		<epreuves>
-				<epreuve idEpreuve="COO" ue="COO">
+				<epreuve idEpreuve="ECOO" ue="COO">
 					<nature>IE</nature>
 					<duree>1.25</duree>
 					<nApogee>E1</nApogee>
 					<coeff>0.33</coeff>
 				</epreuve>
-				<epreuve idEpreuve="POO" ue="POO">
+
+				<epreuve idEpreuve="EPOO" ue="POO">
 					<nature>Projet</nature>
 					<nApogee>E2</nApogee>
 					<coeff>0.66</coeff>
 				</epreuve>
 
-				<epreuve idEpreuve="IR" ue="IR">
+				<epreuve idEpreuve="EIR" ue="IR">
 					<nature>IE</nature>
 					<duree>1.25</duree>
 					<nApogee>E1</nApogee>
 					<coeff>0.35</coeff>
 				</epreuve>
-				<epreuve idEpreuve="AR" ue="AR">
+
+				<epreuve idEpreuve="EAR" ue="AR">
 					<nature>IE</nature>
 					<duree>1.25</duree>
 					<nApogee>E2</nApogee>
 					<coeff>0.3</coeff>
 				</epreuve>
-				<epreuve idEpreuve="SII" ue="SII">
+
+				<epreuve idEpreuve="ESII" ue="SII">
 					<nature>IE</nature>
 					<duree>1.25</duree>
 					<nApogee>E3</nApogee>
 					<coeff>0.35</coeff>
 				</epreuve>
 
-				<epreuve idEpreuve="APS" ue="APS">
+				<epreuve idEpreuve="EAPS" ue="APS">
 					<nApogee>E1</nApogee>
 					<coeff>0.5</coeff>
 				</epreuve>
-				<epreuve idEpreuve="PPI" ue="PPI">
+
+				<epreuve idEpreuve="EPPI" ue="PPI">
 					<nApogee>E2</nApogee>
 					<coeff>0.5</coeff>
 				</epreuve>
 
-				<epreuve idEpreuve="D" ue="D">
+				<epreuve idEpreuve="ED" ue="D">
 					<nature>IE</nature>
 					<duree>1.25</duree>
 					<nApogee>E1</nApogee>
 					<coeff>0.35</coeff>
 				</epreuve>
-				<epreuve idEpreuve="F1" ue="F">
+
+				<epreuve idEpreuve="EF1" ue="F">
 					<nature>IE</nature>
 					<duree>1.25</duree>
 					<nApogee>E2</nApogee>
 					<coeff>0.165</coeff>
 				</epreuve>
-				<epreuve idEpreuve="F2" ue="F">
+
+				<epreuve idEpreuve="EF2" ue="F">
 					<nature>CC</nature>
 					<nApogee>E2</nApogee>
 					<coeff>0.165</coeff>
 				</epreuve>
-				<epreuve idEpreuve="M1" ue="M">
+
+				<epreuve idEpreuve="EM1" ue="M">
 					<nature>IE</nature>
 					<duree>1.25</duree>
 					<nApogee>E3</nApogee>
 					<coeff>0.165</coeff>
 				</epreuve>
-				<epreuve idEpreuve="M2" ue="M">
+
+				<epreuve idEpreuve="EM2" ue="M">
 					<nature>CC</nature>
 					<nApogee>E3</nApogee>
 					<coeff>0.165</coeff>
 				</epreuve>
 
-				<epreuve idEpreuve="PF" ue="PF">
+				<epreuve idEpreuve="EPF" ue="PF">
 					<nature>IE</nature>
 					<duree>2</duree>
 					<nApogee>E1</nApogee>
 					<coeff>0.4</coeff>
 				</epreuve>
-				<epreuve idEpreuve="LPL" ue="LPL">
+
+				<epreuve idEpreuve="ELPL" ue="LPL">
 					<nature>IE</nature>
 					<duree>1.25</duree>
 					<nApogee>E2</nApogee>
 					<coeff>0.4</coeff>
 				</epreuve>
-				<epreuve idEpreuve="AA" ue="AA">
+
+				<epreuve idEpreuve="EAA" ue="AA">
 					<nature>IE</nature>
 					<duree>1.25</duree>
 					<nApogee>E3</nApogee>
 					<coeff>0.2</coeff>
+				</epreuve>
 
-				<epreuve idEpreuve="DSI" ue="DSI">
+				<epreuve idEpreuve="EDSI" ue="DSI">
 					<nature>IE</nature>
 					<duree>1.25</duree>
 					<nApogee>E1</nApogee>
 					<coeff>0.4</coeff>
 				</epreuve>
-				<epreuve idEpreuve="MDSI1" ue="MDSI">
+
+				<epreuve idEpreuve="EMDSI1" ue="MDSI">
 					<nature>IE</nature>
 					<duree>1.25</duree>
 					<nApogee>E2</nApogee>
 					<coeff>0.525</coeff>
 				</epreuve>
-				<epreuve idEpreuve="MDSI2" ue="MDSI">
+
+				<epreuve idEpreuve="EMDSI2" ue="MDSI">
 					<nature>Projet</nature>
 					<nApogee>E3</nApogee>
 					<coeff>0.175</coeff>
 				</epreuve>
 
-				<epreuve idEpreuve="IMM1" ue="IMM">
+				<epreuve idEpreuve="EIMM1" ue="IMM">
 					<nature>CC</nature>
 					<nApogee>E1</nApogee>
 					<coeff>0.5</coeff>
 				</epreuve>
-				<epreuve idEpreuve="IMM2" ue="IMM">
+
+				<epreuve idEpreuve="EIMM2" ue="IMM">
 					<nature>Projet</nature>
 					<nApogee>E2</nApogee>
 					<coeff>0.5</coeff>
 				</epreuve>
 		</epreuves>
-  </maquette>
+  	</maquette>
 
 	<!-- Maquette 5IR SDBD -->
-  <maquette idMaquette="S9_5IR_AP" annee ="5" semestre="1">
+  	<maquette idMaquette="S9_5IR_AP" annee ="5" semestre="1">
 		<promo idPromo="SDBD" responsable="MJH">
 			<intitule>Systèmes Distribitués et Big Data (SDBD)</intitule>
 		</promo>
 
-		<specialite idSpecialite="AP" responsable="PE">
+		<specialite idSpecialite="SAP" responsable="PE">
 			<intitule>Analyse presprictive (AP)</intitule>
 		</specialite>
 
@@ -547,58 +564,58 @@
 				<continuite>false</continuite>
 				<ects>3</ects>
 				<competences>false</competences>
-      </uf>
+	  		</uf>
 
-  		<uf idUf="ADP" responsable="MJH">
-  			<codeApogee>I5IRAD12</codeApogee>
-  			<intitule>Analyse descriptive et prédictive</intitule>
-  			<obligation>false</obligation>
-  			<heterogene>false</heterogene>
-  			<continuite>false</continuite>
-  			<ects>4</ects>
-  			<competences>false</competences>
-      </uf>
+			<uf idUf="ADP" responsable="MJH">
+				<codeApogee>I5IRAD12</codeApogee>
+				<intitule>Analyse descriptive et prédictive</intitule>
+				<obligation>false</obligation>
+				<heterogene>false</heterogene>
+				<continuite>false</continuite>
+				<ects>4</ects>
+				<competences>false</competences>
+	        </uf>
 
-  		<uf idUf="ITDM" responsable="VN">
-  			<codeApogee>I5IRBD12</codeApogee>
-  			<intitule>Infrastructures pour le traitement de données massives</intitule>
-  			<obligation>false</obligation>
-  			<heterogene>false</heterogene>
-  			<continuite>false</continuite>
-  			<ects>4</ects>
-  			<competences>false</competences>
-  		</uf>
+	  		<uf idUf="ITDM" responsable="VN">
+	  			<codeApogee>I5IRBD12</codeApogee>
+	  			<intitule>Infrastructures pour le traitement de données massives</intitule>
+	  			<obligation>false</obligation>
+	  			<heterogene>false</heterogene>
+	  			<continuite>false</continuite>
+	  			<ects>4</ects>
+	  			<competences>false</competences>
+	  		</uf>
 
-  		<uf idUf="PSDBD" responsable="SA">
-  			<codeApogee>I5IRPR12</codeApogee>
-  			<intitule>Projet SDBD</intitule>
-  			<obligation>false</obligation>
-  			<heterogene>false</heterogene>
-  			<continuite>false</continuite>
-  			<ects>4</ects>
-  			<competences>false</competences>
-  		</uf>
+	  		<uf idUf="PSDBD" responsable="SA">
+	  			<codeApogee>I5IRPR12</codeApogee>
+	  			<intitule>Projet SDBD</intitule>
+	  			<obligation>false</obligation>
+	  			<heterogene>false</heterogene>
+	  			<continuite>false</continuite>
+	  			<ects>4</ects>
+	  			<competences>false</competences>
+	  		</uf>
 
-  		<uf idUf="RHPE" responsable="HH">
-  			<codeApogee>I5CCGE21</codeApogee>
-  			<intitule>Relations humaines et professionnelles, éthique</intitule>
-  			<obligation>false</obligation>
-  			<heterogene>false</heterogene>
-  			<continuite>false</continuite>
-  			<ects>5</ects>
-  			<competences>false</competences>
-      </uf>
+	  		<uf idUf="RHPE" responsable="HH">
+	  			<codeApogee>I5CCGE21</codeApogee>
+	  			<intitule>Relations humaines et professionnelles, éthique</intitule>
+	  			<obligation>false</obligation>
+	  			<heterogene>false</heterogene>
+	  			<continuite>false</continuite>
+	  			<ects>5</ects>
+	  			<competences>false</competences>
+	        </uf>
 
-  		<uf idUf="AP" responsable="PE">
-        <codeApogee>I5IRSD12</codeApogee>
-        <intitule>Analyse prescriptive (AP)</intitule>
-        <obligation>false</obligation>
-        <heterogene>false</heterogene>
-        <continuite>false</continuite>
-        <ects>6</ects>
-        <competences>false</competences>
-      </uf>
-    </ufs>
+	  		<uf idUf="AP" responsable="PE">
+		        <codeApogee>I5IRSD12</codeApogee>
+		        <intitule>Analyse prescriptive (AP)</intitule>
+		        <obligation>false</obligation>
+		        <heterogene>false</heterogene>
+		        <continuite>false</continuite>
+		        <ects>6</ects>
+		        <competences>false</competences>
+		    </uf>
+	    </ufs>
 
 		<ues>
 			<ue idUe="IL" responsable="NG" uf="ILAOS">
@@ -626,7 +643,7 @@
 				<tp>8.25</tp>
 			</ue>
 
-			<ue idUe="VM" responsable="FV" uf="SF">
+			<ue idUe="VDM" responsable="FV" uf="SF">
 				<intitule>Vérification de modèles</intitule>
 				<cm>8.75</cm>
 				<tp>5.5</tp>
@@ -717,87 +734,87 @@
 		</ues>
 
 		<epreuves>
-				<epreuve idEpreuve="EPSF" ue="PSF">
-					<nature>Autre</nature>
-					<nApogee>E1</nApogee>
-					<coeff>0.33</coeff>
-				</epreuve>
+			<epreuve idEpreuve="EPSF" ue="PSF">
+				<nature>Autre</nature>
+				<nApogee>E1</nApogee>
+				<coeff>0.33</coeff>
+			</epreuve>
 
-				<epreuve idEpreuve="EMT" ue="MT">
-					<nature>IE</nature>
-					<nApogee>E2</nApogee>
-					<coeff>0.33</coeff>
-				</epreuve>
+			<epreuve idEpreuve="EMT" ue="MT">
+				<nature>IE</nature>
+				<nApogee>E2</nApogee>
+				<coeff>0.33</coeff>
+			</epreuve>
 
-				<epreuve idEpreuve="EVM" ue="VM">
-					<nature>IE</nature>
-					<nApogee>E3</nApogee>
-					<coeff>0.33</coeff>
-				</epreuve>
+			<epreuve idEpreuve="EVM" ue="VDM">
+				<nature>IE</nature>
+				<nApogee>E3</nApogee>
+				<coeff>0.33</coeff>
+			</epreuve>
 
-				<epreuve idEpreuve="ECTLAV" ue="CTLAV">
-					<nature>IE</nature>
-					<nApogee>E1</nApogee>
-					<coeff>0.45</coeff>
-				</epreuve>
+			<epreuve idEpreuve="ECTLAV" ue="CTLAV">
+				<nature>IE</nature>
+				<nApogee>E1</nApogee>
+				<coeff>0.45</coeff>
+			</epreuve>
 
-				<epreuve idEpreuve="EFTMDM" ue="FTMDM">
-					<nature>Soutenance</nature>
-					<nApogee>E2</nApogee>
-					<coeff>0.30</coeff>
-				</epreuve>
+			<epreuve idEpreuve="EFTMDM" ue="FTMDM">
+				<nature>Soutenance</nature>
+				<nApogee>E2</nApogee>
+				<coeff>0.30</coeff>
+			</epreuve>
 
-				<epreuve idEpreuve="EIMDV" ue="IMDV">
-					<nature>IE</nature>
-					<nApogee>E3</nApogee>
-					<coeff>0.25</coeff>
-				</epreuve>
+			<epreuve idEpreuve="EIMDV" ue="IMDV">
+				<nature>IE</nature>
+				<nApogee>E3</nApogee>
+				<coeff>0.25</coeff>
+			</epreuve>
 
-				<epreuve idEpreuve="EAGL1" ue="AGL">
-					<nature>Rapport</nature>
-				</epreuve>
-				<epreuve idEpreuve="EAGL2" ue="AGL">
-					<nature>Soutenance</nature>
-				</epreuve>
+			<epreuve idEpreuve="EAGL1" ue="AGL">
+				<nature>Rapport</nature>
+			</epreuve>
+			<epreuve idEpreuve="EAGL2" ue="AGL">
+				<nature>Soutenance</nature>
+			</epreuve>
 
-				<epreuve idEpreuve="EPC1" ue="PC">
-					<nature>Oral</nature>
-					<nApogee>E1</nApogee>
-					<coeff>0.17</coeff>
-				</epreuve>
-				<epreuve idEpreuve="EPC2" ue="PC">
-					<nature>Ecrit</nature>
-					<nApogee>E1</nApogee>
-					<coeff>0.17</coeff>
-				</epreuve>
+			<epreuve idEpreuve="EPC1" ue="PC">
+				<nature>Oral</nature>
+				<nApogee>E1</nApogee>
+				<coeff>0.17</coeff>
+			</epreuve>
+			<epreuve idEpreuve="EPC2" ue="PC">
+				<nature>Ecrit</nature>
+				<nApogee>E1</nApogee>
+				<coeff>0.17</coeff>
+			</epreuve>
 
-				<epreuve idEpreuve="ECTDM1" ue="CTDM">
-					<nature>Oral</nature>
-					<nApogee>E2</nApogee>
-					<coeff>0.11</coeff>
-				</epreuve>
-				<epreuve idEpreuve="ECTDM2" ue="CTDM">
-					<nature>Ecrit</nature>
-					<nApogee>E2</nApogee>
-					<coeff>0.11</coeff>
-				</epreuve>
+			<epreuve idEpreuve="ECTDM1" ue="CTDM">
+				<nature>Oral</nature>
+				<nApogee>E2</nApogee>
+				<coeff>0.11</coeff>
+			</epreuve>
+			<epreuve idEpreuve="ECTDM2" ue="CTDM">
+				<nature>Ecrit</nature>
+				<nApogee>E2</nApogee>
+				<coeff>0.11</coeff>
+			</epreuve>
 
-				<epreuve idEpreuve="EAPS" ue="APS">
-					<nature>Stage</nature>
-					<nApogee>E3</nApogee>
-					<coeff>0.22</coeff>
-				</epreuve>
+			<epreuve idEpreuve="EAPS" ue="APS">
+				<nature>Stage</nature>
+				<nApogee>E3</nApogee>
+				<coeff>0.22</coeff>
+			</epreuve>
 
-				<epreuve idEpreuve="EPPI1" ue="PPI">
-					<nature>Oral</nature>
-					<nApogee>E4</nApogee>
-					<coeff>0.11</coeff>
-				</epreuve>
-				<epreuve idEpreuve="EPPI2" ue="PPI">
-					<nature>Rapport</nature>
-					<nApogee>E4</nApogee>
-					<coeff>0.11</coeff>
-				</epreuve>
+			<epreuve idEpreuve="EPPI1" ue="PPI">
+				<nature>Oral</nature>
+				<nApogee>E4</nApogee>
+				<coeff>0.11</coeff>
+			</epreuve>
+			<epreuve idEpreuve="EPPI2" ue="PPI">
+				<nature>Rapport</nature>
+				<nApogee>E4</nApogee>
+				<coeff>0.11</coeff>
+			</epreuve>
 		</epreuves>
 
 		<competences>
@@ -814,5 +831,8 @@
 			<ue_competence ue="PC" competence="GP"/>
 			<ue_competence ue="CTDM" competence="OMP"/>
 		</ues_competences>
-  </maquette>
+    </maquette>
 </maquettes>
+
+
+
