@@ -129,7 +129,7 @@
 						<nature>QCM</nature>
 						<duree>2.50</duree>
 						<nApogee>AE3</nApogee>
-						<coeff>0.25</coeff>
+						<coeff>1</coeff>
 					</epreuve>
 
 					<epreuve idEpreuve="EP4" ue="UE3">
@@ -137,7 +137,7 @@
 						<nature>Présentation</nature>
 						<duree>3.75</duree>
 						<nApogee>AE4</nApogee>
-						<coeff>0.75</coeff>
+						<coeff>1</coeff>
 					</epreuve>
 			</epreuves>
 

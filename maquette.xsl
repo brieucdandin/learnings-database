@@ -205,8 +205,8 @@ xmlns="http://www.w3.org/1999/xhtml">
                               <td><xsl:value-of select="intitule"/></td>
                               <td><xsl:value-of select="nature"/></td>
                               <td><xsl:value-of select="nApogee"/></td>
-                              <td><xsl:value-of select="coeff"/></td>
-                              <td rowspan="{$nbEpreuves}"><xsl:value-of select="/maquettes/maquette/ues/ue[@idUe=$idUe]/coefficient"/></td>
+                              <td><xsl:value-of select="coeff[not(.='1')]"/></td>
+                              <td rowspan="{$nbEpreuves}"><xsl:value-of select="/maquettes/maquette/ues/ue[@idUe=$idUe]/coefficient[not(.='1')]"/></td>
                               <!-- ECTS -->
                               <td rowspan="{$nbEpreuves}"/>
                               <!-- Affiche la compétence si elle existe. -->
@@ -219,7 +219,7 @@ xmlns="http://www.w3.org/1999/xhtml">
                               <td><xsl:value-of select="intitule"/></td>
                               <td><xsl:value-of select="nature"/></td>
                               <td><xsl:value-of select="nApogee"/></td>
-                              <td><xsl:value-of select="coeff"/></td>
+                              <td><xsl:value-of select="coeff[not(.='1')]"/></td>
                             </tr>
                           </xsl:otherwise>
                         </xsl:choose>

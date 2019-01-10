@@ -112,7 +112,6 @@
 			<xs:element name="nature" type="xs:string" minOccurs="0"/>
 			<xs:element name="duree" type="xs:float" minOccurs="0"/>
 			<xs:element name="nApogee" type="xs:string" minOccurs="0"/>
-			<!-- Attention : Le coeff de l'épreuve correspond à celui par rapport à l'UF et non à l'UE. -->
 			<xs:element name="coeff" type="xs:float" minOccurs="0"/>
 		</xs:sequence>
 		<xs:attribute name="idEpreuve" type="xs:ID"/>
