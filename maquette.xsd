@@ -85,9 +85,9 @@
 
 	<xs:complexType name="ueType">
 		<xs:sequence>
-			<xs:element name="coefficient" type="xs:float" minOccurs="0"/>
 			<xs:element name="codeApogee" type="xs:string" minOccurs="0"/>
 			<xs:element name="intitule" type="xs:string"/>
+			<xs:element name="coefficient" type="xs:float" minOccurs="0"/>
 			<xs:element name="cm" type="xs:float" minOccurs="0"/>
 			<xs:element name="td" type="xs:float" minOccurs="0"/>
 			<xs:element name="tp" type="xs:float" minOccurs="0"/>
