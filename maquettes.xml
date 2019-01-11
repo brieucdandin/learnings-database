@@ -17,7 +17,6 @@
 				<grade>Enseignante</grade>
 				<bureau>GEI-103</bureau>
 				<tel>0611000354</tel>
-				<mail>lebestnain@moria.dw</mail>
 			</personnel>
 			<personnel idPersonnel="SA" appDepartement="GEI">
 				<nom>Abdellatif</nom>
@@ -176,34 +175,37 @@
 			</personnel>
 			<personnel idPersonnel="MJH" appDepartement="GEI">
 				<nom>Huguet</nom>
-				<prenom>Marie-Jo</prenom>
+				<prenom>Marie-José</prenom>
 				<grade>Enseignant</grade>
 				<bureau>GEI-120</bureau>
 				<tel>0599772235</tel>
+				<mail>huguet@laas.fr</mail>
 			</personnel>
 			<personnel idPersonnel="GT" appDepartement="GEI">
-				<nom>Tredan</nom>
-				<prenom>G.</prenom>
+				<nom>Trédan</nom>
+				<prenom>Gilles</prenom>
 				<grade>Enseignant</grade>
 				<bureau>GEI-118</bureau>
+				<tel>0561336877</tel>
+				<mail> tredan@laas.fr</mail>
 			</personnel>
 			<personnel idPersonnel="MAD" appDepartement="CSH">
-				<nom>Detourbe</nom>
-				<prenom>M.A.</prenom>
+				<nom>Détourbe</nom>
+				<prenom>Marie-Agnès</prenom>
 				<grade>Enseignant</grade>
 				<bureau>CSH-B10</bureau>
 				<mail>ma.detourbe@insa-toulouse.fr</mail>
 			</personnel>
 			<personnel idPersonnel="HH" appDepartement="CSH">
 				<nom>Hereng</nom>
-				<prenom>H.</prenom>
+				<prenom>Hélène</prenom>
 				<grade>Enseignant</grade>
 				<bureau>CSH-B14</bureau>
 				<mail>h.hereng@insa-toulouse.fr</mail>
 			</personnel>
 			<personnel idPersonnel="NN" appDepartement="CSH">
 				<nom>Negrel</nom>
-				<prenom>N.</prenom>
+				<prenom>Nathalie</prenom>
 				<grade>Enseignant</grade>
 				<bureau>CSH-B14</bureau>
 			</personnel>
@@ -214,12 +216,26 @@
 				<tel>0512312312</tel>
 				<mail>rey@insa-toulouse.fr</mail>
 			</personnel>
+			<personnel idPersonnel="PA" appDepartement="GEI">
+				<nom>Acco</nom>
+				<prenom>Pascal</prenom>
+				<grade>Enseignant</grade>
+				<tel>0561336247</tel>
+				<mail>pascal.acco@laas.fr</mail>
+			</personnel>
+			<personnel idPersonnel="GA" appDepartement="GEI">
+				<nom>Auriol</nom>
+				<prenom>Guillaume</prenom>
+				<grade>Enseignant</grade>
+				<tel>0561336919</tel>
+				<mail>guillaume.auriol@laas.fr</mail>
+			</personnel>
 	</personnels>
 
   	<departements>
 			<departement idDepartement="GEI" responsable="DD">
 				<acronyme>GEI</acronyme>
-				<nom>Génie Electronique et Informatique</nom>
+				<nom>ÉGénie Électronique et Informatique</nom>
 				<dateCreation>1963-10-21</dateCreation>
 			</departement>
 			<departement idDepartement="CSH" responsable="LL">
@@ -547,7 +563,7 @@
 		</epreuves>
   	</maquette>
 
-	<!-- Maquette 5IR SDBD -->
+  	<!-- Maquette 5IR SDBD -->
   	<maquette idMaquette="S9_5IR_AP" annee ="5" semestre="1">
 		<promo idPromo="SDBD" responsable="MJH">
 			<intitule>Systèmes Distribitués et Big Data</intitule>
@@ -710,7 +726,7 @@
 			</ue>
 
 			<ue idUe="CTDMVPSDA" responsable="MJH" uf="PSDBD">
-				<intitule>Conférence : Traitement de données massives / Vie privée / Sécurité/ Domaine d'application</intitule>
+				<intitule>Conférence : Traitement de données massives / Vie privée / Sécurité / Domaine d'application</intitule>
         <coefficient>0.33</coefficient>
         <cm>3.75</cm>
 			</ue>
