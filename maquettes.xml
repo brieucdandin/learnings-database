@@ -240,7 +240,7 @@
       <acronyme>IR</acronyme>
 		</promo>
 
-		<specialite idSpecialite="SSI" responsable="PP">
+		<specialite idSpecialite="SSI">
 			<intitule>Systèmes informatiques</intitule>
       <acronyme>SI</acronyme>
 		</specialite>
@@ -607,7 +607,7 @@
 	  			<heterogene>false</heterogene>
 	  			<continuite>false</continuite>
 	  			<ects>4</ects>
-	  			<competences>false</competences>
+	  			<competences>true</competences>
 	  		</uf>
 
 	  		<uf idUf="RHPE" responsable="HH">
@@ -721,7 +721,7 @@
 				<td>35</td>
 			</ue>
 
-			<ue idUe="MA" responsable="HH" uf="RHPE">
+			<ue idUe="ME" responsable="HH" uf="RHPE">
 				<intitule>Management d'équipe</intitule>
         <coefficient>0.34</coefficient>
 				<cm>20</cm>
@@ -733,14 +733,14 @@
 				<td>20</td>
 			</ue>
 
-			<ue idUe="APS" responsable="FR" uf="RHPE">
-				<intitule>Psychologie sociale et éthique</intitule>
+			<ue idUe="APS5IR" responsable="FR" uf="RHPE">
+				<intitule>Activités physiques et sportives</intitule>
         <coefficient>0.22</coefficient>
 				<td>25</td>
 			</ue>
 
 			<ue idUe="PPI" responsable="TD" uf="RHPE">
-				<intitule>Psychologie sociale et éthique</intitule>
+				<intitule>Projet professionnel individualisé</intitule>
         <coefficient>0.22</coefficient>
 				<td>10</td>
 			</ue>
@@ -813,29 +813,29 @@
         <coeff>0.5</coeff>
 			</epreuve>
 
-			<epreuve idEpreuve="EPC1" ue="PC">
+			<epreuve idEpreuve="EME1" ue="ME">
 				<nature>Oral</nature>
 				<nApogee>E1</nApogee>
 				<coeff>0.5</coeff>
 			</epreuve>
-			<epreuve idEpreuve="EPC2" ue="PC">
+			<epreuve idEpreuve="EME2" ue="ME">
 				<nature>Ecrit</nature>
 				<nApogee>E1</nApogee>
 				<coeff>0.5</coeff>
 			</epreuve>
 
-			<epreuve idEpreuve="ECTDM1" ue="CTDMVPSDA">
+			<epreuve idEpreuve="EPSE1" ue="PSE">
 				<nature>Oral</nature>
 				<nApogee>E2</nApogee>
 				<coeff>0.5</coeff>
 			</epreuve>
-			<epreuve idEpreuve="ECTDM2" ue="CTDMVPSDA">
+			<epreuve idEpreuve="EPSE2" ue="PSE">
 				<nature>Ecrit</nature>
 				<nApogee>E2</nApogee>
 				<coeff>0.5</coeff>
 			</epreuve>
 
-			<epreuve idEpreuve="EAPS" ue="APS">
+			<epreuve idEpreuve="EAPS5IR" ue="APS5IR">
 				<nature>Stage</nature>
 				<nApogee>E3</nApogee>
 				<coeff>1</coeff>
