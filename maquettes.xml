@@ -3,7 +3,8 @@
 <?xml-stylesheet type="text/xsl" href= "maquette.xsl" ?>
 
 <maquettes xmlns:xs="http://www.w3.org/2001/XMLSchema-instance" xs:noNamespaceSchemaLocation="maquette.xsd">
-    <personnels>
+	<!-- Liste des personnels -->
+	<personnels>
 			<personnel idPersonnel="NVW" appDepartement="GEI">
 				<nom>Van Wambeke</nom>
 				<prenom>Nicolas</prenom>
@@ -232,7 +233,8 @@
 			</personnel>
 	</personnels>
 
-  	<departements>
+	<!-- Liste des départements -->
+	<departements>
 			<departement idDepartement="GEI" responsable="DD">
 				<acronyme>GEI</acronyme>
 				<nom>ÉGénie Électronique et Informatique</nom>
@@ -250,6 +252,7 @@
 			</departement>
 	</departements>
 
+	<!-- Maquette 4IR SI -->
 	<maquette idMaquette="S7_4IR_SI" annee ="4" semestre="1">
 		<promo idPromo="IR" responsable="PP">
 			<intitule>Informatique et réseaux</intitule>
@@ -563,10 +566,10 @@
 		</epreuves>
   	</maquette>
 
-  	<!-- Maquette 5IR SDBD -->
-  	<maquette idMaquette="S9_5IR_AP" annee ="5" semestre="1">
+	<!-- Maquette 5IR SDBD -->
+	<maquette idMaquette="S9_5IR_AP" annee ="5" semestre="1">
 		<promo idPromo="SDBD" responsable="MJH">
-			<intitule>Systèmes Distribitués et Big Data</intitule>
+			<intitule>Systèmes Distribiués et Big Data</intitule>
       <acronyme>SDBD</acronyme>
 		</promo>
 
