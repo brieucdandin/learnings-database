@@ -44,6 +44,7 @@
 	<xs:complexType name="promoType">
 		<xs:sequence>
 			<xs:element name="intitule" type="xs:string"/>
+			<xs:element name="acronyme" type="xs:string"/>
 		</xs:sequence>
 		<xs:attribute name="idPromo" type="xs:ID"/>
 		<xs:attribute name="responsable" type="xs:IDREF"/>
@@ -54,6 +55,7 @@
 	<xs:complexType name="specialiteType">
 		<xs:sequence>
 			<xs:element name="intitule" type="xs:string"/>
+			<xs:element name="acronyme" type="xs:string"/>
 		</xs:sequence>
 		<xs:attribute name="idSpecialite" type="xs:ID"/>
 		<xs:attribute name="responsable" type="xs:IDREF" use="optional"/>

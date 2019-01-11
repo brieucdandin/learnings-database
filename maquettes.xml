@@ -194,7 +194,6 @@
 				<bureau>CSH-B10</bureau>
 				<mail>ma.detourbe@insa-toulouse.fr</mail>
 			</personnel>
-
 			<personnel idPersonnel="HH" appDepartement="CSH">
 				<nom>Hereng</nom>
 				<prenom>H.</prenom>
@@ -233,16 +232,17 @@
 				<nom>Centre des activités physiques et sportives</nom>
 				<dateCreation>1963-10-21</dateCreation>
 			</departement>
-	
 	</departements>
 
 	<maquette idMaquette="S7_4IR_SI" annee ="4" semestre="1">
 		<promo idPromo="IR" responsable="PP">
 			<intitule>Informatique et réseaux</intitule>
+      <acronyme>IR</acronyme>
 		</promo>
 
 		<specialite idSpecialite="SSI" responsable="PP">
 			<intitule>Systèmes informatiques</intitule>
+      <acronyme>SI</acronyme>
 		</specialite>
 
 		<ufs>
@@ -314,40 +314,48 @@
 		<ues>
 			<ue idUe="COO" responsable="NVW" uf="CP">
 				<intitule>Conception Orientée Objets</intitule>
+        <coefficient>0.33</coefficient>
 				<cm>10</cm>
 				<td>16.25</td>
 			</ue>
 			<ue idUe="POO" responsable="SY" uf="CP">
 				<intitule>Programmation orientée objets</intitule>
+        <coefficient>0.66</coefficient>
 				<cm>7.5</cm>
 				<td>8.75</td>
 				<tp>33</tp>
 			</ue>
 			<ue idUe="IDR" responsable="CC" uf="IS">
 				<intitule>Interconnexion de réseaux</intitule>
+        <coefficient>0.35</coefficient>
 				<cm>15</cm>
 				<td>1.25</td>
 				<tp>8.25</tp>
 			</ue>
 			<ue idUe="AR" responsable="FV" uf="IS">
 				<intitule>Algorithmique répartie</intitule>
+        <coefficient>0.3</coefficient>
 				<cm>10</cm>
 			</ue>
 			<ue idUe="SII" responsable="VN" uf="IS">
 				<intitule>Sécurité informatique et dans l'internet</intitule>
+        <coefficient>0.35</coefficient>
 				<cm>17.5</cm>
 				<td>2.5</td>
 				<tp>8.25</tp>
 			</ue>
 			<ue idUe="APS4IR" responsable="SR" uf="GA">
 				<intitule>APS</intitule>
+        <coefficient>0.5</coefficient>
 				<td>25</td>
 			</ue>
 			<ue idUe="PPI4IR" responsable="VN" uf="IS">
 				<intitule>PPI</intitule>
+        <coefficient>0.5</coefficient>
 			</ue>
 			<ue idUe="D" responsable="LL" uf="CM">
 				<intitule>Droit</intitule>
+        <coefficient>0.33</coefficient>
 				<cm>15</cm>
 			</ue>
 			<ue idUe="F" responsable="CL" uf="CM">
@@ -404,118 +412,125 @@
 					<nature>IE</nature>
 					<duree>1.25</duree>
 					<nApogee>E1</nApogee>
-					<coeff>0.33</coeff>
+					<coeff>1</coeff>
 				</epreuve>
 
 				<epreuve idEpreuve="EPOO" ue="POO">
 					<nature>Projet</nature>
 					<nApogee>E2</nApogee>
-					<coeff>0.66</coeff>
+					<coeff>1</coeff>
 				</epreuve>
 
 				<epreuve idEpreuve="EIR" ue="IDR">
 					<nature>IE</nature>
 					<duree>1.25</duree>
 					<nApogee>E1</nApogee>
-					<coeff>0.35</coeff>
+					<coeff>1</coeff>
 				</epreuve>
 
 				<epreuve idEpreuve="EAR" ue="AR">
 					<nature>IE</nature>
 					<duree>1.25</duree>
 					<nApogee>E2</nApogee>
-					<coeff>0.3</coeff>
+					<coeff>1</coeff>
 				</epreuve>
 
 				<epreuve idEpreuve="ESII" ue="SII">
 					<nature>IE</nature>
 					<duree>1.25</duree>
 					<nApogee>E3</nApogee>
-					<coeff>0.35</coeff>
+					<coeff>1</coeff>
 				</epreuve>
 
 				<epreuve idEpreuve="EAPS4IR" ue="APS4IR">
 					<nApogee>E1</nApogee>
-					<coeff>0.5</coeff>
+					<coeff>1</coeff>
 				</epreuve>
 
 				<epreuve idEpreuve="EPPI4IR" ue="PPI4IR">
 					<nApogee>E2</nApogee>
-					<coeff>0.5</coeff>
+					<coeff>1</coeff>
 				</epreuve>
 
 				<epreuve idEpreuve="ED" ue="D">
 					<nature>IE</nature>
 					<duree>1.25</duree>
 					<nApogee>E1</nApogee>
-					<coeff>0.35</coeff>
+					<coeff>1</coeff>
 				</epreuve>
 
 				<epreuve idEpreuve="EF1" ue="F">
 					<nature>IE</nature>
 					<duree>1.25</duree>
 					<nApogee>E2</nApogee>
-					<coeff>0.165</coeff>
+					<coeff>0.5</coeff>
 				</epreuve>
 
 				<epreuve idEpreuve="EF2" ue="F">
 					<nature>CC</nature>
 					<nApogee>E2</nApogee>
-					<coeff>0.165</coeff>
+					<coeff>0.5</coeff>
 				</epreuve>
 
 				<epreuve idEpreuve="EM1" ue="M">
 					<nature>IE</nature>
 					<duree>1.25</duree>
 					<nApogee>E3</nApogee>
-					<coeff>0.165</coeff>
+					<coeff>0.5</coeff>
 				</epreuve>
 
 				<epreuve idEpreuve="EM2" ue="M">
 					<nature>CC</nature>
 					<nApogee>E3</nApogee>
-					<coeff>0.165</coeff>
+					<coeff>0.5</coeff>
 				</epreuve>
 
-				<epreuve idEpreuve="EPF" ue="PF">
+				<epreuve idEpreuve="EPF1" ue="PF">
 					<nature>IE</nature>
 					<duree>2</duree>
 					<nApogee>E1</nApogee>
-					<coeff>0.4</coeff>
+					<coeff>0.5</coeff>
 				</epreuve>
+
+        <epreuve idEpreuve="EPF2" ue="PF">
+					<nature>Projet</nature>
+					<duree>2</duree>
+					<nApogee>E1</nApogee>
+					<coeff>0.5</coeff>
+        </epreuve>
 
 				<epreuve idEpreuve="ELPL" ue="LPL">
 					<nature>IE</nature>
 					<duree>1.25</duree>
 					<nApogee>E2</nApogee>
-					<coeff>0.4</coeff>
+					<coeff>1</coeff>
 				</epreuve>
 
 				<epreuve idEpreuve="EAA" ue="AA">
 					<nature>IE</nature>
 					<duree>1.25</duree>
 					<nApogee>E3</nApogee>
-					<coeff>0.2</coeff>
+					<coeff>1</coeff>
 				</epreuve>
 
 				<epreuve idEpreuve="EDSI" ue="DSI">
 					<nature>IE</nature>
 					<duree>1.25</duree>
 					<nApogee>E1</nApogee>
-					<coeff>0.4</coeff>
+					<coeff>1</coeff>
 				</epreuve>
 
 				<epreuve idEpreuve="EMDSI1" ue="MDSI">
 					<nature>IE</nature>
 					<duree>1.25</duree>
 					<nApogee>E2</nApogee>
-					<coeff>0.525</coeff>
+					<coeff>0.75</coeff>
 				</epreuve>
 
 				<epreuve idEpreuve="EMDSI2" ue="MDSI">
 					<nature>Projet</nature>
 					<nApogee>E3</nApogee>
-					<coeff>0.175</coeff>
+					<coeff>0.25</coeff>
 				</epreuve>
 
 				<epreuve idEpreuve="EIMM1" ue="IMM">
@@ -535,11 +550,13 @@
 	<!-- Maquette 5IR SDBD -->
   	<maquette idMaquette="S9_5IR_AP" annee ="5" semestre="1">
 		<promo idPromo="SDBD" responsable="MJH">
-			<intitule>Systèmes Distribitués et Big Data (SDBD)</intitule>
+			<intitule>Systèmes Distribitués et Big Data</intitule>
+      <acronyme>SDBD</acronyme>
 		</promo>
 
 		<specialite idSpecialite="SAP" responsable="PE">
-			<intitule>Analyse presprictive (AP)</intitule>
+			<intitule>Analyse presprictive</intitule>
+      <acronyme>AP</acronyme>
 		</specialite>
 
 		<ufs>
@@ -617,12 +634,14 @@
 		<ues>
 			<ue idUe="IL" responsable="NG" uf="ILAOS">
 				<intitule>Ingénierie logicielle</intitule>
+        <coefficient>0.5</coefficient>
 				<cm>11.25</cm>
 				<td>8.75</td>
 			</ue>
 
 			<ue idUe="AOS" responsable="NG" uf="ILAOS">
 				<intitule>Architectures orientées services</intitule>
+        <coefficient>0.5</coefficient>
 				<cm>7.5</cm>
 				<td>15</td>
 				<tp>19.25</tp>
@@ -630,101 +649,119 @@
 
 			<ue idUe="PSF" responsable="CB" uf="SF">
 				<intitule>Principes de la sureté de fonctionnement</intitule>
+        <coefficient>0.33</coefficient>
 				<cm>13.75</cm>
 				<tp>8.25</tp>
 			</ue>
 
 			<ue idUe="MT" responsable="FV" uf="SF">
 				<intitule>Modèles temporels</intitule>
+        <coefficient>0.33</coefficient>
 				<cm>6.25</cm>
 				<tp>8.25</tp>
 			</ue>
 
 			<ue idUe="VDM" responsable="FV" uf="SF">
 				<intitule>Vérification de modèles</intitule>
+        <coefficient>0.33</coefficient>
 				<cm>8.75</cm>
 				<tp>5.5</tp>
 			</ue>
 
 			<ue idUe="AEVD" responsable="GT" uf="ADP">
 				<intitule>Analyse exploratoire et visualisation de données</intitule>
+        <coefficient>0.5</coefficient>
 				<cm>10</cm>
 				<tp>13.75</tp>
 			</ue>
 
 			<ue idUe="APP" responsable="MJH" uf="ADP">
 				<intitule>Apprentissage</intitule>
+        <coefficient>0.5</coefficient>
 				<cm>12.5</cm>
 				<tp>13.75</tp>
 			</ue>
 
 			<ue idUe="CTLAV" responsable="SY" uf="ITDM">
 				<intitule>Concepts et techniques logicielles associées à la virtualisation</intitule>
-				<cm>6.25</cm>
+        <coefficient>0.45</coefficient>
+        <cm>6.25</cm>
 				<tp>8.25</tp>
 			</ue>
 
 			<ue idUe="FTMDM" responsable="SY" uf="ITDM">
 				<intitule>Framework et technologies pour la manipulation de données massives</intitule>
-				<cm>8.75</cm>
+        <coefficient>0.30</coefficient>
+        <cm>8.75</cm>
 				<tp>16.5</tp>
 			</ue>
 
 			<ue idUe="IMDV" responsable="CC" uf="ITDM">
 				<intitule>Infrastructure matérielle distribuée et virtualisée</intitule>
+        <coefficient>0.25</coefficient>
 				<cm>8.75</cm>
 				<tp>16.5</tp>
 			</ue>
 
 			<ue idUe="PC" responsable="SA" uf="PSDBD">
 				<intitule>Projet commun UF IL, SOA, ADP, INFRA</intitule>
+        <coefficient>0.33</coefficient>
 				<tp>22</tp>
 			</ue>
 
 			<ue idUe="CTDMVPSDA" responsable="MJH" uf="PSDBD">
 				<intitule>Conférence : Traitement de données massives / Vie privée / Sécurité/ Domaine d'application</intitule>
-				<cm>3.75</cm>
+        <coefficient>0.33</coefficient>
+        <cm>3.75</cm>
 			</ue>
 
 			<ue idUe="AGL" responsable="MAD" uf="PSDBD">
 				<intitule>Anglais</intitule>
+        <coefficient>0.33</coefficient>
 				<td>35</td>
 			</ue>
 
 			<ue idUe="MA" responsable="HH" uf="RHPE">
 				<intitule>Management d'équipe</intitule>
+        <coefficient>0.34</coefficient>
 				<cm>20</cm>
 			</ue>
 
 			<ue idUe="PSE" responsable="HH" uf="RHPE">
 				<intitule>Psychologie sociale et éthique</intitule>
+        <coefficient>0.22</coefficient>
 				<td>20</td>
 			</ue>
 
 			<ue idUe="APS" responsable="FR" uf="RHPE">
 				<intitule>Psychologie sociale et éthique</intitule>
+        <coefficient>0.22</coefficient>
 				<td>25</td>
 			</ue>
 
 			<ue idUe="PPI" responsable="TD" uf="RHPE">
 				<intitule>Psychologie sociale et éthique</intitule>
+        <coefficient>0.22</coefficient>
 				<td>10</td>
 			</ue>
 
 			<ue idUe="TM" responsable="MJH" uf="AP">
 				<intitule>Transitoire : métaheuristique</intitule>
+        <coefficient>0.33</coefficient>
 				<cm>6.25</cm>
 				<tp>5.5</tp>
 			</ue>
 
 			<ue idUe="MO" responsable="MJH" uf="AP">
 				<intitule>Méthodes et Outils</intitule>
+        <coefficient>0.33</coefficient>
 				<cm>20</cm>
 				<tp>13.75</tp>
 			</ue>
 
 			<ue idUe="PAP" responsable="MJH" uf="AP">
 				<intitule>Projet Analyse Prescriptive</intitule>
+        <coefficient>0.33</coefficient>
 				<cm>1.25</cm>
 				<tp>13.75</tp>
 			</ue>
@@ -734,83 +771,85 @@
 			<epreuve idEpreuve="EPSF" ue="PSF">
 				<nature>Autre</nature>
 				<nApogee>E1</nApogee>
-				<coeff>0.33</coeff>
+				<coeff>1</coeff>
 			</epreuve>
 
 			<epreuve idEpreuve="EMT" ue="MT">
 				<nature>IE</nature>
 				<nApogee>E2</nApogee>
-				<coeff>0.33</coeff>
+				<coeff>1</coeff>
 			</epreuve>
 
 			<epreuve idEpreuve="EVM" ue="VDM">
 				<nature>IE</nature>
 				<nApogee>E3</nApogee>
-				<coeff>0.33</coeff>
+				<coeff>1</coeff>
 			</epreuve>
 
 			<epreuve idEpreuve="ECTLAV" ue="CTLAV">
 				<nature>IE</nature>
 				<nApogee>E1</nApogee>
-				<coeff>0.45</coeff>
+				<coeff>1</coeff>
 			</epreuve>
 
 			<epreuve idEpreuve="EFTMDM" ue="FTMDM">
 				<nature>Soutenance</nature>
 				<nApogee>E2</nApogee>
-				<coeff>0.30</coeff>
+				<coeff>1</coeff>
 			</epreuve>
 
 			<epreuve idEpreuve="EIMDV" ue="IMDV">
 				<nature>IE</nature>
 				<nApogee>E3</nApogee>
-				<coeff>0.25</coeff>
+				<coeff>1</coeff>
 			</epreuve>
 
 			<epreuve idEpreuve="EAGL1" ue="AGL">
 				<nature>Rapport</nature>
+        <coeff>0.5</coeff>
 			</epreuve>
 			<epreuve idEpreuve="EAGL2" ue="AGL">
 				<nature>Soutenance</nature>
+        <coeff>0.5</coeff>
 			</epreuve>
 
 			<epreuve idEpreuve="EPC1" ue="PC">
 				<nature>Oral</nature>
 				<nApogee>E1</nApogee>
-				<coeff>0.17</coeff>
+				<coeff>0.5</coeff>
 			</epreuve>
 			<epreuve idEpreuve="EPC2" ue="PC">
 				<nature>Ecrit</nature>
 				<nApogee>E1</nApogee>
-				<coeff>0.17</coeff>
+				<coeff>0.5</coeff>
 			</epreuve>
 
 			<epreuve idEpreuve="ECTDM1" ue="CTDMVPSDA">
 				<nature>Oral</nature>
 				<nApogee>E2</nApogee>
-				<coeff>0.11</coeff>
+				<coeff>0.5</coeff>
 			</epreuve>
 			<epreuve idEpreuve="ECTDM2" ue="CTDMVPSDA">
 				<nature>Ecrit</nature>
 				<nApogee>E2</nApogee>
-				<coeff>0.11</coeff>
+				<coeff>0.5</coeff>
 			</epreuve>
 
 			<epreuve idEpreuve="EAPS" ue="APS">
 				<nature>Stage</nature>
 				<nApogee>E3</nApogee>
-				<coeff>0.22</coeff>
+				<coeff>1</coeff>
 			</epreuve>
 
 			<epreuve idEpreuve="EPPI1" ue="PPI">
 				<nature>Oral</nature>
 				<nApogee>E4</nApogee>
-				<coeff>0.11</coeff>
+				<coeff>0.5</coeff>
 			</epreuve>
 			<epreuve idEpreuve="EPPI2" ue="PPI">
 				<nature>Rapport</nature>
 				<nApogee>E4</nApogee>
-				<coeff>0.11</coeff>
+				<coeff>0.5</coeff>
 			</epreuve>
 		</epreuves>
 
@@ -830,6 +869,3 @@
 		</ues_competences>
     </maquette>
 </maquettes>
-
-
-

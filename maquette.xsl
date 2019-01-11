@@ -27,7 +27,7 @@ xmlns="http://www.w3.org/1999/xhtml">
                 <xsl:value-of select="concat(@annee, 'A S', @semestre,' - ', promo/intitule,' - ',specialite/intitule)"/>
               </h1>
               <!-- Reponsable de la promo -->
-              Responsable de <em><xsl:value-of select="promo/intitule"/></em> :
+              Responsable de <em><xsl:value-of select="promo/acronyme"/></em> :
               <xsl:call-template name="responsable">
                 <xsl:with-param name="idresponsable" select="promo/@responsable"/>
               </xsl:call-template>
@@ -273,15 +273,15 @@ xmlns="http://www.w3.org/1999/xhtml">
   </xsl:template>
 
   <xsl:template name="responsableSpe">
-    <xsl:param name="idresponsable"/>
     <xsl:param name="specialite"/>
-    <xsl:for-each select="/maquettes/personnels/personnel">
-      <xsl:if test="$idresponsable = @idPersonnel">
-        Responsable de
-        <em><xsl:value-of select="$specialite"/></em>
-        <xsl:value-of select="concat(' : ',nom,' ',prenom)"/>
-      </xsl:if>
-    </xsl:for-each>
+    <xsl:value-of select="/maquettes/maquette/specialite[@idSpecialite = $specialite] = node()"/>
+    <xsl:if test="/maquettes/maquette/specialite[@idSpecialite = $specialite] = node()">
+      Responsable de
+      <em><xsl:value-of select="/maquettes/maquette/specialite[@idSpecialite = $specialite]/acronyme"/></em>
+      <xsl:call-template name="responsable">
+        <xsl:with-param name ="idresponsable" select="/maquettes/personnels/personnel[@idPersonnel = /maquettes/maquette/specialite[@idSpecialite = $specialite]/@responsable]"/>
+      </xsl:call-template>
+    </xsl:if>
   </xsl:template>
 
   <xsl:template name="departement">
