@@ -256,12 +256,12 @@
 	<maquette idMaquette="S7_4IR_SI" annee ="4" semestre="1">
 		<promo idPromo="IR" responsable="PP">
 			<intitule>Informatique et réseaux</intitule>
-      <acronyme>IR</acronyme>
+      		<acronyme>IR</acronyme>
 		</promo>
 
 		<specialite idSpecialite="SSI">
 			<intitule>Systèmes informatiques</intitule>
-      <acronyme>SI</acronyme>
+      		<acronyme>SI</acronyme>
 		</specialite>
 
 		<ufs>
@@ -283,7 +283,7 @@
 				<ects>5</ects>
 				<competences>false</competences>
 			</uf>
-			<uf idUf="GA" responsable="SR">
+			<uf idUf="GEA" responsable="SR">
 				<codeApogee>L4IRIL11</codeApogee>
 				<intitule>Grandir en autonomie</intitule>
 				<obligation>true</obligation>
@@ -363,7 +363,7 @@
 				<td>2.5</td>
 				<tp>8.25</tp>
 			</ue>
-			<ue idUe="APS4IR" responsable="SR" uf="GA">
+			<ue idUe="APS4IR" responsable="SR" uf="GEA">
 				<intitule>APS</intitule>
         <coefficient>0.5</coefficient>
 				<td>25</td>
